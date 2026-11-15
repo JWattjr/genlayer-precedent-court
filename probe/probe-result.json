@@ -1,0 +1,242 @@
+{
+  "status": "PASS",
+  "attempt": 2,
+  "prior_attempts": [
+    {
+      "attempt": 1,
+      "status": "IN_PROGRESS",
+      "source_sha256": {
+        "registry": "3a33c63e34b794d1b43e9c14e1a9d8c708b3d5599a2cd4ef70bd555ab65ff593",
+        "caller": "e396f8964b8ee3ca352067df74cbbec7aeae58de926b883644ab677c5c66377f"
+      },
+      "contracts": {
+        "registry": {
+          "address": "0x3ABcc906a30247E749a889fBe1286ea556fb6289",
+          "explorer_url": "https://explorer-studio.genlayer.com/address/0x3ABcc906a30247E749a889fBe1286ea556fb6289"
+        },
+        "caller": {
+          "address": "0xDd8af04d1f0Ede877F7EC0A79aA77E97d27b7bFc",
+          "explorer_url": "https://explorer-studio.genlayer.com/address/0xDd8af04d1f0Ede877F7EC0A79aA77E97d27b7bFc"
+        }
+      },
+      "transactions": [
+        {
+          "operation": "registry_deploy",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-15T20:25:14.617520+00:00",
+          "hash": "0x9c07a566cfe1ee50ba507cf52cbb41f38554ce6c7912d9537defcabe9211b77a",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9c07a566cfe1ee50ba507cf52cbb41f38554ce6c7912d9537defcabe9211b77a",
+          "submitted_at_utc": "2026-11-15T20:25:22.416143+00:00",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-15T20:25:30.664571+00:00",
+          "finality_status": "FINALIZED",
+          "finalized_observed_at_utc": "2026-11-15T20:25:57.963168+00:00",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1"
+        },
+        {
+          "operation": "caller_deploy",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-15T20:26:00.289277+00:00",
+          "hash": "0xac6b202910692e572a3b503a0f74f5f1dbb51057cbc4535997522d7443e70710",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xac6b202910692e572a3b503a0f74f5f1dbb51057cbc4535997522d7443e70710",
+          "submitted_at_utc": "2026-11-15T20:26:05.494872+00:00",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-15T20:26:12.409633+00:00",
+          "finality_status": "FINALIZED",
+          "finalized_observed_at_utc": "2026-11-15T20:26:40.473794+00:00",
+          "leader_execution": "ERROR",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1"
+        },
+        {
+          "operation": "bind_probe_caller",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-15T20:26:42.760055+00:00",
+          "hash": "0x3b289b21a0569ec7e0c90b51f5bb031c1a7bfb94f070d0c11fc86c9fc4891c2a",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x3b289b21a0569ec7e0c90b51f5bb031c1a7bfb94f070d0c11fc86c9fc4891c2a",
+          "submitted_at_utc": "2026-11-15T20:26:49.213414+00:00",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-15T20:26:56.331744+00:00",
+          "finality_status": "FINALIZED",
+          "finalized_observed_at_utc": "2026-11-15T20:27:22.566768+00:00",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1"
+        },
+        {
+          "operation": "cross_read_then_emit",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-15T20:27:23.895358+00:00",
+          "hash": "0x9b95512b61c43c8f565caeffc2561f47e92802ee4ab22553a6da081613faf099",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9b95512b61c43c8f565caeffc2561f47e92802ee4ab22553a6da081613faf099",
+          "submitted_at_utc": "2026-11-15T20:27:29.451405+00:00",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-15T20:27:30.422451+00:00",
+          "finality_status": "FINALIZED",
+          "finalized_observed_at_utc": "2026-11-15T20:28:01.927461+00:00",
+          "leader_execution": "ERROR",
+          "consensus_result": "NO_MAJORITY",
+          "rounds": "0"
+        }
+      ],
+      "checks": {},
+      "note": "Earlier probe attempt did not establish all three checks; retained for audit."
+    }
+  ],
+  "network_alias": "studionet",
+  "chain_id": 61999,
+  "started_at_utc": "2026-11-15T20:30:24.404984+00:00",
+  "source_sha256": {
+    "registry": "3a33c63e34b794d1b43e9c14e1a9d8c708b3d5599a2cd4ef70bd555ab65ff593",
+    "caller": "71efee35fab5b24dea88570df77147042a4d4b9ed628b112d4b47de659da5714"
+  },
+  "transactions": [
+    {
+      "operation": "registry_deploy",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-15T20:30:24.405770+00:00",
+      "hash": "0x1fb9c7165be518591f4d1c25b58fb51ff7c4bac063d3fc676e08f9d641fe53d8",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1fb9c7165be518591f4d1c25b58fb51ff7c4bac063d3fc676e08f9d641fe53d8",
+      "submitted_at_utc": "2026-11-15T20:30:31.505071+00:00",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-15T20:30:38.611492+00:00",
+      "finality_status": "FINALIZED",
+      "finalized_observed_at_utc": "2026-11-15T20:31:05.357119+00:00",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1"
+    },
+    {
+      "operation": "caller_deploy",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-15T20:31:08.010276+00:00",
+      "hash": "0x009bc85e744200873eb9735250e1a8a6f02590acb3e835122e3f70c5e3f3a61f",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x009bc85e744200873eb9735250e1a8a6f02590acb3e835122e3f70c5e3f3a61f",
+      "submitted_at_utc": "2026-11-15T20:31:14.453467+00:00",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-15T20:31:21.345827+00:00",
+      "finality_status": "FINALIZED",
+      "finalized_observed_at_utc": "2026-11-15T20:31:53.202739+00:00",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1"
+    },
+    {
+      "operation": "bind_probe_caller",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-15T20:31:55.603456+00:00",
+      "hash": "0x1b53d3f5b1a7751842554071b6171fff440f47fc64679b6a605da64bfcdc28c3",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1b53d3f5b1a7751842554071b6171fff440f47fc64679b6a605da64bfcdc28c3",
+      "submitted_at_utc": "2026-11-15T20:32:01.703034+00:00",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-15T20:32:08.723069+00:00",
+      "finality_status": "FINALIZED",
+      "finalized_observed_at_utc": "2026-11-15T20:32:40.872961+00:00",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1"
+    },
+    {
+      "operation": "cross_read_then_emit",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-15T20:32:42.204381+00:00",
+      "hash": "0x28e37c0f2886e14d5c9984a1efbfafe0196e3f5ca41b72dcbf0f3fe1102d4a83",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x28e37c0f2886e14d5c9984a1efbfafe0196e3f5ca41b72dcbf0f3fe1102d4a83",
+      "submitted_at_utc": "2026-11-15T20:32:48.263856+00:00",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-15T20:32:55.756390+00:00",
+      "finality_status": "FINALIZED",
+      "finalized_observed_at_utc": "2026-11-15T20:33:22.022269+00:00",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "triggered_transactions": [
+        "0x8298ce1e9d16449005c1cd1a0bb25defb3ff2c9b6ea2fb485f1b99049fa4de65"
+      ],
+      "child_finality_status": "FINALIZED",
+      "child_leader_execution": "SUCCESS",
+      "child_consensus_result": "MAJORITY_AGREE",
+      "child_trigger_confirmed": true
+    },
+    {
+      "operation": "outsider_append_rejected",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-15T20:33:58.276080+00:00",
+      "hash": "0x1fd02eca493a8df8ba88bf74aff8a9193ee3d4e6ff79bed70213ceec21cb5c17",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1fd02eca493a8df8ba88bf74aff8a9193ee3d4e6ff79bed70213ceec21cb5c17",
+      "submitted_at_utc": "2026-11-15T20:34:03.994617+00:00",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-15T20:34:11.665157+00:00",
+      "finality_status": "FINALIZED",
+      "finalized_observed_at_utc": "2026-11-15T20:34:44.346967+00:00",
+      "leader_execution": "ERROR",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "expected_error": "only bound court may append",
+      "expected_error_found": true
+    },
+    {
+      "operation": "registry_append_child",
+      "stage": "FINALIZED",
+      "parent_transaction": "0x28e37c0f2886e14d5c9984a1efbfafe0196e3f5ca41b72dcbf0f3fe1102d4a83",
+      "hash": "0x8298ce1e9d16449005c1cd1a0bb25defb3ff2c9b6ea2fb485f1b99049fa4de65",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x8298ce1e9d16449005c1cd1a0bb25defb3ff2c9b6ea2fb485f1b99049fa4de65",
+      "created_at_utc": "2026-11-15T20:33:22.789995+00:00",
+      "finalized_at_utc": "2026-11-15T20:33:27+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "receipt_verified_read_only": true,
+      "triggered_by": "0x28e37c0f2886e14d5c9984a1efbfafe0196e3f5ca41b72dcbf0f3fe1102d4a83"
+    }
+  ],
+  "contracts": {
+    "registry": {
+      "address": "0x68FcCF589Aba8771956Bc60379E2afEa0E61e3b4",
+      "explorer_url": "https://explorer-studio.genlayer.com/address/0x68FcCF589Aba8771956Bc60379E2afEa0E61e3b4"
+    },
+    "caller": {
+      "address": "0x3034100e8Bf8d1868932067D6e337De79352c83D",
+      "explorer_url": "https://explorer-studio.genlayer.com/address/0x3034100e8Bf8d1868932067D6e337De79352c83D"
+    }
+  },
+  "checks": {
+    "a_cross_contract_view_read": "PASS",
+    "parent_finality_seconds": 40.749,
+    "b_emitted_write_visible": "PASS",
+    "write_finality_seconds": 33.158,
+    "c_non_court_append_rejected": "PASS",
+    "b_child_transaction_finalized": "PASS"
+  },
+  "readbacks": [
+    {
+      "method": "caller.get_last_read()",
+      "value": "studio-probe-value",
+      "transaction_hash": "0x28e37c0f2886e14d5c9984a1efbfafe0196e3f5ca41b72dcbf0f3fe1102d4a83",
+      "state": "LATEST_FINAL",
+      "checked_at_utc": "2026-11-15T20:33:25.223862+00:00"
+    },
+    {
+      "method": "registry.get(cross-write)",
+      "value": "landed-value",
+      "transaction_hash": "0x28e37c0f2886e14d5c9984a1efbfafe0196e3f5ca41b72dcbf0f3fe1102d4a83",
+      "state": "LATEST_FINAL",
+      "seconds_after_parent_finality": 33.158,
+      "checked_at_utc": "2026-11-15T20:33:56.111837+00:00",
+      "child_transaction_hash": "0x8298ce1e9d16449005c1cd1a0bb25defb3ff2c9b6ea2fb485f1b99049fa4de65",
+      "child_finality_status": "FINALIZED",
+      "parent_transaction_hash": "0x28e37c0f2886e14d5c9984a1efbfafe0196e3f5ca41b72dcbf0f3fe1102d4a83"
+    },
+    {
+      "method": "registry.count()",
+      "before": 2,
+      "after": 2,
+      "state": "LATEST_FINAL",
+      "checked_at_utc": "2026-11-15T20:34:48.006236+00:00"
+    }
+  ],
+  "architecture_decision": "TWO_CONTRACT",
+  "note": "Probe contracts are throwaway and are not submission evidence."
+}

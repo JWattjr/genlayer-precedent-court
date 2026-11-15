@@ -1,0 +1,16 @@
+[
+  {
+    "question": "When does a signed delivery schedule control?",
+    "holding": "A signed schedule controls unless later written assent changes it.",
+    "facts_summary": "Both parties signed the original delivery schedule.",
+    "outcome": "CLAIMANT_WINS",
+    "distinguishing_factors": []
+  },
+  {
+    "question": "Can a later written amendment change a signed delivery date?",
+    "holding": "A later bilateral written amendment controls the earlier schedule.",
+    "facts_summary": "Both parties later signed a dated amendment.",
+    "outcome": "RESPONDENT_WINS",
+    "distinguishing_factors": ["The later writing was signed by both parties."]
+  }
+]

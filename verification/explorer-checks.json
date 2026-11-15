@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "network": "GenLayer StudioNet",
+  "status": "VERIFIED",
+  "checked_at_utc": "2026-11-15T22:11:08Z",
+  "verification_method": "Opened each direct contract URL in the Brave browser and inspected the Studio Explorer accessibility page.",
+  "network_indicators": {
+    "page_title": "GenLayer Studio Explorer",
+    "domain": "explorer-studio.genlayer.com",
+    "connection_status": "Connected"
+  },
+  "checks": [
+    {
+      "contract_name": "PrecedentRegistry",
+      "checked_at_utc": "2026-11-15T21:56:10Z",
+      "address": "0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
+      "contract_url": "https://explorer-studio.genlayer.com/address/0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
+      "evidence_type": "GenLayer Explorer Contract",
+      "address_displayed": true,
+      "deployment_transaction": "0x26115d048abfb780eb9292334817f7a8e4e269033d6e9d7f55f70fbb3650448f",
+      "deployment_transaction_displayed": true,
+      "transaction_count_displayed": 6,
+      "live_demo_transactions_visible": [
+        {
+          "scenario": "Case A append P3",
+          "transaction": "0x6a3465100618fdb0c41ce5a13982da8272620630af496d60611825c83d3ca114"
+        },
+        {
+          "scenario": "Case B append P4",
+          "transaction": "0x3fc2e2c85091dfb6433ce74b227fd900734a75ec6ee8575423fe97ec013adb15"
+        },
+        {
+          "scenario": "Case C append P5",
+          "transaction": "0x250e681641efa4784d99f2ab03cf65282cae8249aed09fd240867a7a646e94e6"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "contract_name": "PrecedentCourt",
+      "checked_at_utc": "2026-11-15T22:11:08Z",
+      "address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "contract_url": "https://explorer-studio.genlayer.com/address/0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "evidence_type": "GenLayer Explorer Contract",
+      "address_displayed": true,
+      "deployment_transaction": "0xa268c6a0b31e810e2ed889c6e24d3747eb9576ef6cacd8ecde220722874acb0c",
+      "deployment_transaction_displayed": true,
+      "transaction_count_displayed": 22,
+      "live_demo_transactions_visible": [
+        {
+          "scenario": "Case A adjudication creates P3",
+          "transaction": "0xee3bc7b3e3cab3e92d69069fb089602bf8b959c52ce797e1e2d033ab9b3fda68"
+        },
+        {
+          "scenario": "Case B contradiction rejected",
+          "transaction": "0x9d6da10025e8beeeb6e4a2fba8edf4ca753e5f01dbff44934c7e68e14d49b114"
+        },
+        {
+          "scenario": "Case B revised ruling creates P4",
+          "transaction": "0x71fc37ddf1563d54c9da75418531b6768e0e80449f57e8afa2300b828e92f587"
+        },
+        {
+          "scenario": "Case C cites P4 and creates P5",
+          "transaction": "0x0ccfa0271dfc17de058e70ffdf6ef8dbe39343942100d4942bcec88d3c5283bc"
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "note": "Both direct contract pages displayed the expected StudioNet addresses and deployment transactions, and the listed live-demo transactions were present. Probe contracts are excluded from submission evidence."
+}
