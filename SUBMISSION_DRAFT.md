@@ -26,7 +26,7 @@ Earlier `court-release/`, `court-review/`, `court-appeal/`, and `optimistic-asse
 
 Each contract address is a separate Explorer evidence entry. The StudioNet address pages and demo transaction rows were opened and checked. The Portal has not been opened or submitted to.
 
-1. **GitHub repository:** unavailable. The required pre-publication check found `gh auth status` unauthenticated; the public repository was not created and no alternate login path was attempted.
+1. **GitHub repository:** [Public source and verification evidence](https://github.com/JWattjr/genlayer-precedent-court).
 2. **GenLayer Explorer Contract — PrecedentRegistry:** [StudioNet contract page](https://explorer-studio.genlayer.com/address/0x0FD8b71034265680EC8B46c6Ff8D06085e71f998). The page displayed this address and deployment transaction `0x26115d048abfb780eb9292334817f7a8e4e269033d6e9d7f55f70fbb3650448f`; Case A/B/C Registry append transactions were present.
 3. **GenLayer Explorer Contract — PrecedentCourt:** [StudioNet contract page](https://explorer-studio.genlayer.com/address/0x68640Ef247219FF0B40d5A7a60c0F8A572178507). The page displayed this address and deployment transaction `0xa268c6a0b31e810e2ed889c6e24d3747eb9576ef6cacd8ecde220722874acb0c`; the Case A/B/C decision transactions were present.
 4. **Key transaction — Case A accepted as P3:** [adjudication](https://explorer-studio.genlayer.com/tx/0xee3bc7b3e3cab3e92d69069fb089602bf8b959c52ce797e1e2d033ab9b3fda68) · [Registry append](https://explorer-studio.genlayer.com/tx/0x6a3465100618fdb0c41ce5a13982da8272620630af496d60611825c83d3ca114).

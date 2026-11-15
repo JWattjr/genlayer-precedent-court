@@ -11,7 +11,7 @@ The StudioNet cross-contract probe passed its view-read, emitted-write, direct r
 
 All three live demos passed: Case A appended P3, Case B rejected and slashed a contradictory proposal before appending revised P4, and Case C cited P4 and appended P5. The source hashes match the deployed source. See [`probe/probe-result.json`](probe/probe-result.json), [`deployments/studionet.json`](deployments/studionet.json), [`verification/studionet-demo.json`](verification/studionet-demo.json), and [`verification/explorer-checks.json`](verification/explorer-checks.json) for probe results, deployment records, readbacks, and browser checks.
 
-The exact staged payload audit passed with zero findings; see [`verification/secret-audit.json`](verification/secret-audit.json). Public GitHub publication is blocked because the required `gh auth status` check reports no authenticated session. No Portal form has been opened or submitted.
+The exact tracked payload audit passed with zero findings; see [the audit](verification/secret-audit.json). Public repository: [genlayer-precedent-court](https://github.com/JWattjr/genlayer-precedent-court). No Portal form has been opened or submitted.
 
 ## Local checks
 

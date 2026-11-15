@@ -24,12 +24,12 @@ The optional `overrules` field remains metadata only. The supplied strict consis
 
 **Explorer evidence verified.** The direct Studio Explorer pages displayed the expected addresses and deployment transactions, showed a connected Explorer state, and included the live demo transactions. Registry displayed 6 transactions; Court displayed its deployment and the Case A/B/C decisions and related transactions. See [`verification/explorer-checks.json`](../verification/explorer-checks.json) for the address-by-address record and [`verification/studionet-demo.json`](../verification/studionet-demo.json) for finalized receipts and direct readbacks.
 
-The project is technically and live-demo ready, but public repository evidence is unavailable because `gh auth status` reports no authenticated GitHub CLI session. Per the requested stop rule, no alternate authentication path was attempted. The local repository is initialized, and the staged payload audit passed with zero findings; see [`verification/secret-audit.json`](../verification/secret-audit.json). No public URL can be claimed until publication succeeds.
+Public repository: [genlayer-precedent-court](https://github.com/JWattjr/genlayer-precedent-court). GitHub CLI authentication was completed by the user. The exact tracked payload passed the publication audit with zero findings; see [the audit](../verification/secret-audit.json).
 
 ## Failures, skipped work, and defaults
 
 - The first throwaway ProbeCaller deployment attempt failed because its constructor did not convert the registry string to `Address`. The corrected deployment passed the full probe; the failed probe is not submission evidence.
-- GitHub repository creation and push are blocked by the unauthenticated GitHub CLI. No workaround was attempted.
+- GitHub publication was initially blocked by missing CLI authentication. The user completed browser sign-in, and the public repository link is recorded above.
 - The overrule field is retained but cannot override the strict contradiction rule. No source changes were made after the live deployment.
 - The claimant alone proposes because only the claimant posts the tracked case bond. A split's odd unit goes to the respondent. The proposer slash is one quarter of the original bond, with the documented cap and refund rules.
 - The StudioNet Builder Portal was not opened or submitted to. No points or acceptance are promised.
