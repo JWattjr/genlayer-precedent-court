@@ -14,3 +14,25 @@ INFO:   Default wait retries: 50
 INFO:   Leader only mode: False
 ..........................                                               [100%]
 26 passed in 5.12s
+
+CLEAN GIT ARCHIVE VERIFICATION
+Commit: f0400bd8dffb5b3e1de264063b659ae2d63e578e
+Interpreter: C:\Users\User\Desktop\IC phase 2\final-offer-arbitration\.venv\Scripts\python.exe
+Versions: {"genlayer-test": "0.30.0rc2", "genlayer-py": "0.19.0rc2", "genvm-linter": "0.11.1rc2", "pytest": "9.1.1"}
+Contract bytes identical to Git archive: true
+Command: python -X utf8 -m pytest tests -o 'addopts=-p no:cacheprovider' -q
+..........................                                               [100%]
+26 passed in 4.84s
+INFO: File `gltest.config.yaml` found in the current directory, using it
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['localnet']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studio_devnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False

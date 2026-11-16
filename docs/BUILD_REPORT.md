@@ -1,39 +1,46 @@
-# Build report
+# Build report — Precedent Court
 
-Review date: 2026-11-15. The user's November 11 submission guidance is treated as learned review guidance, not official criteria and not a promise of points.
+Review date: November 16, 2026 (Africa/Lagos). The user's November 11 guidance is learned review guidance, not official scoring criteria. No points or maximum score are promised.
 
 ## Technical readiness
 
-**Live prototype ready for review.** The StudioNet cross-contract probe passed the view read, emitted write, direct Registry readback, and outsider rejection checks. The append became visible 33.158 seconds after the parent finalized. The project uses the two-contract Registry/Court design selected by that probe.
+The revised source passed full GenVM lint and ABI validation before deployment. 26 direct cases passed in the pinned isolated environment; 26 also passed from a clean git archive HEAD copy. The exact archive commit, interpreter and versions are in verification/tests.txt. Local models are mocked and validator callbacks are explicitly checked; real consensus evidence is the separately recorded live run.
 
-The 13 direct-mode tests pass. GenVM lint passed 3 checks for each of the Court, Registry, ProbeRegistry, and ProbeCaller contracts; ABI validation passed for all four. The probe contracts are throwaway and are excluded from submission evidence. The live release has 25 finalized transaction records. Cases A, B, and C completed, and each deployed contract's source hash matches its local source hash.
+Registry and Court each passed 3 lint checks; both preserved probe contracts also passed 3 each (12 total). The 400-character cross-contract bound, balanced facts summary, real overrule mapping, proposer-specific bonds, two-attempt cap and ranked retrieval have regression coverage.
 
-- Case A was accepted as P3; 40 synthetic units were allocated to the claimant.
-- Case B's contradictory proposal was rejected and 10 units were slashed. The revised proposal was accepted as P4; the remaining 30 units went to the claimant.
-- Case C cited P4 and was accepted as P5; 40 synthetic units were allocated to the claimant.
-
-All bond amounts are synthetic bookkeeping units; the contracts do not receive or transfer GEN or tokens. Local tests mock validator outputs and do not establish distributed consensus. The relevant-record lookup is deliberately bounded to five recent records and can miss relevant rulings.
+All fresh deployed source hashes equal local source SHA-256. A accepted P3; B rejected/slashed the contradiction then accepted distinguished P4; C was proposed by the respondent and created P5 from P4; D created P6 through a justified overrule with old record unchanged; E rejected/slashed an unjustified overrule and remains open with 70 synthetic units held.
 
 ## Distinctiveness
 
-**Local distinction: present, with a clear boundary.** The named assertion-court projects judge evidence-based truth for a claim, appeals, or stale-refund conditions. Liability Cascade attributes a violation to a pipeline step. Precedent Court instead judges whether a proposed holding fits earlier holdings, freezes cited records, and carries each accepted decision into later cases. The meaningful distinction is the compounding precedent state and its consistency check, not the use of an LLM, synthetic bonds, or court terminology. Final Offer Arbitration judges which of two sealed offers is closer to current evidence and pays that amount; it does not carry rulings across cases. These are local comparisons, not ecosystem-wide originality claims.
+The meaningful distinction is immutable rule compounding and justified supersession across independent cases, with proposals and rejection costs attributable to either bonded party. This strengthens the comparison against the user's earlier single-claim court/appeal mechanisms, liability attribution and evidence retraction. It is not merely adding a list to an appeal.
 
-The optional `overrules` field remains metadata only. The supplied strict consistency rule rejects any cited contradiction, so accepted overruling behavior is not implemented; this limitation is documented rather than silently changing the deployed rule.
+These are local comparisons only. Actual custody, authenticated evidence, external adoption and ecosystem-wide novelty have not been established. Consensus does not prove fairness.
 
 ## Evidence readiness
 
-**Explorer evidence verified.** The direct Studio Explorer pages displayed the expected addresses and deployment transactions, showed a connected Explorer state, and included the live demo transactions. Registry displayed 6 transactions; Court displayed its deployment and the Case A/B/C decisions and related transactions. See [`verification/explorer-checks.json`](../verification/explorer-checks.json) for the address-by-address record and [`verification/studionet-demo.json`](../verification/studionet-demo.json) for finalized receipts and direct readbacks.
+Public repository: https://github.com/JWattjr/genlayer-precedent-court. Current contract entries:
 
-Public repository: [genlayer-precedent-court](https://github.com/JWattjr/genlayer-precedent-court). GitHub CLI authentication was completed by the user. The exact tracked payload passed the publication audit with zero findings; see [the audit](../verification/secret-audit.json).
+- **PrecedentRegistry:** [StudioNet contract](https://explorer-studio.genlayer.com/address/0x78a120F66BE45155d639a302880b9d0D96661465)
+- **PrecedentCourt:** [StudioNet contract](https://explorer-studio.genlayer.com/address/0xb473bbC3505Ccd102f5817127f137EBBd4141e9A)
 
-## Failures, skipped work, and defaults
+Fresh transactions, finality, execution results, direct readbacks and settlement arithmetic are in verification/studionet-demo.json. Source hashes are in deployments/studionet.json. Direct contract pages and demo rows are checked in verification/explorer-checks.json. Only fresh addresses are current evidence. Historical addresses remain in DESIGN.md. The final indexed-payload secret audit is in verification/secret-audit.json.
 
-- The first throwaway ProbeCaller deployment attempt failed because its constructor did not convert the registry string to `Address`. The corrected deployment passed the full probe; the failed probe is not submission evidence.
-- GitHub publication was initially blocked by missing CLI authentication. The user completed browser sign-in, and the public repository link is recorded above.
-- The overrule field is retained but cannot override the strict contradiction rule. No source changes were made after the live deployment.
-- The claimant alone proposes because only the claimant posts the tracked case bond. A split's odd unit goes to the respondent. The proposer slash is one quarter of the original bond, with the documented cap and refund rules.
-- The StudioNet Builder Portal was not opened or submitted to. No points or acceptance are promised.
+## Failures, defaults and limits
 
-The first revised Court release failed Case A with [LLM_ERROR] citation judgment count and no accepted ruling. The required judgment IDs/counts were made explicit in the source prompt; lint, all 25 tests and the clean Git archive test were rerun before another fresh Registry/Court deployment. The failed pair is separately listed as superseded in DESIGN.md. Its receipt is preserved in the external first-revision run state; it is not claimed as successful evidence.
+- The first package-install attempt hit sandbox cache permissions. The explicit project cache/network retry installed every requested pin successfully.
+- Remote latest-runner lookup failed DNS inside the sandbox; lint and ABI checks succeeded with the cached pinned runner.
+- The older installed genlayer-test 0.29.2 failed during setup as expected; the requested 0.30.0rc2 passed, including the clean archive check.
+- Initial adapted test assertions expected old error text/accounting; they were corrected to the deliberate new rules before the full passing runs.
+- The Registry is capped at 128 records. Ranked keyword retrieval can miss semantic relationships. Case E remains open with 70 held units after the required first rejected attempt. A stale overrule target fails rather than silently being changed.
+- Synthetic units only; evidence is user-supplied and unauthenticated. No real collateral, fairness guarantee or independent security audit is claimed.
+- Builder Portal was not opened or submitted. No source revisions reuse old deployment evidence.
+
+The first revised Court release failed Case A with [LLM_ERROR] citation judgment count and no accepted ruling. The required judgment IDs/counts were made explicit in the source prompt; lint, all tests and the clean Git archive test were rerun before another fresh Registry/Court deployment. The failed pair is separately listed as superseded in DESIGN.md. Its receipt is preserved in the external first-revision run state; it is not claimed as successful evidence.
 
 The clean-archive byte check caught Git's line-ending conversion on an unchanged file. Contract-source attributes and index handling were corrected; the final clean archive contains the same contract bytes as the local/deployed SHA-256 evidence.
+
+On the superseded second-revision pair, Case B twice finalized with MAJORITY_DISAGREE, including a source-unchanged retry, and left the frozen case PROPOSED. Failed-consensus transactions and receipts are retained; the runner now requires both execution SUCCESS and MAJORITY_AGREE before trusting a transaction, followed by a direct state readback. A transient StudioNet HTTP 502 before retry submission was resolved by retrying. These are recorded failures, not successful transitions.
+
+Before the final deployment, an additional canonical-JSON Unicode boundary was found and fixed. The 26th regression checks that the complete encoded append payload is rejected before any model call or pending mutation. All 26 tests, full lint/ABI checks and the clean Git archive run were repeated before deployment. The final negative Case B input is an explicit logical contradiction of P3.
+
+In the final release, the first Case E adjudication finalized with MAJORITY_DISAGREE and left the case PROPOSED, with no slash. Its receipt is retained separately. The unchanged frozen proposal was retried; only a subsequent MAJORITY_AGREE transaction and exact readback may establish the required rejection/slash. A gateway error during C receipt polling was resumed from its saved hash, with no duplicate write.

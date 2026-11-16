@@ -1,9 +1,10 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "network": "GenLayer StudioNet",
+  "chain_id": 61999,
   "status": "VERIFIED",
-  "checked_at_utc": "2026-11-15T22:11:08Z",
-  "verification_method": "Opened each direct contract URL in the Brave browser and inspected the Studio Explorer accessibility page.",
+  "checked_at_utc": "2026-11-16T10:19:48Z",
+  "verification_method": "Opened both new direct address URLs in Brave; inspected the connected GenLayer Studio Explorer contract page and demo transaction rows.",
   "network_indicators": {
     "page_title": "GenLayer Studio Explorer",
     "domain": "explorer-studio.genlayer.com",
@@ -12,60 +13,76 @@
   "checks": [
     {
       "contract_name": "PrecedentRegistry",
-      "checked_at_utc": "2026-11-15T21:56:10Z",
-      "address": "0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
-      "contract_url": "https://explorer-studio.genlayer.com/address/0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
+      "address": "0x78a120F66BE45155d639a302880b9d0D96661465",
+      "contract_url": "https://explorer-studio.genlayer.com/address/0x78a120F66BE45155d639a302880b9d0D96661465",
       "evidence_type": "GenLayer Explorer Contract",
+      "checked_at_utc": "2026-11-16T10:14:26Z",
       "address_displayed": true,
-      "deployment_transaction": "0x26115d048abfb780eb9292334817f7a8e4e269033d6e9d7f55f70fbb3650448f",
+      "deployment_transaction": "0x1f51230e8278da3fb91cce26f5ffb30c46faf6075ad85403431855779ee7ed6c",
       "deployment_transaction_displayed": true,
-      "transaction_count_displayed": 6,
+      "transaction_count_displayed": 7,
       "live_demo_transactions_visible": [
         {
-          "scenario": "Case A append P3",
-          "transaction": "0x6a3465100618fdb0c41ce5a13982da8272620630af496d60611825c83d3ca114"
+          "scenario": "case_a_consistent_adjudicate_registry_append_child",
+          "transaction": "0xb874e2f9eb31625ce857581874ae370c04aba1fa54e26f97e4476440d8948577"
         },
         {
-          "scenario": "Case B append P4",
-          "transaction": "0x3fc2e2c85091dfb6433ce74b227fd900734a75ec6ee8575423fe97ec013adb15"
+          "scenario": "case_b_distinguished_adjudicate_registry_append_child",
+          "transaction": "0x048a936c43c4ae362072a403a6f4f8843846c70f5a06279c0306fa6880bcf34f"
         },
         {
-          "scenario": "Case C append P5",
-          "transaction": "0x250e681641efa4784d99f2ab03cf65282cae8249aed09fd240867a7a646e94e6"
+          "scenario": "case_c_compounding_adjudicate_registry_append_child",
+          "transaction": "0x25c57240d34430c6b79983468e79f643776e9918989458030703e5d357d698d5"
+        },
+        {
+          "scenario": "case_d_justified_overrule_adjudicate_registry_append_child",
+          "transaction": "0x2669e275b2f794db39f9814066d0a584ff97fe6f3d0cf6e54e4cbe3cd22f245c"
         }
       ],
       "status": "PASS"
     },
     {
       "contract_name": "PrecedentCourt",
-      "checked_at_utc": "2026-11-15T22:11:08Z",
-      "address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "contract_url": "https://explorer-studio.genlayer.com/address/0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "address": "0xb473bbC3505Ccd102f5817127f137EBBd4141e9A",
+      "contract_url": "https://explorer-studio.genlayer.com/address/0xb473bbC3505Ccd102f5817127f137EBBd4141e9A",
       "evidence_type": "GenLayer Explorer Contract",
+      "checked_at_utc": "2026-11-16T10:19:48Z",
       "address_displayed": true,
-      "deployment_transaction": "0xa268c6a0b31e810e2ed889c6e24d3747eb9576ef6cacd8ecde220722874acb0c",
+      "deployment_transaction": "0x0a91311c0b174bfe131df1738d4510611914b4da13121df7f2091b7f87e7e4cf",
       "deployment_transaction_displayed": true,
-      "transaction_count_displayed": 22,
+      "transaction_count_displayed": 33,
       "live_demo_transactions_visible": [
         {
-          "scenario": "Case A adjudication creates P3",
-          "transaction": "0xee3bc7b3e3cab3e92d69069fb089602bf8b959c52ce797e1e2d033ab9b3fda68"
+          "scenario": "case_a_consistent_adjudicate",
+          "transaction": "0x59dac8545dc14d0f144ae786f3b1243b39d5a7a86b08b661d3b280cbc1b0416b"
         },
         {
-          "scenario": "Case B contradiction rejected",
-          "transaction": "0x9d6da10025e8beeeb6e4a2fba8edf4ca753e5f01dbff44934c7e68e14d49b114"
+          "scenario": "case_b_contradiction_adjudicate",
+          "transaction": "0x40e5e0e73a409d8acb183dda835a735b1f29aff3cac62b58c805b355546c9896"
         },
         {
-          "scenario": "Case B revised ruling creates P4",
-          "transaction": "0x71fc37ddf1563d54c9da75418531b6768e0e80449f57e8afa2300b828e92f587"
+          "scenario": "case_b_distinguished_adjudicate",
+          "transaction": "0xca133fbe5943f114816e7a36601a666a4927ddc5ba3f47eac854949aa04b9a76"
         },
         {
-          "scenario": "Case C cites P4 and creates P5",
-          "transaction": "0x0ccfa0271dfc17de058e70ffdf6ef8dbe39343942100d4942bcec88d3c5283bc"
+          "scenario": "case_c_compounding_proposal",
+          "transaction": "0x0ed3554f08228b69804d2d7b5bb6ce02bdb847338a31e66393e323916f6193eb"
+        },
+        {
+          "scenario": "case_c_compounding_adjudicate",
+          "transaction": "0x86a77f25acaaa9e4d795dfbd04ee129f43c82c9fbce0f21bd0bb6e5ce4c37a45"
+        },
+        {
+          "scenario": "case_d_justified_overrule_adjudicate",
+          "transaction": "0xfea058c8b41dbed2c252d93bb3cd4721359243a2b9b4b337e7f9277ad9912f7d"
+        },
+        {
+          "scenario": "case_e_unjustified_overrule_adjudicate",
+          "transaction": "0xd38503b8dc65288fced96958205b8fb5ee5d8951d45e115fffe8f6935ba33d2d"
         }
       ],
       "status": "PASS"
     }
   ],
-  "note": "Both direct contract pages displayed the expected StudioNet addresses and deployment transactions, and the listed live-demo transactions were present. Probe contracts are excluded from submission evidence."
+  "note": "Only final revised Registry/Court addresses are current evidence. All successful A-E decision hashes, respondent proposal and A-D child appends were observed; failed consensus attempts are preserved separately and not claimed as successful decisions."
 }

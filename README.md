@@ -1,40 +1,46 @@
-# GenLayer Precedent Court
+# Precedent Court
 
-Precedent Court separates dispute adjudication from an append-only precedent Registry. A claimant proposes an outcome and holding with citations; validators judge consistency with the frozen cited rulings and a bounded set of recent relevant records. The Court decides all state changes and synthetic bond arithmetic. Each consistent ruling is appended to the Registry and becomes available to later cases.
+**Synthetic units only: no GEN or token is locked or transferred.**
+
+Validators judge whether proposed rulings fit earlier holdings and whether a single cited rule should be overruled. Both bonded parties may propose; accepted rulings compound in an immutable Registry.
+
+Public repository: [genlayer-precedent-court](https://github.com/JWattjr/genlayer-precedent-court).
 
 ## Project state
 
-The StudioNet cross-contract probe passed its view-read, emitted-write, direct readback, and outsider-rejection checks. The released source therefore uses `PrecedentRegistry` and `PrecedentCourt`; a consistent case remains pending until its asynchronous Registry append is visible and `finalize_case` verifies the record.
+The revised source is freshly deployed on GenLayer StudioNet. All required live scenarios passed, and deployed SHA-256 hashes match local source. Only the addresses below are current evidence; superseded addresses are listed in [DESIGN.md](docs/DESIGN.md).
 
-- **PrecedentRegistry:** [StudioNet Explorer](https://explorer-studio.genlayer.com/address/0x0FD8b71034265680EC8B46c6Ff8D06085e71f998)
-- **PrecedentCourt:** [StudioNet Explorer](https://explorer-studio.genlayer.com/address/0x68640Ef247219FF0B40d5A7a60c0F8A572178507)
+- **PrecedentRegistry:** [StudioNet contract](https://explorer-studio.genlayer.com/address/0x78a120F66BE45155d639a302880b9d0D96661465)
+- **PrecedentCourt:** [StudioNet contract](https://explorer-studio.genlayer.com/address/0xb473bbC3505Ccd102f5817127f137EBBd4141e9A)
 
-All three live demos passed: Case A appended P3, Case B rejected and slashed a contradictory proposal before appending revised P4, and Case C cited P4 and appended P5. The source hashes match the deployed source. See [`probe/probe-result.json`](probe/probe-result.json), [`deployments/studionet.json`](deployments/studionet.json), [`verification/studionet-demo.json`](verification/studionet-demo.json), and [`verification/explorer-checks.json`](verification/explorer-checks.json) for probe results, deployment records, readbacks, and browser checks.
+A accepted P3; B rejected/slashed the contradiction then accepted distinguished P4; C was proposed by the respondent and created P5 from P4; D created P6 through a justified overrule with old record unchanged; E rejected/slashed an unjustified overrule and remains open with 70 synthetic units held.
 
-The exact tracked payload audit passed with zero findings; see [the audit](verification/secret-audit.json). Public repository: [genlayer-precedent-court](https://github.com/JWattjr/genlayer-precedent-court). No Portal form has been opened or submitted.
+See [deployment/source hashes](deployments/studionet.json), [live receipts and direct readbacks](verification/studionet-demo.json), and [browser Explorer checks](verification/explorer-checks.json). Builder Portal was not opened or submitted.
 
-## Local checks
+## Run the tests
 
-The project pins the requested package versions in `requirements.txt`. The source was linted and direct-mode tests were run with the cached GenVM runner `v0.6.0-rc5` in the existing workspace environment. The Court tests use a fake Registry adapter because the local direct VM does not provide a separate deployed contract ledger; the Registry itself is also tested directly for access control and idempotent retry behavior.
+Saved results used Python 3.14.2 at exactly:
 
-See [lint output](verification/lint.txt) and [test output](verification/tests.txt). Local tests mock the model and invoke the validator callback; they do not establish distributed consensus.
+C:\Users\User\Desktop\IC phase 2\final-offer-arbitration\.venv\Scripts\python.exe
 
-## Contracts and sequence
+Pinned packages: genlayer-test==0.30.0rc2, genlayer-py==0.19.0rc2, genvm-linter==0.11.1rc2, pytest==9.1.1.
 
-- `contracts/precedent_registry.py` owns genesis seeding, the one-time Court binding, immutable sequence IDs, retry-safe appends, and Registry views.
-- `contracts/precedent_court.py` owns cases, deadline handling, citation snapshots, normalized adjudication, synthetic accounting, and append finalization.
-- `probe/` contains the throwaway contracts used before selecting the two-contract design. They are not submission evidence.
+From a fresh Windows checkout, install and run the same pinned toolchain in a local environment:
 
-Deploy the Registry, deploy the Court with the Registry address, bind the Court, seed genesis records, and call `sync_registry_count` before opening a case. After a consistent `adjudicate` transaction, wait for its triggered Registry child transaction and direct readback before calling `finalize_case`.
+~~~powershell
+uv venv .venv --python 3.14
+uv pip install --python .venv/Scripts/python.exe -r requirements.txt
+.venv/Scripts/python.exe -X utf8 -m pytest tests -o 'addopts=-p no:cacheprovider' -q
+~~~
 
-All bond amounts are synthetic bookkeeping units. The contracts do not accept or transfer GEN or tokens.
+Result: 26 passing cases locally and 26 from a clean git archive HEAD copy. The archive commit, exact interpreter, versions and command are saved in [tests.txt](verification/tests.txt). The empty studio_devnet configuration entry was removed. Running with the older installed genlayer-test 0.29.2 fails during setup because the loader lacks import_calldata; [the compatibility record](verification/older-toolchain-check.txt) is an intentional expected-failure check, not the saved pinned-suite result.
+
+Lint each source file with .venv/Scripts/genvm-lint.exe check contracts/<file>.py --json. All contract sources retain the concrete pinned runner hash; local direct tests use cached v0.6.0-rc5. Linter results are in [lint.txt](verification/lint.txt). Cached runner use followed a failed remote newest-runner lookup and does not change the requested runner pin.
+
+## Scope and limits
+
+Evidence text is user-supplied and unauthenticated. Consensus does not prove fairness or factual truth. Amounts are conserved bookkeeping only. Retrieval is lexical, can miss semantic relationships, and scans a fixed Registry capped at 128 records. Historical citations and accepted overruling are auditable; no old record is edited.
 
 ## Documentation
 
-- [Design and decisions](docs/DESIGN.md)
-- [Distinctiveness review](docs/DISTINCTIVENESS.md)
-- [Security notes](docs/SECURITY_NOTES.md)
-- [Test matrix](docs/TEST_MATRIX.md)
-- [Live demo plan](docs/DEMO_PLAN.md)
-- [Build report](docs/BUILD_REPORT.md)
-- [Prepared submission draft](SUBMISSION_DRAFT.md)
+[Design/decisions](docs/DESIGN.md) · [security](docs/SECURITY_NOTES.md) · [distinctiveness](docs/DISTINCTIVENESS.md) · [test matrix](docs/TEST_MATRIX.md) · [build report](docs/BUILD_REPORT.md) · [submission draft](SUBMISSION_DRAFT.md).

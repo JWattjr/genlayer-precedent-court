@@ -45,7 +45,22 @@ def save() -> None:
     temp.replace(STATE)
 
 
+def retry_read(action):
+    # Retry reads/receipt polling only. Never resubmit a deploy or write on transport failure.
+    for attempt in range(6):
+        try:
+            return action()
+        except Exception:
+            if attempt == 5:
+                raise
+            time.sleep(min(20, 2 + attempt * 3))
+
+
 def rpc(method: str, params: list):
+    return retry_read(lambda: rpc_once(method, params))
+
+
+def rpc_once(method: str, params: list):
     if method not in ("eth_chainId", "gen_getContractCode"):
         raise RuntimeError("RPC method is outside the release runner scope")
     response = SESSION.post(RPC, json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params},
@@ -117,17 +132,17 @@ def tx(label: str, client, *, address: str = "", method: str = "", args: list | 
     if not row.get("hash"):
         raise RuntimeError(f"{label}: submission state has no captured hash; refusing a duplicate")
     if row.get("stage") != "FINALIZED":
-        accepted = client.wait_for_transaction_receipt(
+        accepted = retry_read(lambda: client.wait_for_transaction_receipt(
             transaction_hash=row["hash"], status=TransactionStatus.ACCEPTED,
-            interval=5000, retries=180, full_transaction=True)
+            interval=5000, retries=180, full_transaction=True))
         row["acceptance_status"] = status_name(accepted)
         row["accepted_observed_at_utc"] = iso()
         save()
-        finalized = client.wait_for_transaction_receipt(
+        finalized = retry_read(lambda: client.wait_for_transaction_receipt(
             transaction_hash=row["hash"], status=TransactionStatus.FINALIZED,
-            interval=5000, retries=240, full_transaction=True)
+            interval=5000, retries=240, full_transaction=True))
         row["finality_status"] = status_name(finalized)
-        details = client.get_transaction(transaction_hash=row["hash"])
+        details = retry_read(lambda: client.get_transaction(transaction_hash=row["hash"]))
         row.update(tx_summary(details))
         row["finalized_observed_at_utc"] = iso()
         row["stage"] = "FINALIZED" if row["finality_status"] == "FINALIZED" else "NOT_FINALIZED"
@@ -147,7 +162,7 @@ def contract_address(label: str) -> str:
     row = next(item for item in record["transactions"] if item["operation"] == label)
     address = row.get("deployed_address")
     if not address:
-        details = clients["owner"].get_transaction(transaction_hash=row["hash"])
+        details = retry_read(lambda: clients["owner"].get_transaction(transaction_hash=row["hash"]))
         address = ((details.get("data") or {}).get("contract_address")
                    or (details.get("tx_data_decoded") or {}).get("contract_address"))
         if not address:
@@ -190,17 +205,17 @@ def wait_for_registry_child(parent_label: str, case_id: str) -> dict:
         record["transactions"].append(child)
         save()
     if child.get("stage") != "FINALIZED":
-        accepted = clients["owner"].wait_for_transaction_receipt(
+        accepted = retry_read(lambda: clients["owner"].wait_for_transaction_receipt(
             transaction_hash=child["hash"], status=TransactionStatus.ACCEPTED,
-            interval=5000, retries=180, full_transaction=True)
+            interval=5000, retries=180, full_transaction=True))
         child["acceptance_status"] = status_name(accepted)
         child["accepted_observed_at_utc"] = iso()
         save()
-        finalized = clients["owner"].wait_for_transaction_receipt(
+        finalized = retry_read(lambda: clients["owner"].wait_for_transaction_receipt(
             transaction_hash=child["hash"], status=TransactionStatus.FINALIZED,
-            interval=5000, retries=240, full_transaction=True)
+            interval=5000, retries=240, full_transaction=True))
         child["finality_status"] = status_name(finalized)
-        details = clients["owner"].get_transaction(transaction_hash=child["hash"])
+        details = retry_read(lambda: clients["owner"].get_transaction(transaction_hash=child["hash"]))
         child.update(tx_summary(details))
         child["finalized_observed_at_utc"] = iso()
         child["stage"] = "FINALIZED" if child["finality_status"] == "FINALIZED" else "NOT_FINALIZED"

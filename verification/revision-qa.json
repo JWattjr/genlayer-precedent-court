@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-16T10:19:29.194148+00:00",
+  "checks": {
+    "respondent_proposed_case_C": true,
+    "B_slash_exact": true,
+    "D_old_record_unchanged": true,
+    "D_target_contradiction_justified": true,
+    "D_overrule_mapping": true,
+    "E_excludes_overruled_record": true,
+    "E_rejected_with_held_balance": true,
+    "global_conservation": true
+  },
+  "basis": "Direct readbacks recorded by the fresh source-matched live release; no old source evidence reused."
+}

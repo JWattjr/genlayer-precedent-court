@@ -64,3 +64,5 @@ Additional superseded second-revision pair:
 - Court: 0x0275c538405e0FaD5D4a66078BED01C7200fe9dE.
 
 The second pair's Case A completed, but Case B twice finalized without consensus and did not change state. Failed receipts are retained; no such receipt is successful evidence for the final source.
+
+The final release encountered a transient gateway response during receipt polling after C's response hash was saved. Read-only RPC and receipt calls now have bounded transport retries. Deploy/write submission calls are deliberately never blindly retried; resumed runs use recorded hashes, preserving duplicate-submission safety. Contract source is unchanged by this runner correction.
