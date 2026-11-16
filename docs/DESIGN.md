@@ -1,69 +1,56 @@
 # Precedent Court design
 
-## Decisions made — November 16 revision
+Synthetic units only: no GEN or token is locked or transferred.
 
-This revision was explicitly confirmed by the user after review. **Old rule:** every CONTRADICTS on a cited or surfaced precedent failed the proposal. **New rule:** only a CONTRADICTS on the single cited overrule target may be tolerated, and only when its independently compared enum is JUSTIFIED. Every other contradiction and any UNJUSTIFIED overrule fails. The model's boolean is schema-checked but ignored; code computes consistency from enums.
+## Mechanism
 
-- Both parties may propose after posting matching synthetic bonds. Two attempts are shared across the entire case. Each rejection slashes the proposer's balance by a quarter of the original bond, paid to the other party. At UNRESOLVED each party pays its own 10% fee from the remaining balance and receives the rest. A consistent outcome allocates both remaining bonds; odd split units go to the respondent.
-- Registry records remain immutable. A separate write-once target/replacement mapping records overruling. Exact retries remain idempotent; genesis may be overruled.
-- Optional proposal fields overrules and overrule_reason use empty strings for absence. per_overrule is empty or one id/status judgment. All reasons are bounded; consensus compares only enum sequences.
-- Rank every active uncited record by distinct keyword overlap plus same-outcome bonus 2, then recency. Return the top five with scores. The linear scan is capped at 128 records; it is not semantic search.
-- Historical citations snapshot the overruled_by label. Currently overruled records are not surfaced. A target overruled before adjudication is rejected rather than silently replaced.
-- Cited distinctions require explicit reasons. For automatically surfaced uncited records, validators may identify factual distinctions directly from the records; the proposer could not have supplied a distinction for an uncited record.
-- Fix the reviewed length mismatch by accepting at most 400 question characters and validating the generated append payload before entering pending state. Reserve summary space for both parties and both evidence sources.
-- Keep asynchronous append/finalization and retry-safe Registry writes. Do not add a cancellation that could enable double settlement.
-- Case E's required demo ends after one rejection, with the remaining bonds held for a potential second attempt; do not report it as terminal settlement.
-- Remove the empty studio_devnet config entry. Use the exact requested pinned toolchain and v0.6.0-rc5 cached runner for direct tests, including the clean Git archive check.
+The Court freezes case inputs and cited Registry records. Either party that posts its matching synthetic bond may propose an outcome, holding, 1–3 citations, fact-specific distinctions, and an optional justified overrule. Independent validators classify precedent relations, distinctions, and overruling. Code computes consistency from normalized enums, controls the two-attempt limit, and settles all bookkeeping. An accepted ruling enters PRECEDENT_PENDING, emits a Registry append, and waits for a direct finalized readback before finalize_case releases the held units.
 
-## Superseded deployments
-
-| Contract | Old StudioNet address | Why superseded |
-|---|---|---|
-| PrecedentRegistry | 0x0FD8b71034265680EC8B46c6Ff8D06085e71f998 | Fresh source adds append-only overrule tracking. |
-| PrecedentCourt | 0x68640Ef247219FF0B40d5A7a60c0F8A572178507 | Fresh source adds overruling, two-party bonds, ranked retrieval and QA fixes. |
-
-These are historical addresses only, not evidence for the revised source. Later sections describing the first release are superseded by the revision decisions above and will be reconciled in the final documentation pass.
-
-## Mechanism and boundary
-
-A claimant opens a bounded dispute and posts a synthetic case bond. The respondent may file a position and evidence before the frozen response deadline. The claimant proposes a normalized outcome and holding with one to three existing precedent citations. The Court reads the Registry and snapshots each cited record at proposal time. Validators independently judge whether the proposed ruling is consistent with those snapshots and up to five recent relevant uncited records. Code accepts or rejects the proposal and performs the fixed bond arithmetic. A consistent ruling is appended by the Court to the separate Registry and becomes available to later cases.
-
-Validators do not decide the merits, invent an outcome, choose a payout, or write the Registry. The claimant chooses the proposed outcome; validators judge only precedential consistency. The Court owns deadlines, citation snapshots, attempt limits, enum normalization, and synthetic bond accounting. The Registry owns immutable precedent order and access control. Evidence is user-supplied text; it is not authenticated or fetched by either contract.
+The Registry owns immutable ordered records and a separate append-only overruled_by mapping. Only its bound Court may append. Genesis seeding is trusted deployer input, once, up to three records. Initialization is deploy Registry, deploy Court, bind Court, seed genesis, then sync count. Sync must follow seeding so the expected count is correct.
 
 ## Decisions made
 
-- **Two-contract design:** The Step 0 StudioNet probe passed all three checks. The implemented API is `gl.get_contract_at(address).view().get(key)` for reads and `gl.get_contract_at(address).emit(on="finalized").append(key, value)` for emitted writes. The child append became visible 33.158 seconds after the probe parent finalized. Probe contracts are throwaway and are not submission evidence.
-- **Asynchronous append safety:** A consistent adjudication enters `PRECEDENT_PENDING`, stores the exact append payload, and emits the Registry write. The Court holds the remaining bond until `finalize_case` reads back the expected case reference, ID, sequence, and complete record. `retry_precedent_append` is allowed after 60 seconds and Registry appends are idempotent by case reference, so a repeated child cannot create a duplicate. Only one Court append may be pending at once.
-- **Registry initialization:** The Registry deployer binds one Court address exactly once and may seed up to three genesis precedents exactly once. Genesis rows are marked `genesis=true`; their initial rules are trusted deployer input. The Court deployer synchronizes the Registry count once after binding and seeding, before opening cases.
-- **Equivalence:** Each adjudication uses `gl.vm.run_nondet_unsafe` with an independent validator call, following the custom leader/validator pattern used by earlier workspace court and forecast projects. Strict parsing converts relation and distinction labels to enums before comparison. Validators compare only ordered relation enums, distinction enums, and the `consistent` boolean; explanatory text is bounded but excluded from comparison.
-- **Outcome enum:** `CLAIMANT_WINS`, `RESPONDENT_WINS`, and `SPLIT`. The claimant proposes the outcome. For a consistent ruling, code allocates the remaining bond to the selected winner, or splits it evenly with any odd unit assigned to the respondent.
-- **Bond ownership:** `open_case` records the case bond for the claimant. Since `respond` has no bond argument in the requested interface, only the bonded claimant may propose. This makes the “proposer's bond” explicit and prevents slashing a party that did not post the tracked bond.
-- **Failed proposals:** Each inconsistent attempt slashes `max(1, floor(original_bond / 4))` from the remaining bond to the respondent, capped by the remaining amount. After two failed attempts, the remaining amount pays a 10% fee (`max(1, floor(remaining / 10))` when nonzero) and the rest is returned to the claimant. All amounts are synthetic accounting units; no GEN or token is received or transferred.
-- **Overrule field:** Registry rows retain an optional `overrules` identifier and validate that it points to an existing record. The requested strict rule says any cited `CONTRADICTS` relation makes a proposal inconsistent; the Court therefore does not treat an overrule pointer as an exception and currently appends `overrules=null`. An accepted contrary override is not implemented under this rule.
-- **Relevant-record heuristic:** Up to five latest records are surfaced when their outcome matches the proposal or their normalized keyword set overlaps the case. This bounded retrieval is a relevance hint, not exhaustive precedent search. `# ponytail: same-outcome/keyword-overlap retrieval is capped at five recent records and can miss relevant holdings.`
-- **Response default:** A response is accepted strictly before the deadline. Once the deadline is reached, the claimant may propose with the case marked `DEFAULT`; no response is fabricated.
-- **Bounds:** Cases and precedents are capped; user text, arrays, JSON, enum values, and reasons are length-bounded. Malformed model output raises an `[LLM_ERROR]` and leaves case and accounting state unchanged.
+This revision was explicitly confirmed by the user on November 16, 2026, following the review. The changes are new deployments, not upgrades to the old contracts.
 
-## State and transitions
+- **Rule conflict:** the old deployed rule rejected every CONTRADICTS on a cited or surfaced precedent. The user requested a new rule: a contradiction is tolerated only for the single cited overrule target when its enum is JUSTIFIED. Every other contradiction and any UNJUSTIFIED overrule fails.
+- **Consensus schema:** per_citation contains id/relation/reason; per_distinction contains id/status; per_overrule is empty or one id/status with JUSTIFIED or UNJUSTIFIED. The consistent field must be boolean but its supplied value is ignored. Code derives consistency. Validators independently rerun the task using gl.vm.run_nondet_unsafe and compare only normalized enum sequences; prose is bounded and excluded.
+- **Overrules API:** propose_ruling appends optional overrules and overrule_reason string fields; empty strings represent absence. The target must exist, be cited, and be active. Reasons are required for an overrule and bounded at 240 characters. Genesis may be overruled. A target that becomes overruled before adjudication is rejected instead of silently replaced.
+- **Append-only history:** no original record is edited. A separate write-once target-to-replacement mapping supports get_overruled_by and is_active. Exact case-reference retries are idempotent, including repeated overruling appends; a different replacement of an already-overruled target fails.
+- **Bonds:** respond takes a matching explicit bond. Either bonded party may propose. Only the claimant may propose after response default. Two attempts are shared per case. Each rejection slashes max(1, original_bond // 4), capped by the proposer's remaining bond, to the other party.
+- **Settlement:** a consistent winner receives both remaining bonds. SPLIT divides their total with the odd unit to the respondent. After two rejections, each party separately pays max(1, remaining // 10), capped at its remaining balance when nonzero, and receives the rest. Already paid slashes stay paid. Held balances are zero on terminal paths.
+- **Retrieval:** score each active uncited Registry record by distinct keyword overlap plus same-outcome bonus 2. Sort descending score then descending immutable sequence; take up to five positive-score rows. Each row includes retrieval_score. The scan is bounded by MAX_PRECEDENTS=128. Keyword lookup can miss semantic relationships and its cost grows linearly.
+- **Historical citations:** snapshot overruled_by with the cited record. Overruled records are excluded from uncited retrieval. Explicit cited distinctions require proposal reasons; automatically surfaced uncited records may be classified factually distinguishable from their supplied record because the proposer did not select them.
+- **Length fix:** questions are bounded to the Registry's 400 characters. The complete append payload is built and checked before model adjudication or pending-state mutation. Facts summaries reserve space for question, each position, and each evidence source, avoiding claimant-first truncation.
+- **Async safety:** hold bonds until the exact complete Registry record is visible and finalize_case checks ID, sequence, case reference, and fields. One append may be pending at a time. Retry after 60 seconds sends the identical payload. No cancellation that might double-settle is added.
+- **Live Case E:** the requested demonstration stops after its first rejection; it remains READY_TO_REPROPOSE with 70 synthetic units held. It is not reported as a terminal payout.
+- **Toolchain:** remove the empty studio_devnet entry; pinned direct tests use the cached v0.6.0-rc5 runner. A clean git archive copy is tested with exactly the four requested package versions. Live signing uses the working 0.18.0 client environment separately; this does not change the pinned contract runner or test dependency requirements.
+- **Fresh evidence:** revision run state is isolated under the external encrypted live-run folder. The historical probe folder is preserved and is not submission contract evidence.
 
-`WAITING_RESPONSE -> READY_TO_PROPOSE -> PROPOSED -> PRECEDENT_PENDING -> FINAL`
+## Bounds and limitations
 
-An inconsistent first proposal moves to `READY_TO_REPROPOSE`. A second inconsistent proposal moves to `UNRESOLVED`. A consistent proposal remains `PRECEDENT_PENDING` until the asynchronous Registry append is visible and independently verified by `finalize_case`; only then does the Court settle the remaining bond and mark the case `FINAL`. The account conservation invariant is `bonds_in = paid_claimant_units + paid_respondent_units + fee_units + held_units` throughout pending and terminal states.
+64 cases; 128 Registry records; three citations; five surfaced records; two shared proposal attempts; three genesis records; bounded user/model text. Evidence is user-supplied and unauthenticated. Consensus establishes agreement, not factual truth or fairness. Retrieval is lexical, not semantic or exhaustive. There is no real asset custody. Unsubmitted cases can remain open; a stale overrule proposal may require a new case. One pending append serializes acceptance. No ecosystem-wide originality or points are promised.
 
-Each case stores the frozen input, response/default marker, citation snapshots, surfaced records, normalized validator result, pending append payload when applicable, and settlement arithmetic. `get_case_citations` returns the exact cited snapshots and surfaced context seen by validators.
+## Superseded deployments
 
-## Consistency evaluation
+| Contract | Superseded StudioNet address | Reason |
+|---|---|---|
+| PrecedentRegistry | 0x0FD8b71034265680EC8B46c6Ff8D06085e71f998 | Replaced by real append-only overruling and new views. |
+| PrecedentCourt | 0x68640Ef247219FF0B40d5A7a60c0F8A572178507 | Replaced by overruling, two-party bonds, ranked retrieval and QA corrections. |
 
-The model must return strict JSON with `per_citation`, `per_distinction`, and `consistent`. Each citation relation normalizes to `SUPPORTS`, `DISTINGUISHABLE`, or `CONTRADICTS`; each requested distinction normalizes to `VALID` or `INVALID`. The contract recomputes `consistent` as true only when no cited or surfaced item contradicts and every supplied distinction is valid. A `DISTINGUISHABLE` result for a cited precedent requires a bounded proposal reason and a corresponding `VALID` judgment. Reasons are retained as leader explanations but are not part of consensus comparison.
+These addresses are historical only. New source requires fresh deployment, live readbacks and Explorer checks.
 
-## Cross-contract probe sources
+## Probe
 
-The throwaway probe deployed `ProbeRegistry` and `ProbeCaller` to StudioNet. It established an in-transaction cross-contract view read, a finalized emitted write visible by a direct Registry read, and rejection of a direct append from an outsider. The parent and child hashes, finality, readbacks, and latency are recorded in [`probe-result.json`](../probe/probe-result.json). The first caller deployment attempt failed because its constructor did not convert the string to `Address`; the corrected second attempt passed all checks.
+## Revision deployment retry
 
-- [Interacting with Intelligent Contracts](https://docs.genlayer.com/developers/intelligent-contracts/features/interacting-with-intelligent-contracts)
-- [Internal Messages](https://docs.genlayer.com/developers/intelligent-contracts/features/messages)
-- [Non-determinism and deterministic side effects](https://docs.genlayer.com/developers/intelligent-contracts/features/non-determinism)
+The first revised Court failed Case A with [LLM_ERROR] citation judgment count: model output omitted required cited/surfaced entries. No ruling was accepted. The prompt now explicitly enumerates all required judgment IDs and exact array lengths/order, while parsers remain strict. This documented reliability correction requires another fresh deployment and new live evidence.
 
-## Known design tension
+Additional superseded first-revision addresses:
+- PrecedentRegistry: 0xD55463770A7c7936eb33B6B862540f650A32ceA9.
+- PrecedentCourt: 0x6c1C865D0d37c26Afc484559333E0036a271164C.
 
-An explicit overrule ordinarily permits a later holding to supersede an earlier contrary rule. The prompt also requires a cited contradiction to fail consistency. This implementation follows the strict consistency gate and records the optional field without an exception. This limits accepted overruling behavior; it is surfaced rather than silently changing the supplied rule.
+The failed receipt remains preserved in the external first-revision run state and is not successful new-source evidence.
+
+The preserved throwaway probe established cross-contract view access, emitted writes and outsider rejection. The final readback was visible 33.158 seconds after parent finality. See ../probe/probe-result.json. The revised release separately proves actual Registry/Court interactions again.
+
+Contract source files are exempt from Git line-ending conversion so the published bytes, local bytes and deployed SHA-256 can agree exactly on Windows. This changes Git handling, not deployed program behavior.

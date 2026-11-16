@@ -1,0 +1,44 @@
+INFO: File `gltest.config.yaml` found in the current directory, using it
+INFO: Clearing artifacts directory: artifacts
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['localnet']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+E                                                                        [100%]
+=================================== ERRORS ====================================
+_______ ERROR at setup of test_citing_nonexistent_precedent_is_rejected _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002BA9D3B9CD0>
+
+    @pytest.fixture(autouse=True)
+    def windows_gltest_runtime(monkeypatch):
+        if os.name != "nt":
+            return
+    
+        import gltest.direct.loader as loader
+        import gltest.direct.vm as vm_module
+        from gltest.direct import wasi_mock
+    
+        original_inject = loader._inject_message_to_fd0
+        original_allocate = loader._allocate_contract
+        original_load = loader._load_module
+        original_warp = vm_module.VMContext.warp
+        original_refresh = vm_module.VMContext._refresh_gl_message
+        original_run_validator = vm_module.VMContext.run_validator
+        original_patch_nondet = loader._patch_run_nondet_for_direct_mode
+>       original_import_calldata = loader.import_calldata
+                                   ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'gltest.direct.loader' has no attribute 'import_calldata'
+
+conftest.py:79: AttributeError
+=========================== short test summary info ===========================
+ERROR tests/test_precedent_court.py::test_citing_nonexistent_precedent_is_rejected
+1 error in 0.70s

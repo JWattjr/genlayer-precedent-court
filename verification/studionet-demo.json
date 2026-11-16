@@ -1,27 +1,27 @@
 {
   "schema_version": "1.0",
   "network": "GenLayer StudioNet",
-  "status": "LIVE_DEMOS_PASSED",
+  "status": "STOPPED_WITH_EVIDENCE",
   "architecture": "TWO_CONTRACT",
   "contracts": [
     {
-      "address": "0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
-      "explorer_url": "https://explorer-studio.genlayer.com/address/0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
+      "address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
+      "explorer_url": "https://explorer-studio.genlayer.com/address/0xD55463770A7c7936eb33B6B862540f650A32ceA9",
       "evidence_type": "GenLayer Explorer Contract",
-      "deployment_transaction": "0x26115d048abfb780eb9292334817f7a8e4e269033d6e9d7f55f70fbb3650448f",
+      "deployment_transaction": "0x1f7a5e9007980241cc52f5a83c9b41f5dfda5e536465fec3663a935177222b44",
       "deployed_source_matches_local": true,
-      "deployed_source_sha256": "e04db38b84800f874b3eca116cf9ba521bbd8e12eaf28adf578e6308337c2e84",
-      "local_source_sha256": "e04db38b84800f874b3eca116cf9ba521bbd8e12eaf28adf578e6308337c2e84",
+      "deployed_source_sha256": "a4f05f1062662cfd564317c89f5e5e15e0d0c4fd55c744cb0b32aba524a4f182",
+      "local_source_sha256": "a4f05f1062662cfd564317c89f5e5e15e0d0c4fd55c744cb0b32aba524a4f182",
       "name": "PrecedentRegistry"
     },
     {
-      "address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "explorer_url": "https://explorer-studio.genlayer.com/address/0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+      "explorer_url": "https://explorer-studio.genlayer.com/address/0x6c1C865D0d37c26Afc484559333E0036a271164C",
       "evidence_type": "GenLayer Explorer Contract",
-      "deployment_transaction": "0xa268c6a0b31e810e2ed889c6e24d3747eb9576ef6cacd8ecde220722874acb0c",
+      "deployment_transaction": "0xb00f00a4abaaaeb7e232b650c038765d1ef2fbcb637d361ee747bcbc4d932b1a",
       "deployed_source_matches_local": true,
-      "deployed_source_sha256": "5eac9034f9a021221c55903d3bebb25bdeb79948ef0aef1fc960d83f3453cb66",
-      "local_source_sha256": "5eac9034f9a021221c55903d3bebb25bdeb79948ef0aef1fc960d83f3453cb66",
+      "deployed_source_sha256": "82e24b26600a70385499190fba8a227cec50320d7ffe13929d2266a01d6ec817",
+      "local_source_sha256": "82e24b26600a70385499190fba8a227cec50320d7ffe13929d2266a01d6ec817",
       "name": "PrecedentCourt"
     }
   ],
@@ -29,15 +29,15 @@
     {
       "case_id": "CASE-000001",
       "name": "Case A consistent creates P3",
-      "status": "PASS",
+      "status": "INCOMPLETE",
       "transactions": [
         {
           "operation": "case-000001_open",
           "method": "open_case",
           "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
           "stage": "FINALIZED",
-          "started_at_utc": "2026-11-15T22:10:01.726359+01:00",
-          "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+          "started_at_utc": "2026-11-16T09:07:32.631099+00:00",
+          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
           "args": [
             "May the buyer recover a deposit when the seller misses the signed delivery date?",
             "The buyer says the signed May 1 schedule was missed and no extension was signed.",
@@ -45,39 +45,88 @@
             "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
             40
           ],
-          "hash": "0x8948a42821e5889c4b2abebe0f430e85f90e01b3c6f067601a56e18455042006",
-          "submitted_at_utc": "2026-11-15T22:10:06.331547+01:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x8948a42821e5889c4b2abebe0f430e85f90e01b3c6f067601a56e18455042006",
+          "hash": "0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
+          "submitted_at_utc": "2026-11-16T09:07:38.182067+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
           "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-15T22:10:13.359688+01:00",
+          "accepted_observed_at_utc": "2026-11-16T09:07:44.903166+00:00",
           "finality_status": "FINALIZED",
           "leader_execution": "SUCCESS",
           "consensus_result": "MAJORITY_AGREE",
           "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-15T22:10:45.515966+01:00"
+          "finalized_observed_at_utc": "2026-11-16T09:08:17.018373+00:00"
         },
         {
           "operation": "case-000001_respond",
           "method": "respond",
           "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
           "stage": "FINALIZED",
-          "started_at_utc": "2026-11-15T22:10:45.519136+01:00",
-          "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+          "started_at_utc": "2026-11-16T09:08:17.021330+00:00",
+          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
           "args": [
             "CASE-000001",
             "The seller says the buyer should forfeit the deposit despite the late delivery.",
-            "The attached signed document supports this response."
+            "The attached signed document supports this response.",
+            40
           ],
-          "hash": "0x5066f6aa06c01e0f1e87e97e8f632ba814ce79d3f60a2e9bc2d77b639bf89e5e",
-          "submitted_at_utc": "2026-11-15T22:10:50.495505+01:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5066f6aa06c01e0f1e87e97e8f632ba814ce79d3f60a2e9bc2d77b639bf89e5e",
+          "hash": "0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
+          "submitted_at_utc": "2026-11-16T09:08:21.619862+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
           "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-15T22:10:57.574252+01:00",
+          "accepted_observed_at_utc": "2026-11-16T09:08:28.350682+00:00",
           "finality_status": "FINALIZED",
           "leader_execution": "SUCCESS",
           "consensus_result": "MAJORITY_AGREE",
           "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-15T22:11:29.73457+01:00"
+          "finalized_observed_at_utc": "2026-11-16T09:09:02.257013+00:00"
+        },
+        {
+          "operation": "case_a_consistent_proposal",
+          "method": "propose_ruling",
+          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:09:04.183015+00:00",
+          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+          "args": [
+            "CASE-000001",
+            "CLAIMANT_WINS",
+            "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+            "[\"P-000001\"]",
+            "[]",
+            "",
+            ""
+          ],
+          "hash": "0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
+          "submitted_at_utc": "2026-11-16T09:09:09.497248+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-16T09:09:16.798309+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1",
+          "finalized_observed_at_utc": "2026-11-16T09:09:49.735590+00:00"
+        },
+        {
+          "operation": "case_a_consistent_adjudicate",
+          "method": "adjudicate",
+          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:09:51.618675+00:00",
+          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+          "args": [
+            "CASE-000001"
+          ],
+          "hash": "0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
+          "submitted_at_utc": "2026-11-16T09:09:57.239731+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
+          "acceptance_status": "UNDETERMINED",
+          "accepted_observed_at_utc": "2026-11-16T09:11:17.071654+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "ERROR",
+          "consensus_result": "MAJORITY_DISAGREE",
+          "rounds": "4",
+          "finalized_observed_at_utc": "2026-11-16T09:11:49.251089+00:00"
         }
       ],
       "readbacks": {
@@ -86,22 +135,24 @@
             "attempts": [],
             "case_id": "CASE-000001",
             "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
+            "claimant_bond": 40,
             "claimant_position": "The buyer says the signed May 1 schedule was missed and no extension was signed.",
-            "created_at": "2026-11-15T21:10:07Z",
+            "created_at": "2026-11-16T09:07:37Z",
             "evidence_text": "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
             "original_bond": 40,
             "question": "May the buyer recover a deposit when the seller misses the signed delivery date?",
-            "remaining_bond": 40,
-            "responded_at": "2026-11-15T21:10:51Z",
+            "remaining_bond": 80,
+            "responded_at": "2026-11-16T09:08:21Z",
             "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
+            "respondent_bond": 40,
             "respondent_position": "The seller says the buyer should forfeit the deposit despite the late delivery.",
-            "response_deadline": "2026-11-15T23:10:07Z",
+            "response_deadline": "2026-11-16T11:07:37Z",
             "response_evidence": "The attached signed document supports this response.",
             "response_status": "RESPONDED",
             "status": "READY_TO_PROPOSE",
             "terminal_result": {}
           },
-          "checked_at_utc": "2026-11-15T22:11:31.618849+01:00"
+          "checked_at_utc": "2026-11-16T09:09:04.181578+00:00"
         },
         "case_a_consistent_proposal_snapshot": {
           "attempts": [
@@ -117,6 +168,7 @@
                     "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
                     "id": "P-000001",
                     "outcome": "CLAIMANT_WINS",
+                    "overruled_by": "",
                     "overrules": null,
                     "question": "Does a signed delivery schedule control when a seller misses the date?"
                   }
@@ -124,7 +176,10 @@
                 "distinctions": [],
                 "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
                 "outcome": "CLAIMANT_WINS",
-                "proposed_at": "2026-11-15T21:11:37Z",
+                "overrule_reason": "",
+                "overrules": "",
+                "proposed_at": "2026-11-16T09:09:09Z",
+                "proposer_role": "CLAIMANT",
                 "registry_count_at_proposal": 2
               },
               "judgment": {},
@@ -132,1468 +187,6 @@
             }
           ],
           "case_id": "CASE-000001"
-        },
-        "case_a_consistent_after_adjudication": {
-          "case": {
-            "append_retries": 0,
-            "attempts": [
-              {
-                "adjudicated_at": "2026-11-15T21:12:24Z",
-                "judgment": {
-                  "consistent": true,
-                  "per_citation": [
-                    {
-                      "id": "P-000001",
-                      "reason": "The proposal follows the holding allowing deposit recovery when delivery misses the signed deadline and no later written amendment extends it.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "The proposal's requirement of a later mutually signed amendment accords with the holding that oral discussions alone cannot amend the signed deadline.",
-                      "relation": "SUPPORTS"
-                    }
-                  ],
-                  "per_distinction": []
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "GENESIS-1",
-                      "created_at_case_seq": 1,
-                      "distinguishing_factors": [],
-                      "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                      "genesis": true,
-                      "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                      "id": "P-000001",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Does a signed delivery schedule control when a seller misses the date?"
-                    }
-                  ],
-                  "distinctions": [],
-                  "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:11:37Z",
-                  "registry_count_at_proposal": 2
-                },
-                "settlement": {},
-                "surfaced_precedents": [
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  }
-                ]
-              }
-            ],
-            "case_id": "CASE-000001",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The buyer says the signed May 1 schedule was missed and no extension was signed.",
-            "created_at": "2026-11-15T21:10:07Z",
-            "evidence_text": "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-            "original_bond": 40,
-            "pending_precedent": {
-              "case_ref": "CASE-000001",
-              "distinguishing_factors": [],
-              "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-              "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-              "outcome": "CLAIMANT_WINS",
-              "overrules": null,
-              "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-            },
-            "pending_precedent_id": "P-000003",
-            "pending_since": "2026-11-15T21:12:24Z",
-            "question": "May the buyer recover a deposit when the seller misses the signed delivery date?",
-            "remaining_bond": 40,
-            "responded_at": "2026-11-15T21:10:51Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The seller says the buyer should forfeit the deposit despite the late delivery.",
-            "response_deadline": "2026-11-15T23:10:07Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "PRECEDENT_PENDING",
-            "terminal_result": {}
-          },
-          "accounting": {
-            "bonds_in": 40,
-            "conserved": true,
-            "fee_units": 0,
-            "held_units": 40,
-            "paid_claimant_units": 0,
-            "paid_respondent_units": 0
-          },
-          "checked_at_utc": "2026-11-15T22:13:13.212321+01:00"
-        },
-        "final": {
-          "case": {
-            "append_retries": 0,
-            "attempts": [
-              {
-                "adjudicated_at": "2026-11-15T21:12:24Z",
-                "judgment": {
-                  "consistent": true,
-                  "per_citation": [
-                    {
-                      "id": "P-000001",
-                      "reason": "The proposal follows the holding allowing deposit recovery when delivery misses the signed deadline and no later written amendment extends it.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "The proposal's requirement of a later mutually signed amendment accords with the holding that oral discussions alone cannot amend the signed deadline.",
-                      "relation": "SUPPORTS"
-                    }
-                  ],
-                  "per_distinction": []
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "GENESIS-1",
-                      "created_at_case_seq": 1,
-                      "distinguishing_factors": [],
-                      "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                      "genesis": true,
-                      "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                      "id": "P-000001",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Does a signed delivery schedule control when a seller misses the date?"
-                    }
-                  ],
-                  "distinctions": [],
-                  "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:11:37Z",
-                  "registry_count_at_proposal": 2
-                },
-                "settlement": {
-                  "claimant_paid_units": 40,
-                  "fee_units": 0,
-                  "held_units": 0,
-                  "respondent_paid_units": 0
-                },
-                "surfaced_precedents": [
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  }
-                ]
-              }
-            ],
-            "case_id": "CASE-000001",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The buyer says the signed May 1 schedule was missed and no extension was signed.",
-            "created_at": "2026-11-15T21:10:07Z",
-            "evidence_text": "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-            "final_precedent_id": "P-000003",
-            "finalized_at": "2026-11-15T21:13:52Z",
-            "original_bond": 40,
-            "pending_precedent": {
-              "case_ref": "CASE-000001",
-              "distinguishing_factors": [],
-              "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-              "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-              "outcome": "CLAIMANT_WINS",
-              "overrules": null,
-              "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-            },
-            "pending_precedent_id": "P-000003",
-            "question": "May the buyer recover a deposit when the seller misses the signed delivery date?",
-            "remaining_bond": 0,
-            "responded_at": "2026-11-15T21:10:51Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The seller says the buyer should forfeit the deposit despite the late delivery.",
-            "response_deadline": "2026-11-15T23:10:07Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "FINAL",
-            "terminal_result": {
-              "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-              "outcome": "CLAIMANT_WINS",
-              "precedent_id": "P-000003",
-              "settlement": {
-                "claimant_paid_units": 40,
-                "fee_units": 0,
-                "held_units": 0,
-                "respondent_paid_units": 0
-              }
-            }
-          },
-          "precedent": {
-            "case_ref": "CASE-000001",
-            "created_at_case_seq": 3,
-            "distinguishing_factors": [],
-            "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-            "genesis": false,
-            "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-            "id": "P-000003",
-            "outcome": "CLAIMANT_WINS",
-            "overrules": null,
-            "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-          },
-          "accounting": {
-            "bonds_in": 40,
-            "conserved": true,
-            "fee_units": 0,
-            "held_units": 0,
-            "paid_claimant_units": 40,
-            "paid_respondent_units": 0
-          },
-          "checked_at_utc": "2026-11-15T22:14:35.472698+01:00"
-        }
-      }
-    },
-    {
-      "case_id": "CASE-000002",
-      "name": "Case B contradiction slashes; distinction accepts P4",
-      "status": "PASS",
-      "transactions": [
-        {
-          "operation": "case-000002_open",
-          "method": "open_case",
-          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-          "stage": "FINALIZED",
-          "started_at_utc": "2026-11-15T22:14:35.476015+01:00",
-          "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-          "args": [
-            "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
-            "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
-            "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-            "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-            40
-          ],
-          "hash": "0x7e96023de49353ab08f4bd218ced4645ef1dcdd058bf4e907ca217bc50a9b191",
-          "submitted_at_utc": "2026-11-15T22:14:39.720445+01:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x7e96023de49353ab08f4bd218ced4645ef1dcdd058bf4e907ca217bc50a9b191",
-          "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-15T22:14:46.784963+01:00",
-          "finality_status": "FINALIZED",
-          "leader_execution": "SUCCESS",
-          "consensus_result": "MAJORITY_AGREE",
-          "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-15T22:15:19.839601+01:00"
-        },
-        {
-          "operation": "case-000002_respond",
-          "method": "respond",
-          "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-          "stage": "FINALIZED",
-          "started_at_utc": "2026-11-15T22:15:19.842933+01:00",
-          "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-          "args": [
-            "CASE-000002",
-            "The buyer says the original deadline alone controls and seeks the deposit.",
-            "The attached signed document supports this response."
-          ],
-          "hash": "0x66714cae35a269177cf218b35f304b8bf4f39fe87e864573180d89a880beae63",
-          "submitted_at_utc": "2026-11-15T22:15:25.72886+01:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x66714cae35a269177cf218b35f304b8bf4f39fe87e864573180d89a880beae63",
-          "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-15T22:15:32.831451+01:00",
-          "finality_status": "FINALIZED",
-          "leader_execution": "SUCCESS",
-          "consensus_result": "MAJORITY_AGREE",
-          "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-15T22:16:05.438255+01:00"
-        }
-      ],
-      "readbacks": {
-        "after_response": {
-          "case": {
-            "attempts": [],
-            "case_id": "CASE-000002",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
-            "created_at": "2026-11-15T21:14:41Z",
-            "evidence_text": "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-            "original_bond": 40,
-            "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
-            "remaining_bond": 40,
-            "responded_at": "2026-11-15T21:15:26Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The buyer says the original deadline alone controls and seeks the deposit.",
-            "response_deadline": "2026-11-15T23:14:41Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "READY_TO_PROPOSE",
-            "terminal_result": {}
-          },
-          "checked_at_utc": "2026-11-15T22:16:07.706368+01:00"
-        },
-        "case_b_contradiction_proposal_snapshot": {
-          "attempts": [
-            {
-              "attempt": {
-                "cited_precedents": [
-                  {
-                    "case_ref": "CASE-000001",
-                    "created_at_case_seq": 3,
-                    "distinguishing_factors": [],
-                    "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                    "genesis": false,
-                    "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                    "id": "P-000003",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                  }
-                ],
-                "distinctions": [],
-                "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
-                "outcome": "CLAIMANT_WINS",
-                "proposed_at": "2026-11-15T21:16:14Z",
-                "registry_count_at_proposal": 3
-              },
-              "judgment": {},
-              "surfaced_precedents": []
-            }
-          ],
-          "case_id": "CASE-000002"
-        },
-        "case_b_contradiction_after_adjudication": {
-          "case": {
-            "attempts": [
-              {
-                "adjudicated_at": "2026-11-15T21:17:02Z",
-                "judgment": {
-                  "consistent": false,
-                  "per_citation": [
-                    {
-                      "id": "P-000003",
-                      "reason": "The holding permits recovery for a missed signed date when no later mutually signed amendment exists. The proposal disregards such an amendment and allows recovery despite timely delivery under it.",
-                      "relation": "CONTRADICTS"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "The holding requires a later mutually signed amendment to change the deadline. Both parties signed that amendment here, but the proposal treats the original date as controlling regardless.",
-                      "relation": "CONTRADICTS"
-                    },
-                    {
-                      "id": "P-000001",
-                      "reason": "The holding allows recovery when no later written amendment extends the deadline. The proposal instead allows recovery despite a signed extension and delivery by the amended date.",
-                      "relation": "CONTRADICTS"
-                    }
-                  ],
-                  "per_distinction": []
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "CASE-000001",
-                      "created_at_case_seq": 3,
-                      "distinguishing_factors": [],
-                      "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                      "genesis": false,
-                      "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                      "id": "P-000003",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                    }
-                  ],
-                  "distinctions": [],
-                  "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:16:14Z",
-                  "registry_count_at_proposal": 3
-                },
-                "settlement": {
-                  "held_units": 30,
-                  "remaining_bond_units": 30,
-                  "respondent_slash_units": 10
-                },
-                "surfaced_precedents": [
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  },
-                  {
-                    "case_ref": "GENESIS-1",
-                    "created_at_case_seq": 1,
-                    "distinguishing_factors": [],
-                    "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                    "genesis": true,
-                    "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                    "id": "P-000001",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Does a signed delivery schedule control when a seller misses the date?"
-                  }
-                ]
-              }
-            ],
-            "case_id": "CASE-000002",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
-            "created_at": "2026-11-15T21:14:41Z",
-            "evidence_text": "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-            "original_bond": 40,
-            "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
-            "remaining_bond": 30,
-            "responded_at": "2026-11-15T21:15:26Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The buyer says the original deadline alone controls and seeks the deposit.",
-            "response_deadline": "2026-11-15T23:14:41Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "READY_TO_REPROPOSE",
-            "terminal_result": {}
-          },
-          "accounting": {
-            "bonds_in": 80,
-            "conserved": true,
-            "fee_units": 0,
-            "held_units": 30,
-            "paid_claimant_units": 40,
-            "paid_respondent_units": 10
-          },
-          "checked_at_utc": "2026-11-15T22:18:14.827693+01:00"
-        },
-        "case_b_distinguished_proposal_snapshot": {
-          "attempts": [
-            {
-              "attempt": {
-                "cited_precedents": [
-                  {
-                    "case_ref": "CASE-000001",
-                    "created_at_case_seq": 3,
-                    "distinguishing_factors": [],
-                    "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                    "genesis": false,
-                    "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                    "id": "P-000003",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                  }
-                ],
-                "distinctions": [],
-                "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
-                "outcome": "CLAIMANT_WINS",
-                "proposed_at": "2026-11-15T21:16:14Z",
-                "registry_count_at_proposal": 3
-              },
-              "judgment": {
-                "consistent": false,
-                "per_citation": [
-                  {
-                    "id": "P-000003",
-                    "reason": "The holding permits recovery for a missed signed date when no later mutually signed amendment exists. The proposal disregards such an amendment and allows recovery despite timely delivery under it.",
-                    "relation": "CONTRADICTS"
-                  },
-                  {
-                    "id": "P-000002",
-                    "reason": "The holding requires a later mutually signed amendment to change the deadline. Both parties signed that amendment here, but the proposal treats the original date as controlling regardless.",
-                    "relation": "CONTRADICTS"
-                  },
-                  {
-                    "id": "P-000001",
-                    "reason": "The holding allows recovery when no later written amendment extends the deadline. The proposal instead allows recovery despite a signed extension and delivery by the amended date.",
-                    "relation": "CONTRADICTS"
-                  }
-                ],
-                "per_distinction": []
-              },
-              "surfaced_precedents": [
-                {
-                  "case_ref": "GENESIS-2",
-                  "created_at_case_seq": 2,
-                  "distinguishing_factors": [],
-                  "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                  "genesis": true,
-                  "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                  "id": "P-000002",
-                  "outcome": "CLAIMANT_WINS",
-                  "overrules": null,
-                  "question": "Can oral discussions amend a written delivery deadline?"
-                },
-                {
-                  "case_ref": "GENESIS-1",
-                  "created_at_case_seq": 1,
-                  "distinguishing_factors": [],
-                  "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                  "genesis": true,
-                  "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                  "id": "P-000001",
-                  "outcome": "CLAIMANT_WINS",
-                  "overrules": null,
-                  "question": "Does a signed delivery schedule control when a seller misses the date?"
-                }
-              ]
-            },
-            {
-              "attempt": {
-                "cited_precedents": [
-                  {
-                    "case_ref": "GENESIS-1",
-                    "created_at_case_seq": 1,
-                    "distinguishing_factors": [],
-                    "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                    "genesis": true,
-                    "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                    "id": "P-000001",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Does a signed delivery schedule control when a seller misses the date?"
-                  },
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  },
-                  {
-                    "case_ref": "CASE-000001",
-                    "created_at_case_seq": 3,
-                    "distinguishing_factors": [],
-                    "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                    "genesis": false,
-                    "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                    "id": "P-000003",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                  }
-                ],
-                "distinctions": [
-                  {
-                    "id": "P-000001",
-                    "reason": "That rule expressly applies only when no later written extension exists; this case has a signed extension."
-                  },
-                  {
-                    "id": "P-000002",
-                    "reason": "That rule rejects oral changes; both parties signed this later extension."
-                  },
-                  {
-                    "id": "P-000003",
-                    "reason": "That ruling had no later written amendment; both parties signed one here."
-                  }
-                ],
-                "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-                "outcome": "CLAIMANT_WINS",
-                "proposed_at": "2026-11-15T21:18:21Z",
-                "registry_count_at_proposal": 3
-              },
-              "judgment": {},
-              "surfaced_precedents": []
-            }
-          ],
-          "case_id": "CASE-000002"
-        },
-        "case_b_distinguished_after_adjudication": {
-          "case": {
-            "append_retries": 0,
-            "attempts": [
-              {
-                "adjudicated_at": "2026-11-15T21:17:02Z",
-                "judgment": {
-                  "consistent": false,
-                  "per_citation": [
-                    {
-                      "id": "P-000003",
-                      "reason": "The holding permits recovery for a missed signed date when no later mutually signed amendment exists. The proposal disregards such an amendment and allows recovery despite timely delivery under it.",
-                      "relation": "CONTRADICTS"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "The holding requires a later mutually signed amendment to change the deadline. Both parties signed that amendment here, but the proposal treats the original date as controlling regardless.",
-                      "relation": "CONTRADICTS"
-                    },
-                    {
-                      "id": "P-000001",
-                      "reason": "The holding allows recovery when no later written amendment extends the deadline. The proposal instead allows recovery despite a signed extension and delivery by the amended date.",
-                      "relation": "CONTRADICTS"
-                    }
-                  ],
-                  "per_distinction": []
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "CASE-000001",
-                      "created_at_case_seq": 3,
-                      "distinguishing_factors": [],
-                      "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                      "genesis": false,
-                      "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                      "id": "P-000003",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                    }
-                  ],
-                  "distinctions": [],
-                  "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:16:14Z",
-                  "registry_count_at_proposal": 3
-                },
-                "settlement": {
-                  "held_units": 30,
-                  "remaining_bond_units": 30,
-                  "respondent_slash_units": 10
-                },
-                "surfaced_precedents": [
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  },
-                  {
-                    "case_ref": "GENESIS-1",
-                    "created_at_case_seq": 1,
-                    "distinguishing_factors": [],
-                    "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                    "genesis": true,
-                    "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                    "id": "P-000001",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Does a signed delivery schedule control when a seller misses the date?"
-                  }
-                ]
-              },
-              {
-                "adjudicated_at": "2026-11-15T21:19:08Z",
-                "judgment": {
-                  "consistent": true,
-                  "per_citation": [
-                    {
-                      "id": "P-000001",
-                      "reason": "The holding permits recovery for late delivery without a later written extension. Here, both parties signed an extension and delivery met the amended date.",
-                      "relation": "DISTINGUISHABLE"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "The precedent involved only oral discussions, which could not amend the deadline. Here, the mutually signed extension satisfies the holding's amendment requirement.",
-                      "relation": "DISTINGUISHABLE"
-                    },
-                    {
-                      "id": "P-000003",
-                      "reason": "The precedent involved a missed deadline with no mutually signed amendment. Here, both parties signed an amendment and the seller delivered by its deadline.",
-                      "relation": "DISTINGUISHABLE"
-                    }
-                  ],
-                  "per_distinction": [
-                    {
-                      "id": "P-000001",
-                      "status": "VALID"
-                    },
-                    {
-                      "id": "P-000002",
-                      "status": "VALID"
-                    },
-                    {
-                      "id": "P-000003",
-                      "status": "VALID"
-                    }
-                  ]
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "GENESIS-1",
-                      "created_at_case_seq": 1,
-                      "distinguishing_factors": [],
-                      "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                      "genesis": true,
-                      "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                      "id": "P-000001",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Does a signed delivery schedule control when a seller misses the date?"
-                    },
-                    {
-                      "case_ref": "GENESIS-2",
-                      "created_at_case_seq": 2,
-                      "distinguishing_factors": [],
-                      "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                      "genesis": true,
-                      "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                      "id": "P-000002",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Can oral discussions amend a written delivery deadline?"
-                    },
-                    {
-                      "case_ref": "CASE-000001",
-                      "created_at_case_seq": 3,
-                      "distinguishing_factors": [],
-                      "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                      "genesis": false,
-                      "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                      "id": "P-000003",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                    }
-                  ],
-                  "distinctions": [
-                    {
-                      "id": "P-000001",
-                      "reason": "That rule expressly applies only when no later written extension exists; this case has a signed extension."
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "That rule rejects oral changes; both parties signed this later extension."
-                    },
-                    {
-                      "id": "P-000003",
-                      "reason": "That ruling had no later written amendment; both parties signed one here."
-                    }
-                  ],
-                  "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:18:21Z",
-                  "registry_count_at_proposal": 3
-                },
-                "settlement": {},
-                "surfaced_precedents": []
-              }
-            ],
-            "case_id": "CASE-000002",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
-            "created_at": "2026-11-15T21:14:41Z",
-            "evidence_text": "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-            "original_bond": 40,
-            "pending_precedent": {
-              "case_ref": "CASE-000002",
-              "distinguishing_factors": [
-                "That rule expressly applies only when no later written extension exists; this case has a signed extension.",
-                "That rule rejects oral changes; both parties signed this later extension.",
-                "That ruling had no later written amendment; both parties signed one here."
-              ],
-              "facts_summary": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date? Claimant: The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time. Respondent: The buyer says the original deadline alone controls and seeks the deposit. Evidence: The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-              "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-              "outcome": "CLAIMANT_WINS",
-              "overrules": null,
-              "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?"
-            },
-            "pending_precedent_id": "P-000004",
-            "pending_since": "2026-11-15T21:19:08Z",
-            "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
-            "remaining_bond": 30,
-            "responded_at": "2026-11-15T21:15:26Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The buyer says the original deadline alone controls and seeks the deposit.",
-            "response_deadline": "2026-11-15T23:14:41Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "PRECEDENT_PENDING",
-            "terminal_result": {}
-          },
-          "accounting": {
-            "bonds_in": 80,
-            "conserved": true,
-            "fee_units": 0,
-            "held_units": 30,
-            "paid_claimant_units": 40,
-            "paid_respondent_units": 10
-          },
-          "checked_at_utc": "2026-11-15T22:20:27.013707+01:00"
-        },
-        "final": {
-          "case": {
-            "append_retries": 0,
-            "attempts": [
-              {
-                "adjudicated_at": "2026-11-15T21:17:02Z",
-                "judgment": {
-                  "consistent": false,
-                  "per_citation": [
-                    {
-                      "id": "P-000003",
-                      "reason": "The holding permits recovery for a missed signed date when no later mutually signed amendment exists. The proposal disregards such an amendment and allows recovery despite timely delivery under it.",
-                      "relation": "CONTRADICTS"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "The holding requires a later mutually signed amendment to change the deadline. Both parties signed that amendment here, but the proposal treats the original date as controlling regardless.",
-                      "relation": "CONTRADICTS"
-                    },
-                    {
-                      "id": "P-000001",
-                      "reason": "The holding allows recovery when no later written amendment extends the deadline. The proposal instead allows recovery despite a signed extension and delivery by the amended date.",
-                      "relation": "CONTRADICTS"
-                    }
-                  ],
-                  "per_distinction": []
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "CASE-000001",
-                      "created_at_case_seq": 3,
-                      "distinguishing_factors": [],
-                      "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                      "genesis": false,
-                      "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                      "id": "P-000003",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                    }
-                  ],
-                  "distinctions": [],
-                  "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:16:14Z",
-                  "registry_count_at_proposal": 3
-                },
-                "settlement": {
-                  "held_units": 30,
-                  "remaining_bond_units": 30,
-                  "respondent_slash_units": 10
-                },
-                "surfaced_precedents": [
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  },
-                  {
-                    "case_ref": "GENESIS-1",
-                    "created_at_case_seq": 1,
-                    "distinguishing_factors": [],
-                    "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                    "genesis": true,
-                    "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                    "id": "P-000001",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Does a signed delivery schedule control when a seller misses the date?"
-                  }
-                ]
-              },
-              {
-                "adjudicated_at": "2026-11-15T21:19:08Z",
-                "judgment": {
-                  "consistent": true,
-                  "per_citation": [
-                    {
-                      "id": "P-000001",
-                      "reason": "The holding permits recovery for late delivery without a later written extension. Here, both parties signed an extension and delivery met the amended date.",
-                      "relation": "DISTINGUISHABLE"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "The precedent involved only oral discussions, which could not amend the deadline. Here, the mutually signed extension satisfies the holding's amendment requirement.",
-                      "relation": "DISTINGUISHABLE"
-                    },
-                    {
-                      "id": "P-000003",
-                      "reason": "The precedent involved a missed deadline with no mutually signed amendment. Here, both parties signed an amendment and the seller delivered by its deadline.",
-                      "relation": "DISTINGUISHABLE"
-                    }
-                  ],
-                  "per_distinction": [
-                    {
-                      "id": "P-000001",
-                      "status": "VALID"
-                    },
-                    {
-                      "id": "P-000002",
-                      "status": "VALID"
-                    },
-                    {
-                      "id": "P-000003",
-                      "status": "VALID"
-                    }
-                  ]
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "GENESIS-1",
-                      "created_at_case_seq": 1,
-                      "distinguishing_factors": [],
-                      "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                      "genesis": true,
-                      "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                      "id": "P-000001",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Does a signed delivery schedule control when a seller misses the date?"
-                    },
-                    {
-                      "case_ref": "GENESIS-2",
-                      "created_at_case_seq": 2,
-                      "distinguishing_factors": [],
-                      "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                      "genesis": true,
-                      "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                      "id": "P-000002",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Can oral discussions amend a written delivery deadline?"
-                    },
-                    {
-                      "case_ref": "CASE-000001",
-                      "created_at_case_seq": 3,
-                      "distinguishing_factors": [],
-                      "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                      "genesis": false,
-                      "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                      "id": "P-000003",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                    }
-                  ],
-                  "distinctions": [
-                    {
-                      "id": "P-000001",
-                      "reason": "That rule expressly applies only when no later written extension exists; this case has a signed extension."
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "That rule rejects oral changes; both parties signed this later extension."
-                    },
-                    {
-                      "id": "P-000003",
-                      "reason": "That ruling had no later written amendment; both parties signed one here."
-                    }
-                  ],
-                  "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:18:21Z",
-                  "registry_count_at_proposal": 3
-                },
-                "settlement": {
-                  "claimant_paid_units": 30,
-                  "fee_units": 0,
-                  "held_units": 0,
-                  "respondent_paid_units": 0
-                },
-                "surfaced_precedents": []
-              }
-            ],
-            "case_id": "CASE-000002",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
-            "created_at": "2026-11-15T21:14:41Z",
-            "evidence_text": "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-            "final_precedent_id": "P-000004",
-            "finalized_at": "2026-11-15T21:21:10Z",
-            "original_bond": 40,
-            "pending_precedent": {
-              "case_ref": "CASE-000002",
-              "distinguishing_factors": [
-                "That rule expressly applies only when no later written extension exists; this case has a signed extension.",
-                "That rule rejects oral changes; both parties signed this later extension.",
-                "That ruling had no later written amendment; both parties signed one here."
-              ],
-              "facts_summary": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date? Claimant: The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time. Respondent: The buyer says the original deadline alone controls and seeks the deposit. Evidence: The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-              "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-              "outcome": "CLAIMANT_WINS",
-              "overrules": null,
-              "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?"
-            },
-            "pending_precedent_id": "P-000004",
-            "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
-            "remaining_bond": 0,
-            "responded_at": "2026-11-15T21:15:26Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The buyer says the original deadline alone controls and seeks the deposit.",
-            "response_deadline": "2026-11-15T23:14:41Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "FINAL",
-            "terminal_result": {
-              "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-              "outcome": "CLAIMANT_WINS",
-              "precedent_id": "P-000004",
-              "settlement": {
-                "claimant_paid_units": 30,
-                "fee_units": 0,
-                "held_units": 0,
-                "respondent_paid_units": 0
-              }
-            }
-          },
-          "precedent": {
-            "case_ref": "CASE-000002",
-            "created_at_case_seq": 4,
-            "distinguishing_factors": [
-              "That rule expressly applies only when no later written extension exists; this case has a signed extension.",
-              "That rule rejects oral changes; both parties signed this later extension.",
-              "That ruling had no later written amendment; both parties signed one here."
-            ],
-            "facts_summary": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date? Claimant: The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time. Respondent: The buyer says the original deadline alone controls and seeks the deposit. Evidence: The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-            "genesis": false,
-            "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-            "id": "P-000004",
-            "outcome": "CLAIMANT_WINS",
-            "overrules": null,
-            "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?"
-          },
-          "accounting": {
-            "bonds_in": 80,
-            "conserved": true,
-            "fee_units": 0,
-            "held_units": 0,
-            "paid_claimant_units": 70,
-            "paid_respondent_units": 10
-          },
-          "checked_at_utc": "2026-11-15T22:21:47.674877+01:00"
-        }
-      }
-    },
-    {
-      "case_id": "CASE-000003",
-      "name": "Case C cites P4 and compounds",
-      "status": "PASS",
-      "transactions": [
-        {
-          "operation": "case-000003_open",
-          "method": "open_case",
-          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-          "stage": "FINALIZED",
-          "started_at_utc": "2026-11-15T22:21:47.67974+01:00",
-          "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-          "args": [
-            "Can a seller keep the deposit after delivering by a mutually signed extension?",
-            "The seller says the parties signed an extension to June 4 and delivery occurred on June 4.",
-            "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-            "Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-            40
-          ],
-          "hash": "0x542eae2e7111d05cecc88bbf047f7934c64385684fde5dc14e4774e41ff9e3af",
-          "submitted_at_utc": "2026-11-15T22:21:52.416784+01:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x542eae2e7111d05cecc88bbf047f7934c64385684fde5dc14e4774e41ff9e3af",
-          "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-15T22:21:59.879104+01:00",
-          "finality_status": "FINALIZED",
-          "leader_execution": "SUCCESS",
-          "consensus_result": "MAJORITY_AGREE",
-          "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-15T22:22:26.64573+01:00"
-        },
-        {
-          "operation": "case-000003_respond",
-          "method": "respond",
-          "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-          "stage": "FINALIZED",
-          "started_at_utc": "2026-11-15T22:22:26.649829+01:00",
-          "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-          "args": [
-            "CASE-000003",
-            "The buyer relies on the original June 1 schedule and asks for the deposit.",
-            "The attached signed document supports this response."
-          ],
-          "hash": "0x871296e83da2add40cdb202365652d911a59ba1e3f638d6a18d7f3d81d86c4e2",
-          "submitted_at_utc": "2026-11-15T22:22:31.743479+01:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x871296e83da2add40cdb202365652d911a59ba1e3f638d6a18d7f3d81d86c4e2",
-          "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-15T22:22:39.210559+01:00",
-          "finality_status": "FINALIZED",
-          "leader_execution": "SUCCESS",
-          "consensus_result": "MAJORITY_AGREE",
-          "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-15T22:23:05.000358+01:00"
-        }
-      ],
-      "readbacks": {
-        "after_response": {
-          "case": {
-            "attempts": [],
-            "case_id": "CASE-000003",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The seller says the parties signed an extension to June 4 and delivery occurred on June 4.",
-            "created_at": "2026-11-15T21:21:53Z",
-            "evidence_text": "Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-            "original_bond": 40,
-            "question": "Can a seller keep the deposit after delivering by a mutually signed extension?",
-            "remaining_bond": 40,
-            "responded_at": "2026-11-15T21:22:32Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The buyer relies on the original June 1 schedule and asks for the deposit.",
-            "response_deadline": "2026-11-15T23:21:53Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "READY_TO_PROPOSE",
-            "terminal_result": {}
-          },
-          "checked_at_utc": "2026-11-15T22:23:06.843949+01:00"
-        },
-        "case_c_compounding_proposal_snapshot": {
-          "attempts": [
-            {
-              "attempt": {
-                "cited_precedents": [
-                  {
-                    "case_ref": "CASE-000002",
-                    "created_at_case_seq": 4,
-                    "distinguishing_factors": [
-                      "That rule expressly applies only when no later written extension exists; this case has a signed extension.",
-                      "That rule rejects oral changes; both parties signed this later extension.",
-                      "That ruling had no later written amendment; both parties signed one here."
-                    ],
-                    "facts_summary": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date? Claimant: The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time. Respondent: The buyer says the original deadline alone controls and seeks the deposit. Evidence: The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-                    "genesis": false,
-                    "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-                    "id": "P-000004",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?"
-                  }
-                ],
-                "distinctions": [],
-                "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-                "outcome": "CLAIMANT_WINS",
-                "proposed_at": "2026-11-15T21:23:13Z",
-                "registry_count_at_proposal": 4
-              },
-              "judgment": {},
-              "surfaced_precedents": []
-            }
-          ],
-          "case_id": "CASE-000003"
-        },
-        "case_c_compounding_after_adjudication": {
-          "case": {
-            "append_retries": 0,
-            "attempts": [
-              {
-                "adjudicated_at": "2026-11-15T21:24:00Z",
-                "judgment": {
-                  "consistent": true,
-                  "per_citation": [
-                    {
-                      "id": "P-000004",
-                      "reason": "Directly holds that the buyer cannot recover solely because the original date passed when both parties signed an extension and delivery met the amended date.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000003",
-                      "reason": "Recovery requires a missed signed deadline without a later mutually signed amendment. Here, the parties signed an amendment and delivery met its deadline.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "Requires a later mutually signed amendment rather than oral discussion to change the deadline. The extension here satisfies that requirement.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000001",
-                      "reason": "Permits recovery for late delivery when no later written amendment extends the deadline. The signed extension and timely delivery here are consistent with that rule.",
-                      "relation": "SUPPORTS"
-                    }
-                  ],
-                  "per_distinction": []
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "CASE-000002",
-                      "created_at_case_seq": 4,
-                      "distinguishing_factors": [
-                        "That rule expressly applies only when no later written extension exists; this case has a signed extension.",
-                        "That rule rejects oral changes; both parties signed this later extension.",
-                        "That ruling had no later written amendment; both parties signed one here."
-                      ],
-                      "facts_summary": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date? Claimant: The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time. Respondent: The buyer says the original deadline alone controls and seeks the deposit. Evidence: The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-                      "genesis": false,
-                      "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-                      "id": "P-000004",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?"
-                    }
-                  ],
-                  "distinctions": [],
-                  "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:23:13Z",
-                  "registry_count_at_proposal": 4
-                },
-                "settlement": {},
-                "surfaced_precedents": [
-                  {
-                    "case_ref": "CASE-000001",
-                    "created_at_case_seq": 3,
-                    "distinguishing_factors": [],
-                    "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                    "genesis": false,
-                    "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                    "id": "P-000003",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                  },
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  },
-                  {
-                    "case_ref": "GENESIS-1",
-                    "created_at_case_seq": 1,
-                    "distinguishing_factors": [],
-                    "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                    "genesis": true,
-                    "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                    "id": "P-000001",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Does a signed delivery schedule control when a seller misses the date?"
-                  }
-                ]
-              }
-            ],
-            "case_id": "CASE-000003",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The seller says the parties signed an extension to June 4 and delivery occurred on June 4.",
-            "created_at": "2026-11-15T21:21:53Z",
-            "evidence_text": "Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-            "original_bond": 40,
-            "pending_precedent": {
-              "case_ref": "CASE-000003",
-              "distinguishing_factors": [],
-              "facts_summary": "Can a seller keep the deposit after delivering by a mutually signed extension? Claimant: The seller says the parties signed an extension to June 4 and delivery occurred on June 4. Respondent: The buyer relies on the original June 1 schedule and asks for the deposit. Evidence: Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-              "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-              "outcome": "CLAIMANT_WINS",
-              "overrules": null,
-              "question": "Can a seller keep the deposit after delivering by a mutually signed extension?"
-            },
-            "pending_precedent_id": "P-000005",
-            "pending_since": "2026-11-15T21:24:00Z",
-            "question": "Can a seller keep the deposit after delivering by a mutually signed extension?",
-            "remaining_bond": 40,
-            "responded_at": "2026-11-15T21:22:32Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The buyer relies on the original June 1 schedule and asks for the deposit.",
-            "response_deadline": "2026-11-15T23:21:53Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "PRECEDENT_PENDING",
-            "terminal_result": {}
-          },
-          "accounting": {
-            "bonds_in": 120,
-            "conserved": true,
-            "fee_units": 0,
-            "held_units": 40,
-            "paid_claimant_units": 70,
-            "paid_respondent_units": 10
-          },
-          "checked_at_utc": "2026-11-15T22:25:48.780892+01:00"
-        },
-        "final": {
-          "case": {
-            "append_retries": 0,
-            "attempts": [
-              {
-                "adjudicated_at": "2026-11-15T21:24:00Z",
-                "judgment": {
-                  "consistent": true,
-                  "per_citation": [
-                    {
-                      "id": "P-000004",
-                      "reason": "Directly holds that the buyer cannot recover solely because the original date passed when both parties signed an extension and delivery met the amended date.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000003",
-                      "reason": "Recovery requires a missed signed deadline without a later mutually signed amendment. Here, the parties signed an amendment and delivery met its deadline.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000002",
-                      "reason": "Requires a later mutually signed amendment rather than oral discussion to change the deadline. The extension here satisfies that requirement.",
-                      "relation": "SUPPORTS"
-                    },
-                    {
-                      "id": "P-000001",
-                      "reason": "Permits recovery for late delivery when no later written amendment extends the deadline. The signed extension and timely delivery here are consistent with that rule.",
-                      "relation": "SUPPORTS"
-                    }
-                  ],
-                  "per_distinction": []
-                },
-                "proposal": {
-                  "cited_precedents": [
-                    {
-                      "case_ref": "CASE-000002",
-                      "created_at_case_seq": 4,
-                      "distinguishing_factors": [
-                        "That rule expressly applies only when no later written extension exists; this case has a signed extension.",
-                        "That rule rejects oral changes; both parties signed this later extension.",
-                        "That ruling had no later written amendment; both parties signed one here."
-                      ],
-                      "facts_summary": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date? Claimant: The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time. Respondent: The buyer says the original deadline alone controls and seeks the deposit. Evidence: The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-                      "genesis": false,
-                      "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-                      "id": "P-000004",
-                      "outcome": "CLAIMANT_WINS",
-                      "overrules": null,
-                      "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?"
-                    }
-                  ],
-                  "distinctions": [],
-                  "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-                  "outcome": "CLAIMANT_WINS",
-                  "proposed_at": "2026-11-15T21:23:13Z",
-                  "registry_count_at_proposal": 4
-                },
-                "settlement": {
-                  "claimant_paid_units": 40,
-                  "fee_units": 0,
-                  "held_units": 0,
-                  "respondent_paid_units": 0
-                },
-                "surfaced_precedents": [
-                  {
-                    "case_ref": "CASE-000001",
-                    "created_at_case_seq": 3,
-                    "distinguishing_factors": [],
-                    "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-                    "genesis": false,
-                    "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-                    "id": "P-000003",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-                  },
-                  {
-                    "case_ref": "GENESIS-2",
-                    "created_at_case_seq": 2,
-                    "distinguishing_factors": [],
-                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
-                    "genesis": true,
-                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
-                    "id": "P-000002",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Can oral discussions amend a written delivery deadline?"
-                  },
-                  {
-                    "case_ref": "GENESIS-1",
-                    "created_at_case_seq": 1,
-                    "distinguishing_factors": [],
-                    "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
-                    "genesis": true,
-                    "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
-                    "id": "P-000001",
-                    "outcome": "CLAIMANT_WINS",
-                    "overrules": null,
-                    "question": "Does a signed delivery schedule control when a seller misses the date?"
-                  }
-                ]
-              }
-            ],
-            "case_id": "CASE-000003",
-            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
-            "claimant_position": "The seller says the parties signed an extension to June 4 and delivery occurred on June 4.",
-            "created_at": "2026-11-15T21:21:53Z",
-            "evidence_text": "Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-            "final_precedent_id": "P-000005",
-            "finalized_at": "2026-11-15T21:26:27Z",
-            "original_bond": 40,
-            "pending_precedent": {
-              "case_ref": "CASE-000003",
-              "distinguishing_factors": [],
-              "facts_summary": "Can a seller keep the deposit after delivering by a mutually signed extension? Claimant: The seller says the parties signed an extension to June 4 and delivery occurred on June 4. Respondent: The buyer relies on the original June 1 schedule and asks for the deposit. Evidence: Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-              "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-              "outcome": "CLAIMANT_WINS",
-              "overrules": null,
-              "question": "Can a seller keep the deposit after delivering by a mutually signed extension?"
-            },
-            "pending_precedent_id": "P-000005",
-            "question": "Can a seller keep the deposit after delivering by a mutually signed extension?",
-            "remaining_bond": 0,
-            "responded_at": "2026-11-15T21:22:32Z",
-            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
-            "respondent_position": "The buyer relies on the original June 1 schedule and asks for the deposit.",
-            "response_deadline": "2026-11-15T23:21:53Z",
-            "response_evidence": "The attached signed document supports this response.",
-            "response_status": "RESPONDED",
-            "status": "FINAL",
-            "terminal_result": {
-              "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-              "outcome": "CLAIMANT_WINS",
-              "precedent_id": "P-000005",
-              "settlement": {
-                "claimant_paid_units": 40,
-                "fee_units": 0,
-                "held_units": 0,
-                "respondent_paid_units": 0
-              }
-            }
-          },
-          "precedent": {
-            "case_ref": "CASE-000003",
-            "created_at_case_seq": 5,
-            "distinguishing_factors": [],
-            "facts_summary": "Can a seller keep the deposit after delivering by a mutually signed extension? Claimant: The seller says the parties signed an extension to June 4 and delivery occurred on June 4. Respondent: The buyer relies on the original June 1 schedule and asks for the deposit. Evidence: Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-            "genesis": false,
-            "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-            "id": "P-000005",
-            "outcome": "CLAIMANT_WINS",
-            "overrules": null,
-            "question": "Can a seller keep the deposit after delivering by a mutually signed extension?"
-          },
-          "accounting": {
-            "bonds_in": 120,
-            "conserved": true,
-            "fee_units": 0,
-            "held_units": 0,
-            "paid_claimant_units": 110,
-            "paid_respondent_units": 10
-          },
-          "checked_at_utc": "2026-11-15T22:27:09.959721+01:00"
         }
       }
     }
@@ -1614,110 +207,110 @@
       "method": "deploy",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:06:27.834327+01:00",
+      "started_at_utc": "2026-11-16T09:03:54.261828+00:00",
       "args": [],
-      "hash": "0x26115d048abfb780eb9292334817f7a8e4e269033d6e9d7f55f70fbb3650448f",
-      "submitted_at_utc": "2026-11-15T22:06:35.204662+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x26115d048abfb780eb9292334817f7a8e4e269033d6e9d7f55f70fbb3650448f",
+      "hash": "0x1f7a5e9007980241cc52f5a83c9b41f5dfda5e536465fec3663a935177222b44",
+      "submitted_at_utc": "2026-11-16T09:04:00.427411+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1f7a5e9007980241cc52f5a83c9b41f5dfda5e536465fec3663a935177222b44",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:06:43.111754+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:04:07.954512+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:07:11.04078+01:00",
-      "deployed_address": "0x0FD8b71034265680EC8B46c6Ff8D06085e71f998"
+      "finalized_observed_at_utc": "2026-11-16T09:04:40.812865+00:00",
+      "deployed_address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9"
     },
     {
       "operation": "court_deploy",
       "method": "deploy",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:07:11.524375+01:00",
+      "started_at_utc": "2026-11-16T09:04:41.140351+00:00",
       "args": [
-        "0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
+        "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
         7200
       ],
-      "hash": "0xa268c6a0b31e810e2ed889c6e24d3747eb9576ef6cacd8ecde220722874acb0c",
-      "submitted_at_utc": "2026-11-15T22:07:17.056896+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xa268c6a0b31e810e2ed889c6e24d3747eb9576ef6cacd8ecde220722874acb0c",
+      "hash": "0xb00f00a4abaaaeb7e232b650c038765d1ef2fbcb637d361ee747bcbc4d932b1a",
+      "submitted_at_utc": "2026-11-16T09:04:47.790805+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xb00f00a4abaaaeb7e232b650c038765d1ef2fbcb637d361ee747bcbc4d932b1a",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:07:24.131824+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:04:54.905293+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:07:51.805493+01:00",
-      "deployed_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507"
+      "finalized_observed_at_utc": "2026-11-16T09:05:27.143438+00:00",
+      "deployed_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C"
     },
     {
       "operation": "bind_court",
       "method": "bind_court",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:07:52.316627+01:00",
-      "contract_address": "0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
+      "started_at_utc": "2026-11-16T09:05:27.486756+00:00",
+      "contract_address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
       "args": [
-        "0x68640Ef247219FF0B40d5A7a60c0F8A572178507"
+        "0x6c1C865D0d37c26Afc484559333E0036a271164C"
       ],
-      "hash": "0x924caa1ece7f08279f864e4d31b54adb80525425983d8c0e1a6a618a1b995ac5",
-      "submitted_at_utc": "2026-11-15T22:07:57.63354+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x924caa1ece7f08279f864e4d31b54adb80525425983d8c0e1a6a618a1b995ac5",
+      "hash": "0x9b269271d75cbde2f7361162c40e454c698a924d637c086dd711fd6b69d5acc2",
+      "submitted_at_utc": "2026-11-16T09:05:33.511991+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9b269271d75cbde2f7361162c40e454c698a924d637c086dd711fd6b69d5acc2",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:08:05.056291+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:05:40.796767+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:08:36.861233+01:00"
+      "finalized_observed_at_utc": "2026-11-16T09:06:08.085504+00:00"
     },
     {
       "operation": "seed_genesis",
       "method": "seed_genesis_precedents",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:08:36.864271+01:00",
-      "contract_address": "0x0FD8b71034265680EC8B46c6Ff8D06085e71f998",
+      "started_at_utc": "2026-11-16T09:06:08.099533+00:00",
+      "contract_address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
       "args": [
         "[{\"question\": \"Does a signed delivery schedule control when a seller misses the date?\", \"holding\": \"A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.\", \"facts_summary\": \"Signed schedule; no written amendment; delivery occurred after the deadline.\", \"outcome\": \"CLAIMANT_WINS\", \"distinguishing_factors\": []}, {\"question\": \"Can oral discussions amend a written delivery deadline?\", \"holding\": \"An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.\", \"facts_summary\": \"The parties discussed a date orally but did not sign a later amendment.\", \"outcome\": \"CLAIMANT_WINS\", \"distinguishing_factors\": []}]"
       ],
-      "hash": "0x0b6e82726e46b3293ca79bbdd37cd6d5fe4f657220da03561beead0be9b62995",
-      "submitted_at_utc": "2026-11-15T22:08:42.311077+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0b6e82726e46b3293ca79bbdd37cd6d5fe4f657220da03561beead0be9b62995",
+      "hash": "0x1db533dd387cb02cf212da93e75dd10dbde24b800668d938ca73da3352c28af5",
+      "submitted_at_utc": "2026-11-16T09:06:13.794801+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1db533dd387cb02cf212da93e75dd10dbde24b800668d938ca73da3352c28af5",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:08:49.358014+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:06:20.648516+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:09:15.319226+01:00"
+      "finalized_observed_at_utc": "2026-11-16T09:06:46.833079+00:00"
     },
     {
       "operation": "sync_registry_count",
       "method": "sync_registry_count",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:09:15.323605+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "started_at_utc": "2026-11-16T09:06:46.836851+00:00",
+      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
       "args": [],
-      "hash": "0x2897d81f9ec99b173555cf5e50f31cecf528cfe8b570edce5e83a4a46589ca6c",
-      "submitted_at_utc": "2026-11-15T22:09:19.990554+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x2897d81f9ec99b173555cf5e50f31cecf528cfe8b570edce5e83a4a46589ca6c",
+      "hash": "0xba4869d6caeff109962dbc731e6ea95713c866862b69160d08836a131483c363",
+      "submitted_at_utc": "2026-11-16T09:06:52.560281+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xba4869d6caeff109962dbc731e6ea95713c866862b69160d08836a131483c363",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:09:26.677981+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:06:59.365539+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:09:59.86694+01:00"
+      "finalized_observed_at_utc": "2026-11-16T09:07:30.718516+00:00"
     },
     {
       "operation": "case-000001_open",
       "method": "open_case",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:10:01.726359+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "started_at_utc": "2026-11-16T09:07:32.631099+00:00",
+      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
       "args": [
         "May the buyer recover a deposit when the seller misses the signed delivery date?",
         "The buyer says the signed May 1 schedule was missed and no extension was signed.",
@@ -1725,491 +318,88 @@
         "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
         40
       ],
-      "hash": "0x8948a42821e5889c4b2abebe0f430e85f90e01b3c6f067601a56e18455042006",
-      "submitted_at_utc": "2026-11-15T22:10:06.331547+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x8948a42821e5889c4b2abebe0f430e85f90e01b3c6f067601a56e18455042006",
+      "hash": "0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
+      "submitted_at_utc": "2026-11-16T09:07:38.182067+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:10:13.359688+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:07:44.903166+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:10:45.515966+01:00"
+      "finalized_observed_at_utc": "2026-11-16T09:08:17.018373+00:00"
     },
     {
       "operation": "case-000001_respond",
       "method": "respond",
       "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:10:45.519136+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "started_at_utc": "2026-11-16T09:08:17.021330+00:00",
+      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
       "args": [
         "CASE-000001",
         "The seller says the buyer should forfeit the deposit despite the late delivery.",
-        "The attached signed document supports this response."
+        "The attached signed document supports this response.",
+        40
       ],
-      "hash": "0x5066f6aa06c01e0f1e87e97e8f632ba814ce79d3f60a2e9bc2d77b639bf89e5e",
-      "submitted_at_utc": "2026-11-15T22:10:50.495505+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5066f6aa06c01e0f1e87e97e8f632ba814ce79d3f60a2e9bc2d77b639bf89e5e",
+      "hash": "0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
+      "submitted_at_utc": "2026-11-16T09:08:21.619862+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:10:57.574252+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:08:28.350682+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:11:29.73457+01:00"
+      "finalized_observed_at_utc": "2026-11-16T09:09:02.257013+00:00"
     },
     {
       "operation": "case_a_consistent_proposal",
       "method": "propose_ruling",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:11:31.620308+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "started_at_utc": "2026-11-16T09:09:04.183015+00:00",
+      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
       "args": [
         "CASE-000001",
         "CLAIMANT_WINS",
         "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
         "[\"P-000001\"]",
-        "[]"
+        "[]",
+        "",
+        ""
       ],
-      "hash": "0x8c0609780f1b3735f5251dfeccdcc54d32363163d6e71fcc71085fdb921e90bb",
-      "submitted_at_utc": "2026-11-15T22:11:35.867047+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x8c0609780f1b3735f5251dfeccdcc54d32363163d6e71fcc71085fdb921e90bb",
+      "hash": "0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
+      "submitted_at_utc": "2026-11-16T09:09:09.497248+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:11:42.920974+01:00",
+      "accepted_observed_at_utc": "2026-11-16T09:09:16.798309+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:12:15.321936+01:00"
+      "finalized_observed_at_utc": "2026-11-16T09:09:49.735590+00:00"
     },
     {
       "operation": "case_a_consistent_adjudicate",
       "method": "adjudicate",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:12:17.583618+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
+      "started_at_utc": "2026-11-16T09:09:51.618675+00:00",
+      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
       "args": [
         "CASE-000001"
       ],
-      "hash": "0xee3bc7b3e3cab3e92d69069fb089602bf8b959c52ce797e1e2d033ab9b3fda68",
-      "submitted_at_utc": "2026-11-15T22:12:23.083808+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xee3bc7b3e3cab3e92d69069fb089602bf8b959c52ce797e1e2d033ab9b3fda68",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:12:42.251465+01:00",
+      "hash": "0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
+      "submitted_at_utc": "2026-11-16T09:09:57.239731+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
+      "acceptance_status": "UNDETERMINED",
+      "accepted_observed_at_utc": "2026-11-16T09:11:17.071654+00:00",
       "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:13:09.076283+01:00"
-    },
-    {
-      "operation": "case_a_consistent_adjudicate_registry_append_child",
-      "method": "append_precedent",
-      "case_id": "CASE-000001",
-      "parent_transaction": "0xee3bc7b3e3cab3e92d69069fb089602bf8b959c52ce797e1e2d033ab9b3fda68",
-      "hash": "0x6a3465100618fdb0c41ce5a13982da8272620630af496d60611825c83d3ca114",
-      "stage": "FINALIZED",
-      "submitted_at_utc": "2026-11-15T22:13:14.027322+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x6a3465100618fdb0c41ce5a13982da8272620630af496d60611825c83d3ca114",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:13:14.863519+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:13:41.624661+01:00",
-      "direct_readback": {
-        "registry_count": 3,
-        "precedent": {
-          "case_ref": "CASE-000001",
-          "created_at_case_seq": 3,
-          "distinguishing_factors": [],
-          "facts_summary": "May the buyer recover a deposit when the seller misses the signed delivery date? Claimant: The buyer says the signed May 1 schedule was missed and no extension was signed. Respondent: The seller says the buyer should forfeit the deposit despite the late delivery. Evidence: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
-          "genesis": false,
-          "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
-          "id": "P-000003",
-          "outcome": "CLAIMANT_WINS",
-          "overrules": null,
-          "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
-        },
-        "state": "LATEST_FINAL",
-        "checked_at_utc": "2026-11-15T22:13:45.750516+01:00",
-        "seconds_after_parent_finality": 36.674
-      }
-    },
-    {
-      "operation": "case_a_consistent_adjudicate_court_finalize",
-      "method": "finalize_case",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:13:45.753712+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000001"
-      ],
-      "hash": "0x54bba2de0d08eda0be7cf022d257274a1d817b85b1aedbcc6235e01a97520f8c",
-      "submitted_at_utc": "2026-11-15T22:13:51.932895+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x54bba2de0d08eda0be7cf022d257274a1d817b85b1aedbcc6235e01a97520f8c",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:13:58.68547+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:14:31.221751+01:00"
-    },
-    {
-      "operation": "case-000002_open",
-      "method": "open_case",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:14:35.476015+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
-        "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
-        "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-        "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-        40
-      ],
-      "hash": "0x7e96023de49353ab08f4bd218ced4645ef1dcdd058bf4e907ca217bc50a9b191",
-      "submitted_at_utc": "2026-11-15T22:14:39.720445+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x7e96023de49353ab08f4bd218ced4645ef1dcdd058bf4e907ca217bc50a9b191",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:14:46.784963+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:15:19.839601+01:00"
-    },
-    {
-      "operation": "case-000002_respond",
-      "method": "respond",
-      "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:15:19.842933+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000002",
-        "The buyer says the original deadline alone controls and seeks the deposit.",
-        "The attached signed document supports this response."
-      ],
-      "hash": "0x66714cae35a269177cf218b35f304b8bf4f39fe87e864573180d89a880beae63",
-      "submitted_at_utc": "2026-11-15T22:15:25.72886+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x66714cae35a269177cf218b35f304b8bf4f39fe87e864573180d89a880beae63",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:15:32.831451+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:16:05.438255+01:00"
-    },
-    {
-      "operation": "case_b_contradiction_proposal",
-      "method": "propose_ruling",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:16:07.707999+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000002",
-        "CLAIMANT_WINS",
-        "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
-        "[\"P-000003\"]",
-        "[]"
-      ],
-      "hash": "0xb190e4064d8380f439af346fb079fce89bc92556ace7d80d9185a5e00d41b78c",
-      "submitted_at_utc": "2026-11-15T22:16:14.041105+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xb190e4064d8380f439af346fb079fce89bc92556ace7d80d9185a5e00d41b78c",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:16:20.760323+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:16:53.785456+01:00"
-    },
-    {
-      "operation": "case_b_contradiction_adjudicate",
-      "method": "adjudicate",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:16:56.083272+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000002"
-      ],
-      "hash": "0x9d6da10025e8beeeb6e4a2fba8edf4ca753e5f01dbff44934c7e68e14d49b114",
-      "submitted_at_utc": "2026-11-15T22:17:00.730298+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9d6da10025e8beeeb6e4a2fba8edf4ca753e5f01dbff44934c7e68e14d49b114",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:17:32.095513+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "2",
-      "finalized_observed_at_utc": "2026-11-15T22:18:10.686936+01:00"
-    },
-    {
-      "operation": "case_b_distinguished_proposal",
-      "method": "propose_ruling",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:18:14.8295+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000002",
-        "CLAIMANT_WINS",
-        "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-        "[\"P-000001\", \"P-000002\", \"P-000003\"]",
-        "[{\"id\": \"P-000001\", \"reason\": \"That rule expressly applies only when no later written extension exists; this case has a signed extension.\"}, {\"id\": \"P-000002\", \"reason\": \"That rule rejects oral changes; both parties signed this later extension.\"}, {\"id\": \"P-000003\", \"reason\": \"That ruling had no later written amendment; both parties signed one here.\"}]"
-      ],
-      "hash": "0xa9b3b7e86462290d0f20d4d4b1565fd5b4661e06166fcaaf9f1f0ac4a6da1143",
-      "submitted_at_utc": "2026-11-15T22:18:20.532465+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xa9b3b7e86462290d0f20d4d4b1565fd5b4661e06166fcaaf9f1f0ac4a6da1143",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:18:33.513843+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:19:00.611492+01:00"
-    },
-    {
-      "operation": "case_b_distinguished_adjudicate",
-      "method": "adjudicate",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:19:02.869071+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000002"
-      ],
-      "hash": "0x71fc37ddf1563d54c9da75418531b6768e0e80449f57e8afa2300b828e92f587",
-      "submitted_at_utc": "2026-11-15T22:19:07.521016+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x71fc37ddf1563d54c9da75418531b6768e0e80449f57e8afa2300b828e92f587",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:19:51.376213+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "2",
-      "finalized_observed_at_utc": "2026-11-15T22:20:22.877975+01:00"
-    },
-    {
-      "operation": "case_b_distinguished_adjudicate_registry_append_child",
-      "method": "append_precedent",
-      "case_id": "CASE-000002",
-      "parent_transaction": "0x71fc37ddf1563d54c9da75418531b6768e0e80449f57e8afa2300b828e92f587",
-      "hash": "0x3fc2e2c85091dfb6433ce74b227fd900734a75ec6ee8575423fe97ec013adb15",
-      "stage": "FINALIZED",
-      "submitted_at_utc": "2026-11-15T22:20:27.867289+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x3fc2e2c85091dfb6433ce74b227fd900734a75ec6ee8575423fe97ec013adb15",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:20:29.121621+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:20:56.732903+01:00",
-      "direct_readback": {
-        "registry_count": 4,
-        "precedent": {
-          "case_ref": "CASE-000002",
-          "created_at_case_seq": 4,
-          "distinguishing_factors": [
-            "That rule expressly applies only when no later written extension exists; this case has a signed extension.",
-            "That rule rejects oral changes; both parties signed this later extension.",
-            "That ruling had no later written amendment; both parties signed one here."
-          ],
-          "facts_summary": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date? Claimant: The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time. Respondent: The buyer says the original deadline alone controls and seeks the deposit. Evidence: The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
-          "genesis": false,
-          "holding": "A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
-          "id": "P-000004",
-          "outcome": "CLAIMANT_WINS",
-          "overrules": null,
-          "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?"
-        },
-        "state": "LATEST_FINAL",
-        "checked_at_utc": "2026-11-15T22:21:01.067989+01:00",
-        "seconds_after_parent_finality": 38.19
-      }
-    },
-    {
-      "operation": "case_b_distinguished_adjudicate_court_finalize",
-      "method": "finalize_case",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:21:01.070209+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000002"
-      ],
-      "hash": "0xfc750e345244381e6f86f9a12533299f9973f433a54f2a1779997ea4a3498346",
-      "submitted_at_utc": "2026-11-15T22:21:09.421207+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xfc750e345244381e6f86f9a12533299f9973f433a54f2a1779997ea4a3498346",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:21:17.144505+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:21:43.513726+01:00"
-    },
-    {
-      "operation": "case-000003_open",
-      "method": "open_case",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:21:47.67974+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "Can a seller keep the deposit after delivering by a mutually signed extension?",
-        "The seller says the parties signed an extension to June 4 and delivery occurred on June 4.",
-        "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-        "Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-        40
-      ],
-      "hash": "0x542eae2e7111d05cecc88bbf047f7934c64385684fde5dc14e4774e41ff9e3af",
-      "submitted_at_utc": "2026-11-15T22:21:52.416784+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x542eae2e7111d05cecc88bbf047f7934c64385684fde5dc14e4774e41ff9e3af",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:21:59.879104+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:22:26.64573+01:00"
-    },
-    {
-      "operation": "case-000003_respond",
-      "method": "respond",
-      "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:22:26.649829+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000003",
-        "The buyer relies on the original June 1 schedule and asks for the deposit.",
-        "The attached signed document supports this response."
-      ],
-      "hash": "0x871296e83da2add40cdb202365652d911a59ba1e3f638d6a18d7f3d81d86c4e2",
-      "submitted_at_utc": "2026-11-15T22:22:31.743479+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x871296e83da2add40cdb202365652d911a59ba1e3f638d6a18d7f3d81d86c4e2",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:22:39.210559+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:23:05.000358+01:00"
-    },
-    {
-      "operation": "case_c_compounding_proposal",
-      "method": "propose_ruling",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:23:06.846317+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000003",
-        "CLAIMANT_WINS",
-        "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-        "[\"P-000004\"]",
-        "[]"
-      ],
-      "hash": "0x5ceeddc39ba3643dbea9ce34b579479bc4b530bbebfa8e59782ef671c3f3f751",
-      "submitted_at_utc": "2026-11-15T22:23:12.683673+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5ceeddc39ba3643dbea9ce34b579479bc4b530bbebfa8e59782ef671c3f3f751",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:23:20.158027+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:23:52.062516+01:00"
-    },
-    {
-      "operation": "case_c_compounding_adjudicate",
-      "method": "adjudicate",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:23:53.96186+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000003"
-      ],
-      "hash": "0x0ccfa0271dfc17de058e70ffdf6ef8dbe39343942100d4942bcec88d3c5283bc",
-      "submitted_at_utc": "2026-11-15T22:23:58.819097+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0ccfa0271dfc17de058e70ffdf6ef8dbe39343942100d4942bcec88d3c5283bc",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:25:12.775494+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "3",
-      "finalized_observed_at_utc": "2026-11-15T22:25:44.67973+01:00"
-    },
-    {
-      "operation": "case_c_compounding_adjudicate_registry_append_child",
-      "method": "append_precedent",
-      "case_id": "CASE-000003",
-      "parent_transaction": "0x0ccfa0271dfc17de058e70ffdf6ef8dbe39343942100d4942bcec88d3c5283bc",
-      "hash": "0x250e681641efa4784d99f2ab03cf65282cae8249aed09fd240867a7a646e94e6",
-      "stage": "FINALIZED",
-      "submitted_at_utc": "2026-11-15T22:25:49.695207+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x250e681641efa4784d99f2ab03cf65282cae8249aed09fd240867a7a646e94e6",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:25:50.589198+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:26:16.714217+01:00",
-      "direct_readback": {
-        "registry_count": 5,
-        "precedent": {
-          "case_ref": "CASE-000003",
-          "created_at_case_seq": 5,
-          "distinguishing_factors": [],
-          "facts_summary": "Can a seller keep the deposit after delivering by a mutually signed extension? Claimant: The seller says the parties signed an extension to June 4 and delivery occurred on June 4. Respondent: The buyer relies on the original June 1 schedule and asks for the deposit. Evidence: Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.",
-          "genesis": false,
-          "holding": "A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-          "id": "P-000005",
-          "outcome": "CLAIMANT_WINS",
-          "overrules": null,
-          "question": "Can a seller keep the deposit after delivering by a mutually signed extension?"
-        },
-        "state": "LATEST_FINAL",
-        "checked_at_utc": "2026-11-15T22:26:20.574397+01:00",
-        "seconds_after_parent_finality": 35.895
-      }
-    },
-    {
-      "operation": "case_c_compounding_adjudicate_court_finalize",
-      "method": "finalize_case",
-      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
-      "stage": "FINALIZED",
-      "started_at_utc": "2026-11-15T22:26:20.576804+01:00",
-      "contract_address": "0x68640Ef247219FF0B40d5A7a60c0F8A572178507",
-      "args": [
-        "CASE-000003"
-      ],
-      "hash": "0x60cc44c0bb1b3673d4ac39d97e270f73b2a80adfff32d93eb26c575c57c96330",
-      "submitted_at_utc": "2026-11-15T22:26:25.726397+01:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x60cc44c0bb1b3673d4ac39d97e270f73b2a80adfff32d93eb26c575c57c96330",
-      "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-15T22:26:32.946624+01:00",
-      "finality_status": "FINALIZED",
-      "leader_execution": "SUCCESS",
-      "consensus_result": "MAJORITY_AGREE",
-      "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-15T22:27:05.691871+01:00"
+      "leader_execution": "ERROR",
+      "consensus_result": "MAJORITY_DISAGREE",
+      "rounds": "4",
+      "finalized_observed_at_utc": "2026-11-16T09:11:49.251089+00:00"
     }
   ],
   "portal_used": false,

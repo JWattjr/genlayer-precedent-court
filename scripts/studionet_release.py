@@ -22,7 +22,7 @@ from studionet_probe import dpapi, load_accounts, status_name, tx_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WORK = ROOT.parent / "precedent-court-live-run" / "revision-2026-11-16"
+WORK = ROOT.parent / "precedent-court-live-run" / "revision-2026-11-16-attempt2"
 STATE = WORK / "release.json"
 RPC = "https://studio.genlayer.com/api"
 EXPLORER = "https://explorer-studio.genlayer.com"
@@ -242,7 +242,7 @@ def ensure_case_open(case_id: str, *, question: str, claimant_position: str,
        args=[case_id, respondent_position, "The attached signed document supports this response.", bond])
     record["scenarios"].setdefault(case_id, {"readbacks": {}, "transactions": []})
     opened = read(address, "get_case", [case_id])
-    assert opened["status"] == "READY_TO_PROPOSE" and opened["response_status"] == "RESPONDED"
+    assert opened["response_status"] == "RESPONDED"
     record["scenarios"][case_id]["readbacks"]["after_response"] = {"case": opened, "checked_at_utc": iso()}
     save()
 

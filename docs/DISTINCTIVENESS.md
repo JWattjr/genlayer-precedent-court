@@ -22,3 +22,11 @@ Precedent Court judges enum-level consistency between a proposed rule and earlie
 ## Limits of the claim
 
 Commit/reveal, synthetic accounting, independent validator calls, bounded JSON, and deterministic state transitions are shared building blocks. The claimed distinction is the compounding precedent ledger and the consistency-versus-merits boundary. No ecosystem-wide novelty or award outcome is asserted.
+
+## November 16 revision assessment
+
+Real append-only overruling and proposals from either bonded party strengthen the local distinction: a later case can explicitly supersede one active earlier rule under a separately judged justification, without editing history. This is more than court-appeal plus a list, because the state affects future independent cases and tracks active versus superseded holdings. Both parties can challenge the precedent fit through proposals, and the rejection cost follows the proposer.
+
+The comparison remains against court-release, court-review, court-appeal, optimistic-assertion-court-DESIGN.md, liability-cascade-phase1, liability-review.md and evidence_retraction_demo.py. Their evidence truth, single-claim appeal, pipeline attribution and evidence retraction mechanisms differ from cross-case rule evolution. The companion Final Offer Arbitration selects one current-dispute amount; it has no compounding rule history.
+
+These changes do not prove ecosystem-wide originality. Keyword retrieval can miss semantically related rulings, the Registry has a fixed cap, evidence text is unauthenticated, and consensus does not prove fairness. No score or points are promised.

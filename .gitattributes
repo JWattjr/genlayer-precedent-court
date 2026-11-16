@@ -1,3 +1,5 @@
 *.py text eol=lf
 *.md text eol=lf
 *.json text eol=lf
+# Preserve exact deployed contract bytes for source SHA-256 evidence.
+contracts/*.py -text

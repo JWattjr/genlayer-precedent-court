@@ -1,21 +1,15 @@
 # Test matrix
 
-Lint ran before the direct suite. Full outputs are saved in `verification/lint.txt` and `verification/tests.txt`.
+Saved pinned direct suite: 25 passing cases. Clean git archive run: 25 passing cases. See ../verification/tests.txt for exact interpreter, package versions, archive commit and command. Local tests mock LLM responses and explicitly exercise validator callbacks; they do not reproduce network consensus.
 
-**13 direct tests passed.** The suite uses the pinned workspace environment (`genlayer-test==0.30.0rc2`, `genlayer-py==0.19.0rc2`, `genvm-linter==0.11.1rc2`, `pytest==9.1.1`) and cached GenVM bundle `v0.6.0-rc5`.
-
-| Requirement | Coverage |
+| Area | Coverage |
 |---|---|
-| Registry rejects append from a non-Court address | `test_registry_rejects_append_from_non_court_address` |
-| Retried identical Registry append is idempotent; changed duplicate is rejected | `test_registry_append_is_idempotent_for_the_same_case_record` |
-| Nonexistent citations reject without changing escrow | `test_citing_nonexistent_precedent_is_rejected` |
-| Proposal freezes citation text while a later precedent is appended | `test_citation_snapshot_is_frozen_when_a_later_precedent_is_appended` |
-| Consistent ruling waits for append and settles only after finalization | `test_consistent_ruling_waits_for_append_then_finalizes_and_settles` |
-| All three final outcome distributions conserve the bond | `test_every_consistent_outcome_has_exact_conserved_settlement` (3 parameter cases) |
-| Contradiction rejects, slashes a fixed amount, and permits a second distinguished proposal | `test_contradiction_slashes_and_allows_a_second_distinguishing_proposal` |
-| Two failures close UNRESOLVED with exact refund, slash, fee, and conservation | `test_two_failed_attempts_close_unresolved_with_exact_refund_arithmetic` |
-| A later case cites the earlier case's new Registry record | `test_case_two_cites_case_ones_new_precedent` |
-| No response proceeds on default after the response deadline | `test_default_proceeds_after_response_window` |
-| Oversized input and malformed model JSON reject without state changes | `test_oversized_inputs_and_malformed_model_json_are_rejected_without_state_change` |
+| Registry | Outsider rejection, idempotent exact append, conflicting retry rejection, actual immutable genesis overrule mapping and active status, duplicate overrule rejection. |
+| Citations | Nonexistent cited ID rejection, frozen citation text, compounding later-case citation, historical overruled_by label. |
+| Overrules | Justified contradiction accepted; unjustified overrule rejected/slashed; target must be cited and exist; already-overruled target rejected; another contradiction still fails; model boolean cannot override computed result. |
+| Parties and accounting | Respondent proposal and respondent slash paid to claimant; mixed parties share two attempts; both consistent winners and split; odd split after slash; per-party fee/refund at unresolved; default with claimant bond only; global conservation. |
+| Retrieval | Actual ranked helper finds an older high-overlap record beyond five recent rows; deterministic scores and recency tie-break; overruled records excluded; surfaced scores retained. |
+| Safety | 401-character question rejected before state entry; 400-character boundary remains appendable; summary preserves each party's evidence field; oversized/malformed inputs fail without state change. |
+| Async behavior | Consistent adjudication holds bonds pending Registry append; finalized readback permits settlement. Direct tests use an adapter for cross-contract messages; real emitted child writes and finality are separately established by live evidence. |
 
-Court tests use a fake Registry adapter at the cross-contract boundary because the local direct VM does not provide a separate deployed contract ledger. The Registry contract itself runs in direct mode for access-control and idempotency tests. The separate StudioNet probe establishes the real cross-contract read, emitted child write, child finality, direct readback, and outsider rejection. The project contracts' own live deployment and three-case demo are recorded separately in `verification/studionet-demo.json`.
+Required live scenarios: A accepted P3; B contradiction rejected then distinction accepted P4; C respondent proposal cites P4 and creates P5; D justified overrule creates P6 with old record unchanged; E unjustified overrule rejected/slashed. E intentionally leaves one attempt and held units.
