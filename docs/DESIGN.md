@@ -1,5 +1,29 @@
 # Precedent Court design
 
+## Decisions made — November 16 revision
+
+This revision was explicitly confirmed by the user after review. **Old rule:** every CONTRADICTS on a cited or surfaced precedent failed the proposal. **New rule:** only a CONTRADICTS on the single cited overrule target may be tolerated, and only when its independently compared enum is JUSTIFIED. Every other contradiction and any UNJUSTIFIED overrule fails. The model's boolean is schema-checked but ignored; code computes consistency from enums.
+
+- Both parties may propose after posting matching synthetic bonds. Two attempts are shared across the entire case. Each rejection slashes the proposer's balance by a quarter of the original bond, paid to the other party. At UNRESOLVED each party pays its own 10% fee from the remaining balance and receives the rest. A consistent outcome allocates both remaining bonds; odd split units go to the respondent.
+- Registry records remain immutable. A separate write-once target/replacement mapping records overruling. Exact retries remain idempotent; genesis may be overruled.
+- Optional proposal fields overrules and overrule_reason use empty strings for absence. per_overrule is empty or one id/status judgment. All reasons are bounded; consensus compares only enum sequences.
+- Rank every active uncited record by distinct keyword overlap plus same-outcome bonus 2, then recency. Return the top five with scores. The linear scan is capped at 128 records; it is not semantic search.
+- Historical citations snapshot the overruled_by label. Currently overruled records are not surfaced. A target overruled before adjudication is rejected rather than silently replaced.
+- Cited distinctions require explicit reasons. For automatically surfaced uncited records, validators may identify factual distinctions directly from the records; the proposer could not have supplied a distinction for an uncited record.
+- Fix the reviewed length mismatch by accepting at most 400 question characters and validating the generated append payload before entering pending state. Reserve summary space for both parties and both evidence sources.
+- Keep asynchronous append/finalization and retry-safe Registry writes. Do not add a cancellation that could enable double settlement.
+- Case E's required demo ends after one rejection, with the remaining bonds held for a potential second attempt; do not report it as terminal settlement.
+- Remove the empty studio_devnet config entry. Use the exact requested pinned toolchain and v0.6.0-rc5 cached runner for direct tests, including the clean Git archive check.
+
+## Superseded deployments
+
+| Contract | Old StudioNet address | Why superseded |
+|---|---|---|
+| PrecedentRegistry | 0x0FD8b71034265680EC8B46c6Ff8D06085e71f998 | Fresh source adds append-only overrule tracking. |
+| PrecedentCourt | 0x68640Ef247219FF0B40d5A7a60c0F8A572178507 | Fresh source adds overruling, two-party bonds, ranked retrieval and QA fixes. |
+
+These are historical addresses only, not evidence for the revised source. Later sections describing the first release are superseded by the revision decisions above and will be reconciled in the final documentation pass.
+
 ## Mechanism and boundary
 
 A claimant opens a bounded dispute and posts a synthetic case bond. The respondent may file a position and evidence before the frozen response deadline. The claimant proposes a normalized outcome and holding with one to three existing precedent citations. The Court reads the Registry and snapshots each cited record at proposal time. Validators independently judge whether the proposed ruling is consistent with those snapshots and up to five recent relevant uncited records. Code accepts or rejects the proposal and performs the fixed bond arithmetic. A consistent ruling is appended by the Court to the separate Registry and becomes available to later cases.

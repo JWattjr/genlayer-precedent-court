@@ -92,6 +92,7 @@ class PrecedentRegistry(gl.Contract):
     precedents: TreeMap[str, str]
     precedent_order: DynArray[str]
     case_ref_to_id: TreeMap[str, str]
+    overruled_by: TreeMap[str, str]
 
     def __init__(self):
         self.owner = gl.message.sender_address
@@ -116,6 +117,8 @@ class PrecedentRegistry(gl.Contract):
         self.precedents[precedent_id] = _canonical(precedent)
         self.precedent_order.append(precedent_id)
         self.case_ref_to_id[case_ref] = precedent_id
+        if record["overrules"] is not None:
+            self.overruled_by[record["overrules"]] = precedent_id
         return precedent
 
     def _load_precedent(self, precedent_id: str) -> dict:
@@ -172,9 +175,24 @@ class PrecedentRegistry(gl.Contract):
         if not self.court_bound or _address_text(gl.message.sender_address) != self.bound_court:
             raise gl.vm.UserError("[EXPECTED] only bound court may append")
         record = _record_input(precedent_json, genesis=False)
-        if record["overrules"] is not None and record["overrules"] not in self.precedents:
-            raise gl.vm.UserError("[EXPECTED] overruled precedent does not exist")
+        if record["case_ref"] in self.case_ref_to_id:
+            return self._append_normalized(record, False)
+        if record["overrules"] is not None:
+            if record["overrules"] not in self.precedents:
+                raise gl.vm.UserError("[EXPECTED] overruled precedent does not exist")
+            if record["overrules"] in self.overruled_by:
+                raise gl.vm.UserError("[EXPECTED] precedent is already overruled")
         return self._append_normalized(record, False)
+
+    @gl.public.view
+    def get_overruled_by(self, precedent_id: str) -> str:
+        self._load_precedent(precedent_id)
+        return self.overruled_by[precedent_id] if precedent_id in self.overruled_by else ""
+
+    @gl.public.view
+    def is_active(self, precedent_id: str) -> bool:
+        self._load_precedent(precedent_id)
+        return precedent_id not in self.overruled_by
 
     @gl.public.view
     def get_precedent(self, precedent_id: str) -> dict:

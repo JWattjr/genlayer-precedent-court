@@ -22,7 +22,7 @@ from studionet_probe import dpapi, load_accounts, status_name, tx_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WORK = ROOT.parent / "precedent-court-live-run"
+WORK = ROOT.parent / "precedent-court-live-run" / "revision-2026-11-16"
 STATE = WORK / "release.json"
 RPC = "https://studio.genlayer.com/api"
 EXPLORER = "https://explorer-studio.genlayer.com"
@@ -224,7 +224,7 @@ def finalize_case(case_id: str, parent_label: str) -> dict:
     case = read(address, "get_case", [case_id])
     ledger = read(address, "get_accounting")
     assert case["status"] == "FINAL" and case["final_precedent_id"] == precedent["id"]
-    assert ledger["conserved"] and ledger["held_units"] == 0
+    assert ledger["conserved"]
     scenario = record["scenarios"][case_id]
     scenario["readbacks"]["final"] = {"case": case, "precedent": precedent,
                                        "accounting": ledger, "checked_at_utc": iso()}
@@ -239,7 +239,7 @@ def ensure_case_open(case_id: str, *, question: str, claimant_position: str,
     tx(label, clients["owner"], address=address, method="open_case",
        args=[question, claimant_position, clients["outsider"].local_account.address, evidence, bond])
     tx(case_id.lower() + "_respond", clients["outsider"], address=address, method="respond",
-       args=[case_id, respondent_position, "The attached signed document supports this response."])
+       args=[case_id, respondent_position, "The attached signed document supports this response.", bond])
     record["scenarios"].setdefault(case_id, {"readbacks": {}, "transactions": []})
     opened = read(address, "get_case", [case_id])
     assert opened["status"] == "READY_TO_PROPOSE" and opened["response_status"] == "RESPONDED"
@@ -248,10 +248,11 @@ def ensure_case_open(case_id: str, *, question: str, claimant_position: str,
 
 
 def propose_and_adjudicate(case_id: str, *, outcome: str, holding: str,
-                           citations: list[str], distinctions: list[dict], label: str) -> dict:
+                           citations: list[str], distinctions: list[dict], label: str,
+                           proposer: str = "owner", overrules: str = "", overrule_reason: str = "") -> dict:
     address = record["contracts"]["court"]["address"]
-    tx(label + "_proposal", clients["owner"], address=address, method="propose_ruling",
-       args=[case_id, outcome, holding, json.dumps(citations), json.dumps(distinctions)])
+    tx(label + "_proposal", clients[proposer], address=address, method="propose_ruling",
+       args=[case_id, outcome, holding, json.dumps(citations), json.dumps(distinctions), overrules, overrule_reason])
     snapshot = read(address, "get_case_citations", [case_id])
     record["scenarios"][case_id]["readbacks"][label + "_proposal_snapshot"] = snapshot
     save()
@@ -322,7 +323,7 @@ def run_demo() -> None:
         if initial["status"] != "READY_TO_REPROPOSE":
             raise RuntimeError("Case B's first proposal was not rejected and slashed as expected")
         initial_settlement = initial["attempts"][-1]["settlement"]
-        if initial_settlement.get("respondent_slash_units") != 10 or initial["remaining_bond"] != 30:
+        if initial_settlement.get("proposer_slash_units") != 10 or initial["remaining_bond"] != 70:
             raise RuntimeError("Case B's first proposal did not apply the exact quarter-bond slash")
         revised = propose_and_adjudicate(case_b, outcome="CLAIMANT_WINS",
             holding="A buyer cannot recover solely because the original date passed when both parties signed an extension and the seller delivered by it.",
@@ -350,7 +351,7 @@ def run_demo() -> None:
             evidence="Both parties signed a June 4 extension. The seller delivered on June 4. No delivery failure occurred under the amendment.", bond=40)
         state = propose_and_adjudicate(case_c, outcome="CLAIMANT_WINS",
             holding="A seller that delivers by a mutually signed extension may retain the deposit notwithstanding the original date.",
-            citations=["P-000004"], distinctions=[], label="case_c_compounding")
+            citations=["P-000004"], distinctions=[], label="case_c_compounding", proposer="outsider")
         if state["status"] != "PRECEDENT_PENDING":
             raise RuntimeError("Case C did not enter the expected pending Registry-append state")
         finalize_case(case_c, "case_c_compounding_adjudicate")
@@ -359,18 +360,69 @@ def run_demo() -> None:
         record["scenarios"][case_c]["complete"] = True
         save()
 
+    # Case D: the old categorical written-only rule is superseded where the original signed agreement expressly authorizes oral variation.
+    case_d = "CASE-000004"
+    if not record["scenarios"].get(case_d, {}).get("complete"):
+        ensure_case_open(case_d,
+            question="Does an expressly authorized and mutually recorded oral extension amend the delivery date?",
+            claimant_position="The signed original agreement expressly permits recorded mutual oral extensions and both parties recorded one.",
+            respondent_position="The buyer relies on P2's categorical written-only amendment rule.",
+            evidence="Original signed clause: delivery extensions may be agreed orally if recorded and confirmed by both parties. Both parties confirmed a June 4 oral extension in a recording; delivery was June 4.", bond=40)
+        before = read(registry_address, "get_precedent", ["P-000002"])
+        record["scenarios"][case_d]["readbacks"]["overrule_target_before"] = before
+        save()
+        state = propose_and_adjudicate(case_d, outcome="CLAIMANT_WINS",
+            holding="An extension expressly authorized by the original signed contract and mutually confirmed in a recording is effective without a separate signed amendment.",
+            citations=["P-000002", "P-000001", "P-000003"],
+            distinctions=[
+                {"id": "P-000001", "reason": "The original signed contract here expressly authorizes recorded oral variation; the earlier case had no such permission."},
+                {"id": "P-000003", "reason": "The earlier case lacked an authorized mutually confirmed extension; this one has the agreed recorded extension."}],
+            label="case_d_justified_overrule", overrules="P-000002",
+            overrule_reason="P2's categorical demand for a later signature ignores an express oral-variation clause in the original signed agreement. Mutual recorded confirmation under that clause supersedes its written-only rule.")
+        if state["status"] != "PRECEDENT_PENDING":
+            raise RuntimeError("Case D justified overrule was rejected")
+        finalize_case(case_d, "case_d_justified_overrule_adjudicate")
+        after = read(registry_address, "get_precedent", ["P-000002"])
+        replacement = read(registry_address, "get_overruled_by", ["P-000002"])
+        active = read(registry_address, "is_active", ["P-000002"])
+        if after != before or replacement != "P-000006" or active is not False:
+            raise RuntimeError("Case D append-only overrule invariant failed")
+        record["scenarios"][case_d]["readbacks"]["overrule_target_after"] = {
+            "record": after, "overruled_by": replacement, "is_active": active, "old_record_unchanged": after == before}
+        record["scenarios"][case_d]["complete"] = True
+        save()
+
+    case_e = "CASE-000005"
+    if not record["scenarios"].get(case_e, {}).get("complete"):
+        ensure_case_open(case_e,
+            question="Can a seller overturn the deposit recovery rule solely because the result is inconvenient?",
+            claimant_position="The seller asks to keep the deposit despite missing the signed date without any valid extension.",
+            respondent_position="The buyer relies on P3's recovery rule; no law or facts changed.",
+            evidence="The signed delivery date was missed. No extension was agreed. No defect in P3's rule is identified; the seller merely dislikes the result.", bond=40)
+        state = propose_and_adjudicate(case_e, outcome="CLAIMANT_WINS",
+            holding="A seller may keep the deposit even after missing a binding delivery date with no extension.",
+            citations=["P-000003"], distinctions=[], label="case_e_unjustified_overrule",
+            overrules="P-000003", overrule_reason="The seller dislikes the recovery rule and wants a more profitable result; no changed facts or superseding rule are claimed.")
+        if state["status"] != "READY_TO_REPROPOSE" or state["attempts"][-1]["settlement"]["proposer_slash_units"] != 10:
+            raise RuntimeError("Case E unjustified overrule was not rejected and slashed")
+        record["scenarios"][case_e]["complete"] = True
+        record["scenarios"][case_e]["note"] = "Required demo ends after the first rejected attempt; 70 synthetic units remain held for a possible second proposal."
+        save()
+
 
 def write_public_evidence() -> None:
-    contracts = [dict(value, name=name.title().replace("_", " "))
+    contracts = [dict(value, name="PrecedentRegistry" if name == "registry" else "PrecedentCourt")
                  for name, value in record.get("contracts", {}).items()]
     scenarios = []
     for case_id, value in record.get("scenarios", {}).items():
         transactions = [item for item in record.get("transactions", [])
-                       if item.get("operation", "").startswith(case_id.lower())]
+                       if item.get("operation", "").startswith(case_id.lower()) or item.get("operation", "").startswith("case_" + chr(96 + int(case_id[-6:])) + "_")]
         scenarios.append({"case_id": case_id,
                           "name": {"CASE-000001": "Case A consistent creates P3",
                                    "CASE-000002": "Case B contradiction slashes; distinction accepts P4",
-                                   "CASE-000003": "Case C cites P4 and compounds"}.get(case_id, case_id),
+                                   "CASE-000003": "Case C respondent proposes and cites P4",
+                                   "CASE-000004": "Case D justified overrule creates P6",
+                                   "CASE-000005": "Case E unjustified overrule rejected and slashed"}.get(case_id, case_id),
                           "status": "PASS" if value.get("complete") else "INCOMPLETE",
                           "transactions": transactions, "readbacks": value.get("readbacks", {})})
     demo = {"schema_version": "1.0", "network": "GenLayer StudioNet",
