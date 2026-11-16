@@ -5,23 +5,23 @@
   "architecture": "TWO_CONTRACT",
   "contracts": [
     {
-      "address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
-      "explorer_url": "https://explorer-studio.genlayer.com/address/0xD55463770A7c7936eb33B6B862540f650A32ceA9",
+      "address": "0xeB2f1fD8829088d54Bb10b564a5a20ff41F97fE4",
+      "explorer_url": "https://explorer-studio.genlayer.com/address/0xeB2f1fD8829088d54Bb10b564a5a20ff41F97fE4",
       "evidence_type": "GenLayer Explorer Contract",
-      "deployment_transaction": "0x1f7a5e9007980241cc52f5a83c9b41f5dfda5e536465fec3663a935177222b44",
+      "deployment_transaction": "0x35429a59e9bd257451b948a30c71e1172b38762d79f46b3e16ee98c26cecfb35",
       "deployed_source_matches_local": true,
       "deployed_source_sha256": "a4f05f1062662cfd564317c89f5e5e15e0d0c4fd55c744cb0b32aba524a4f182",
       "local_source_sha256": "a4f05f1062662cfd564317c89f5e5e15e0d0c4fd55c744cb0b32aba524a4f182",
       "name": "PrecedentRegistry"
     },
     {
-      "address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
-      "explorer_url": "https://explorer-studio.genlayer.com/address/0x6c1C865D0d37c26Afc484559333E0036a271164C",
+      "address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+      "explorer_url": "https://explorer-studio.genlayer.com/address/0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
       "evidence_type": "GenLayer Explorer Contract",
-      "deployment_transaction": "0xb00f00a4abaaaeb7e232b650c038765d1ef2fbcb637d361ee747bcbc4d932b1a",
+      "deployment_transaction": "0xc383c73cfabaea117af149fd8eca1bcca05c0493538bd55b13b02a2011667914",
       "deployed_source_matches_local": true,
-      "deployed_source_sha256": "82e24b26600a70385499190fba8a227cec50320d7ffe13929d2266a01d6ec817",
-      "local_source_sha256": "82e24b26600a70385499190fba8a227cec50320d7ffe13929d2266a01d6ec817",
+      "deployed_source_sha256": "26a1ea7183daf1c2946baeda3c37c8b5be275e901c05c48ffb1a8793aaf1fad6",
+      "local_source_sha256": "26a1ea7183daf1c2946baeda3c37c8b5be275e901c05c48ffb1a8793aaf1fad6",
       "name": "PrecedentCourt"
     }
   ],
@@ -29,15 +29,15 @@
     {
       "case_id": "CASE-000001",
       "name": "Case A consistent creates P3",
-      "status": "INCOMPLETE",
+      "status": "PASS",
       "transactions": [
         {
           "operation": "case-000001_open",
           "method": "open_case",
           "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
           "stage": "FINALIZED",
-          "started_at_utc": "2026-11-16T09:07:32.631099+00:00",
-          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+          "started_at_utc": "2026-11-16T09:20:28.250085+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
           "args": [
             "May the buyer recover a deposit when the seller misses the signed delivery date?",
             "The buyer says the signed May 1 schedule was missed and no extension was signed.",
@@ -45,48 +45,48 @@
             "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
             40
           ],
-          "hash": "0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
-          "submitted_at_utc": "2026-11-16T09:07:38.182067+00:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
+          "hash": "0x7b7fda1a2172c0c61bba00675f66ed6480ba778aff58082025ace35fa29d0567",
+          "submitted_at_utc": "2026-11-16T09:20:33.842931+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x7b7fda1a2172c0c61bba00675f66ed6480ba778aff58082025ace35fa29d0567",
           "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-16T09:07:44.903166+00:00",
+          "accepted_observed_at_utc": "2026-11-16T09:20:41.612545+00:00",
           "finality_status": "FINALIZED",
           "leader_execution": "SUCCESS",
           "consensus_result": "MAJORITY_AGREE",
           "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-16T09:08:17.018373+00:00"
+          "finalized_observed_at_utc": "2026-11-16T09:21:15.511684+00:00"
         },
         {
           "operation": "case-000001_respond",
           "method": "respond",
           "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
           "stage": "FINALIZED",
-          "started_at_utc": "2026-11-16T09:08:17.021330+00:00",
-          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+          "started_at_utc": "2026-11-16T09:21:15.515305+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
           "args": [
             "CASE-000001",
             "The seller says the buyer should forfeit the deposit despite the late delivery.",
             "The attached signed document supports this response.",
             40
           ],
-          "hash": "0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
-          "submitted_at_utc": "2026-11-16T09:08:21.619862+00:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
+          "hash": "0xf61e5e414627f4f4ffa4121b480fb41e0730aa5494c908b4096c165e8f82f848",
+          "submitted_at_utc": "2026-11-16T09:21:20.622500+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xf61e5e414627f4f4ffa4121b480fb41e0730aa5494c908b4096c165e8f82f848",
           "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-16T09:08:28.350682+00:00",
+          "accepted_observed_at_utc": "2026-11-16T09:21:27.734064+00:00",
           "finality_status": "FINALIZED",
           "leader_execution": "SUCCESS",
           "consensus_result": "MAJORITY_AGREE",
           "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-16T09:09:02.257013+00:00"
+          "finalized_observed_at_utc": "2026-11-16T09:22:00.741155+00:00"
         },
         {
           "operation": "case_a_consistent_proposal",
           "method": "propose_ruling",
           "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
           "stage": "FINALIZED",
-          "started_at_utc": "2026-11-16T09:09:04.183015+00:00",
-          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+          "started_at_utc": "2026-11-16T09:22:02.950901+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
           "args": [
             "CASE-000001",
             "CLAIMANT_WINS",
@@ -96,37 +96,93 @@
             "",
             ""
           ],
-          "hash": "0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
-          "submitted_at_utc": "2026-11-16T09:09:09.497248+00:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
+          "hash": "0x01faf1d6ec043e96a5247bc6a7e35caef886516228dbca4334945c16c3610fda",
+          "submitted_at_utc": "2026-11-16T09:22:08.381417+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x01faf1d6ec043e96a5247bc6a7e35caef886516228dbca4334945c16c3610fda",
           "acceptance_status": "ACCEPTED",
-          "accepted_observed_at_utc": "2026-11-16T09:09:16.798309+00:00",
+          "accepted_observed_at_utc": "2026-11-16T09:22:15.782941+00:00",
           "finality_status": "FINALIZED",
           "leader_execution": "SUCCESS",
           "consensus_result": "MAJORITY_AGREE",
           "rounds": "1",
-          "finalized_observed_at_utc": "2026-11-16T09:09:49.735590+00:00"
+          "finalized_observed_at_utc": "2026-11-16T09:22:48.119822+00:00"
         },
         {
           "operation": "case_a_consistent_adjudicate",
           "method": "adjudicate",
           "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
           "stage": "FINALIZED",
-          "started_at_utc": "2026-11-16T09:09:51.618675+00:00",
-          "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+          "started_at_utc": "2026-11-16T09:22:50.001809+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
           "args": [
             "CASE-000001"
           ],
-          "hash": "0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
-          "submitted_at_utc": "2026-11-16T09:09:57.239731+00:00",
-          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
-          "acceptance_status": "UNDETERMINED",
-          "accepted_observed_at_utc": "2026-11-16T09:11:17.071654+00:00",
+          "hash": "0xe4b8daab3a3431314fed1ffacf75e9e2144f707f404ad9dea5114e84b5a01cca",
+          "submitted_at_utc": "2026-11-16T09:22:54.951038+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xe4b8daab3a3431314fed1ffacf75e9e2144f707f404ad9dea5114e84b5a01cca",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-16T09:23:20.049444+00:00",
           "finality_status": "FINALIZED",
-          "leader_execution": "ERROR",
-          "consensus_result": "MAJORITY_DISAGREE",
-          "rounds": "4",
-          "finalized_observed_at_utc": "2026-11-16T09:11:49.251089+00:00"
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1",
+          "finalized_observed_at_utc": "2026-11-16T09:23:52.318548+00:00"
+        },
+        {
+          "operation": "case_a_consistent_adjudicate_registry_append_child",
+          "method": "append_precedent",
+          "case_id": "CASE-000001",
+          "parent_transaction": "0xe4b8daab3a3431314fed1ffacf75e9e2144f707f404ad9dea5114e84b5a01cca",
+          "hash": "0x172fb295b2a06b7b28d458502498bfe3285f800bcb687b746ef92a87c7ae0fe6",
+          "stage": "FINALIZED",
+          "submitted_at_utc": "2026-11-16T09:23:57.866854+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x172fb295b2a06b7b28d458502498bfe3285f800bcb687b746ef92a87c7ae0fe6",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-16T09:23:58.813558+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1",
+          "finalized_observed_at_utc": "2026-11-16T09:24:31.726046+00:00",
+          "direct_readback": {
+            "registry_count": 3,
+            "precedent": {
+              "case_ref": "CASE-000001",
+              "created_at_case_seq": 3,
+              "distinguishing_factors": [],
+              "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+              "genesis": false,
+              "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+              "id": "P-000003",
+              "outcome": "CLAIMANT_WINS",
+              "overrules": null,
+              "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+            },
+            "state": "LATEST_FINAL",
+            "checked_at_utc": "2026-11-16T09:24:36.259949+00:00",
+            "seconds_after_parent_finality": 43.941
+          }
+        },
+        {
+          "operation": "case_a_consistent_adjudicate_court_finalize",
+          "method": "finalize_case",
+          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:24:36.261961+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+          "args": [
+            "CASE-000001"
+          ],
+          "hash": "0xdd972f7a15710908511072773bda2319047fd1352c2b0a6e0c094b5eae45f4a5",
+          "submitted_at_utc": "2026-11-16T09:24:43.038892+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xdd972f7a15710908511072773bda2319047fd1352c2b0a6e0c094b5eae45f4a5",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-16T09:24:49.777909+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1",
+          "finalized_observed_at_utc": "2026-11-16T09:25:22.533891+00:00"
         }
       ],
       "readbacks": {
@@ -137,22 +193,22 @@
             "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
             "claimant_bond": 40,
             "claimant_position": "The buyer says the signed May 1 schedule was missed and no extension was signed.",
-            "created_at": "2026-11-16T09:07:37Z",
+            "created_at": "2026-11-16T09:20:33Z",
             "evidence_text": "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
             "original_bond": 40,
             "question": "May the buyer recover a deposit when the seller misses the signed delivery date?",
             "remaining_bond": 80,
-            "responded_at": "2026-11-16T09:08:21Z",
+            "responded_at": "2026-11-16T09:21:20Z",
             "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
             "respondent_bond": 40,
             "respondent_position": "The seller says the buyer should forfeit the deposit despite the late delivery.",
-            "response_deadline": "2026-11-16T11:07:37Z",
+            "response_deadline": "2026-11-16T11:20:33Z",
             "response_evidence": "The attached signed document supports this response.",
             "response_status": "RESPONDED",
             "status": "READY_TO_PROPOSE",
             "terminal_result": {}
           },
-          "checked_at_utc": "2026-11-16T09:09:04.181578+00:00"
+          "checked_at_utc": "2026-11-16T09:22:02.949333+00:00"
         },
         "case_a_consistent_proposal_snapshot": {
           "attempts": [
@@ -178,7 +234,7 @@
                 "outcome": "CLAIMANT_WINS",
                 "overrule_reason": "",
                 "overrules": "",
-                "proposed_at": "2026-11-16T09:09:09Z",
+                "proposed_at": "2026-11-16T09:22:08Z",
                 "proposer_role": "CLAIMANT",
                 "registry_count_at_proposal": 2
               },
@@ -187,6 +243,528 @@
             }
           ],
           "case_id": "CASE-000001"
+        },
+        "case_a_consistent_after_adjudication": {
+          "case": {
+            "append_retries": 0,
+            "attempts": [
+              {
+                "adjudicated_at": "2026-11-16T09:22:54Z",
+                "judgment": {
+                  "consistent": true,
+                  "per_citation": [
+                    {
+                      "id": "P-000001",
+                      "reason": "Identical facts: signed schedule, no written amendment, delivery after deadline. Holding directly supports buyer recovering deposit when seller misses signed date.",
+                      "relation": "SUPPORTS"
+                    },
+                    {
+                      "id": "P-000002",
+                      "reason": "Confirms oral discussions cannot amend a signed deadline; no signed extension exists here, reinforcing that the original May 1 date controls and buyer may recover deposit.",
+                      "relation": "SUPPORTS"
+                    }
+                  ],
+                  "per_distinction": [],
+                  "per_overrule": []
+                },
+                "proposal": {
+                  "cited_precedents": [
+                    {
+                      "case_ref": "GENESIS-1",
+                      "created_at_case_seq": 1,
+                      "distinguishing_factors": [],
+                      "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
+                      "genesis": true,
+                      "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
+                      "id": "P-000001",
+                      "outcome": "CLAIMANT_WINS",
+                      "overruled_by": "",
+                      "overrules": null,
+                      "question": "Does a signed delivery schedule control when a seller misses the date?"
+                    }
+                  ],
+                  "distinctions": [],
+                  "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+                  "outcome": "CLAIMANT_WINS",
+                  "overrule_reason": "",
+                  "overrules": "",
+                  "proposed_at": "2026-11-16T09:22:08Z",
+                  "proposer_role": "CLAIMANT",
+                  "registry_count_at_proposal": 2
+                },
+                "settlement": {},
+                "surfaced_precedents": [
+                  {
+                    "case_ref": "GENESIS-2",
+                    "created_at_case_seq": 2,
+                    "distinguishing_factors": [],
+                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
+                    "genesis": true,
+                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
+                    "id": "P-000002",
+                    "outcome": "CLAIMANT_WINS",
+                    "overruled_by": "",
+                    "overrules": null,
+                    "question": "Can oral discussions amend a written delivery deadline?",
+                    "retrieval_score": 8
+                  }
+                ]
+              }
+            ],
+            "case_id": "CASE-000001",
+            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
+            "claimant_bond": 40,
+            "claimant_position": "The buyer says the signed May 1 schedule was missed and no extension was signed.",
+            "created_at": "2026-11-16T09:20:33Z",
+            "evidence_text": "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
+            "original_bond": 40,
+            "pending_precedent": {
+              "case_ref": "CASE-000001",
+              "distinguishing_factors": [],
+              "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+              "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+              "outcome": "CLAIMANT_WINS",
+              "overrules": null,
+              "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+            },
+            "pending_precedent_id": "P-000003",
+            "pending_since": "2026-11-16T09:22:54Z",
+            "question": "May the buyer recover a deposit when the seller misses the signed delivery date?",
+            "remaining_bond": 80,
+            "responded_at": "2026-11-16T09:21:20Z",
+            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
+            "respondent_bond": 40,
+            "respondent_position": "The seller says the buyer should forfeit the deposit despite the late delivery.",
+            "response_deadline": "2026-11-16T11:20:33Z",
+            "response_evidence": "The attached signed document supports this response.",
+            "response_status": "RESPONDED",
+            "status": "PRECEDENT_PENDING",
+            "terminal_result": {}
+          },
+          "accounting": {
+            "bonds_in": 80,
+            "conserved": true,
+            "fee_units": 0,
+            "held_units": 80,
+            "paid_claimant_units": 0,
+            "paid_respondent_units": 0
+          },
+          "checked_at_utc": "2026-11-16T09:23:56.565233+00:00"
+        },
+        "final": {
+          "case": {
+            "append_retries": 0,
+            "attempts": [
+              {
+                "adjudicated_at": "2026-11-16T09:22:54Z",
+                "judgment": {
+                  "consistent": true,
+                  "per_citation": [
+                    {
+                      "id": "P-000001",
+                      "reason": "Identical facts: signed schedule, no written amendment, delivery after deadline. Holding directly supports buyer recovering deposit when seller misses signed date.",
+                      "relation": "SUPPORTS"
+                    },
+                    {
+                      "id": "P-000002",
+                      "reason": "Confirms oral discussions cannot amend a signed deadline; no signed extension exists here, reinforcing that the original May 1 date controls and buyer may recover deposit.",
+                      "relation": "SUPPORTS"
+                    }
+                  ],
+                  "per_distinction": [],
+                  "per_overrule": []
+                },
+                "proposal": {
+                  "cited_precedents": [
+                    {
+                      "case_ref": "GENESIS-1",
+                      "created_at_case_seq": 1,
+                      "distinguishing_factors": [],
+                      "facts_summary": "Signed schedule; no written amendment; delivery occurred after the deadline.",
+                      "genesis": true,
+                      "holding": "A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.",
+                      "id": "P-000001",
+                      "outcome": "CLAIMANT_WINS",
+                      "overruled_by": "",
+                      "overrules": null,
+                      "question": "Does a signed delivery schedule control when a seller misses the date?"
+                    }
+                  ],
+                  "distinctions": [],
+                  "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+                  "outcome": "CLAIMANT_WINS",
+                  "overrule_reason": "",
+                  "overrules": "",
+                  "proposed_at": "2026-11-16T09:22:08Z",
+                  "proposer_role": "CLAIMANT",
+                  "registry_count_at_proposal": 2
+                },
+                "settlement": {
+                  "claimant_paid_units": 80,
+                  "fee_units": 0,
+                  "held_units": 0,
+                  "respondent_paid_units": 0
+                },
+                "surfaced_precedents": [
+                  {
+                    "case_ref": "GENESIS-2",
+                    "created_at_case_seq": 2,
+                    "distinguishing_factors": [],
+                    "facts_summary": "The parties discussed a date orally but did not sign a later amendment.",
+                    "genesis": true,
+                    "holding": "An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.",
+                    "id": "P-000002",
+                    "outcome": "CLAIMANT_WINS",
+                    "overruled_by": "",
+                    "overrules": null,
+                    "question": "Can oral discussions amend a written delivery deadline?",
+                    "retrieval_score": 8
+                  }
+                ]
+              }
+            ],
+            "case_id": "CASE-000001",
+            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
+            "claimant_bond": 0,
+            "claimant_position": "The buyer says the signed May 1 schedule was missed and no extension was signed.",
+            "created_at": "2026-11-16T09:20:33Z",
+            "evidence_text": "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
+            "final_precedent_id": "P-000003",
+            "finalized_at": "2026-11-16T09:24:41Z",
+            "original_bond": 40,
+            "pending_precedent": {
+              "case_ref": "CASE-000001",
+              "distinguishing_factors": [],
+              "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+              "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+              "outcome": "CLAIMANT_WINS",
+              "overrules": null,
+              "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+            },
+            "pending_precedent_id": "P-000003",
+            "question": "May the buyer recover a deposit when the seller misses the signed delivery date?",
+            "remaining_bond": 0,
+            "responded_at": "2026-11-16T09:21:20Z",
+            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
+            "respondent_bond": 0,
+            "respondent_position": "The seller says the buyer should forfeit the deposit despite the late delivery.",
+            "response_deadline": "2026-11-16T11:20:33Z",
+            "response_evidence": "The attached signed document supports this response.",
+            "response_status": "RESPONDED",
+            "status": "FINAL",
+            "terminal_result": {
+              "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+              "outcome": "CLAIMANT_WINS",
+              "precedent_id": "P-000003",
+              "settlement": {
+                "claimant_paid_units": 80,
+                "fee_units": 0,
+                "held_units": 0,
+                "respondent_paid_units": 0
+              }
+            }
+          },
+          "precedent": {
+            "case_ref": "CASE-000001",
+            "created_at_case_seq": 3,
+            "distinguishing_factors": [],
+            "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+            "genesis": false,
+            "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+            "id": "P-000003",
+            "outcome": "CLAIMANT_WINS",
+            "overrules": null,
+            "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+          },
+          "accounting": {
+            "bonds_in": 80,
+            "conserved": true,
+            "fee_units": 0,
+            "held_units": 0,
+            "paid_claimant_units": 80,
+            "paid_respondent_units": 0
+          },
+          "checked_at_utc": "2026-11-16T09:25:27.047279+00:00"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-000002",
+      "name": "Case B contradiction slashes; distinction accepts P4",
+      "status": "INCOMPLETE",
+      "transactions": [
+        {
+          "operation": "case-000002_open",
+          "method": "open_case",
+          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:25:27.050997+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+          "args": [
+            "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
+            "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
+            "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
+            "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
+            40
+          ],
+          "hash": "0xaaa295380a70f83faae57c4a7b5e17b6e9726827eb0169fce46d1ada52ac140a",
+          "submitted_at_utc": "2026-11-16T09:25:32.947677+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xaaa295380a70f83faae57c4a7b5e17b6e9726827eb0169fce46d1ada52ac140a",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-16T09:25:40.099697+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1",
+          "finalized_observed_at_utc": "2026-11-16T09:26:07.165180+00:00"
+        },
+        {
+          "operation": "case-000002_respond",
+          "method": "respond",
+          "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:26:07.169049+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+          "args": [
+            "CASE-000002",
+            "The buyer says the original deadline alone controls and seeks the deposit.",
+            "The attached signed document supports this response.",
+            40
+          ],
+          "hash": "0xce1f495fc872d9241ed3ac72003c572dc2db84067b136f19ce13edafd542bebe",
+          "submitted_at_utc": "2026-11-16T09:26:12.400883+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0xce1f495fc872d9241ed3ac72003c572dc2db84067b136f19ce13edafd542bebe",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-16T09:26:20.229771+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1",
+          "finalized_observed_at_utc": "2026-11-16T09:26:47.435636+00:00"
+        },
+        {
+          "operation": "case_b_contradiction_proposal",
+          "method": "propose_ruling",
+          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:26:49.373725+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+          "args": [
+            "CASE-000002",
+            "CLAIMANT_WINS",
+            "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
+            "[\"P-000003\"]",
+            "[]",
+            "",
+            ""
+          ],
+          "hash": "0x5e26e19d5a9107f41468a15bdaaddb202610bb405ce7ab46ec4dc29b8a21945b",
+          "submitted_at_utc": "2026-11-16T09:26:54.882764+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5e26e19d5a9107f41468a15bdaaddb202610bb405ce7ab46ec4dc29b8a21945b",
+          "acceptance_status": "ACCEPTED",
+          "accepted_observed_at_utc": "2026-11-16T09:27:01.994630+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_AGREE",
+          "rounds": "1",
+          "finalized_observed_at_utc": "2026-11-16T09:27:34.109885+00:00"
+        },
+        {
+          "operation": "case_b_contradiction_adjudicate_failed_consensus_1",
+          "method": "adjudicate",
+          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:27:36.046183+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+          "args": [
+            "CASE-000002"
+          ],
+          "hash": "0x9693a7fe3955e3d66165e902c130f4ebb4739321ee1f89fd4216081c1fa6a391",
+          "submitted_at_utc": "2026-11-16T09:27:41.586421+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9693a7fe3955e3d66165e902c130f4ebb4739321ee1f89fd4216081c1fa6a391",
+          "acceptance_status": "UNDETERMINED",
+          "accepted_observed_at_utc": "2026-11-16T09:31:02.883178+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_DISAGREE",
+          "rounds": "4",
+          "finalized_observed_at_utc": "2026-11-16T09:31:35.562166+00:00",
+          "retry_reason": "Finalized without consensus agreement; no state transition accepted"
+        },
+        {
+          "operation": "case_b_contradiction_adjudicate",
+          "method": "adjudicate",
+          "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+          "stage": "FINALIZED",
+          "started_at_utc": "2026-11-16T09:35:13.063427+00:00",
+          "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+          "args": [
+            "CASE-000002"
+          ],
+          "hash": "0x35cf82f17d5f03f30ad8f18ef4c42f4fa4a2fdd4ef1ae0be22645bb65b8004e1",
+          "submitted_at_utc": "2026-11-16T09:35:18.862827+00:00",
+          "explorer_url": "https://explorer-studio.genlayer.com/tx/0x35cf82f17d5f03f30ad8f18ef4c42f4fa4a2fdd4ef1ae0be22645bb65b8004e1",
+          "acceptance_status": "UNDETERMINED",
+          "accepted_observed_at_utc": "2026-11-16T09:37:15.819419+00:00",
+          "finality_status": "FINALIZED",
+          "leader_execution": "SUCCESS",
+          "consensus_result": "MAJORITY_DISAGREE",
+          "rounds": "4",
+          "finalized_observed_at_utc": "2026-11-16T09:37:48.207149+00:00"
+        }
+      ],
+      "readbacks": {
+        "after_response": {
+          "case": {
+            "attempts": [
+              {
+                "judgment": {},
+                "proposal": {
+                  "cited_precedents": [
+                    {
+                      "case_ref": "CASE-000001",
+                      "created_at_case_seq": 3,
+                      "distinguishing_factors": [],
+                      "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+                      "genesis": false,
+                      "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+                      "id": "P-000003",
+                      "outcome": "CLAIMANT_WINS",
+                      "overruled_by": "",
+                      "overrules": null,
+                      "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+                    }
+                  ],
+                  "distinctions": [],
+                  "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
+                  "outcome": "CLAIMANT_WINS",
+                  "overrule_reason": "",
+                  "overrules": "",
+                  "proposed_at": "2026-11-16T09:26:54Z",
+                  "proposer_role": "CLAIMANT",
+                  "registry_count_at_proposal": 3
+                },
+                "settlement": {},
+                "surfaced_precedents": []
+              }
+            ],
+            "case_id": "CASE-000002",
+            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
+            "claimant_bond": 40,
+            "claimant_position": "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
+            "created_at": "2026-11-16T09:25:32Z",
+            "evidence_text": "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
+            "original_bond": 40,
+            "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
+            "remaining_bond": 80,
+            "responded_at": "2026-11-16T09:26:11Z",
+            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
+            "respondent_bond": 40,
+            "respondent_position": "The buyer says the original deadline alone controls and seeks the deposit.",
+            "response_deadline": "2026-11-16T11:25:32Z",
+            "response_evidence": "The attached signed document supports this response.",
+            "response_status": "RESPONDED",
+            "status": "PROPOSED",
+            "terminal_result": {}
+          },
+          "checked_at_utc": "2026-11-16T09:35:10.820521+00:00"
+        },
+        "case_b_contradiction_proposal_snapshot": {
+          "attempts": [
+            {
+              "attempt": {
+                "cited_precedents": [
+                  {
+                    "case_ref": "CASE-000001",
+                    "created_at_case_seq": 3,
+                    "distinguishing_factors": [],
+                    "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+                    "genesis": false,
+                    "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+                    "id": "P-000003",
+                    "outcome": "CLAIMANT_WINS",
+                    "overruled_by": "",
+                    "overrules": null,
+                    "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+                  }
+                ],
+                "distinctions": [],
+                "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
+                "outcome": "CLAIMANT_WINS",
+                "overrule_reason": "",
+                "overrules": "",
+                "proposed_at": "2026-11-16T09:26:54Z",
+                "proposer_role": "CLAIMANT",
+                "registry_count_at_proposal": 3
+              },
+              "judgment": {},
+              "surfaced_precedents": []
+            }
+          ],
+          "case_id": "CASE-000002"
+        },
+        "case_b_contradiction_after_adjudication": {
+          "case": {
+            "attempts": [
+              {
+                "judgment": {},
+                "proposal": {
+                  "cited_precedents": [
+                    {
+                      "case_ref": "CASE-000001",
+                      "created_at_case_seq": 3,
+                      "distinguishing_factors": [],
+                      "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+                      "genesis": false,
+                      "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+                      "id": "P-000003",
+                      "outcome": "CLAIMANT_WINS",
+                      "overruled_by": "",
+                      "overrules": null,
+                      "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+                    }
+                  ],
+                  "distinctions": [],
+                  "holding": "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
+                  "outcome": "CLAIMANT_WINS",
+                  "overrule_reason": "",
+                  "overrules": "",
+                  "proposed_at": "2026-11-16T09:26:54Z",
+                  "proposer_role": "CLAIMANT",
+                  "registry_count_at_proposal": 3
+                },
+                "settlement": {},
+                "surfaced_precedents": []
+              }
+            ],
+            "case_id": "CASE-000002",
+            "claimant": "0x54e92a1b7611b449c864cd97723d3a3c8c7b25f5",
+            "claimant_bond": 40,
+            "claimant_position": "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
+            "created_at": "2026-11-16T09:25:32Z",
+            "evidence_text": "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
+            "original_bond": 40,
+            "question": "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
+            "remaining_bond": 80,
+            "responded_at": "2026-11-16T09:26:11Z",
+            "respondent": "0xdd4860697407b53aa3e3c6213de18c3bf34a5bbc",
+            "respondent_bond": 40,
+            "respondent_position": "The buyer says the original deadline alone controls and seeks the deposit.",
+            "response_deadline": "2026-11-16T11:25:32Z",
+            "response_evidence": "The attached signed document supports this response.",
+            "response_status": "RESPONDED",
+            "status": "PROPOSED",
+            "terminal_result": {}
+          },
+          "accounting": {
+            "bonds_in": 160,
+            "conserved": true,
+            "fee_units": 0,
+            "held_units": 80,
+            "paid_claimant_units": 80,
+            "paid_respondent_units": 0
+          },
+          "checked_at_utc": "2026-11-16T09:31:39.684283+00:00"
         }
       }
     }
@@ -207,110 +785,110 @@
       "method": "deploy",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:03:54.261828+00:00",
+      "started_at_utc": "2026-11-16T09:16:45.321571+00:00",
       "args": [],
-      "hash": "0x1f7a5e9007980241cc52f5a83c9b41f5dfda5e536465fec3663a935177222b44",
-      "submitted_at_utc": "2026-11-16T09:04:00.427411+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1f7a5e9007980241cc52f5a83c9b41f5dfda5e536465fec3663a935177222b44",
+      "hash": "0x35429a59e9bd257451b948a30c71e1172b38762d79f46b3e16ee98c26cecfb35",
+      "submitted_at_utc": "2026-11-16T09:16:51.180153+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x35429a59e9bd257451b948a30c71e1172b38762d79f46b3e16ee98c26cecfb35",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:04:07.954512+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:16:57.904252+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:04:40.812865+00:00",
-      "deployed_address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9"
+      "finalized_observed_at_utc": "2026-11-16T09:17:30.330011+00:00",
+      "deployed_address": "0xeB2f1fD8829088d54Bb10b564a5a20ff41F97fE4"
     },
     {
       "operation": "court_deploy",
       "method": "deploy",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:04:41.140351+00:00",
+      "started_at_utc": "2026-11-16T09:17:30.643881+00:00",
       "args": [
-        "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
+        "0xeB2f1fD8829088d54Bb10b564a5a20ff41F97fE4",
         7200
       ],
-      "hash": "0xb00f00a4abaaaeb7e232b650c038765d1ef2fbcb637d361ee747bcbc4d932b1a",
-      "submitted_at_utc": "2026-11-16T09:04:47.790805+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xb00f00a4abaaaeb7e232b650c038765d1ef2fbcb637d361ee747bcbc4d932b1a",
+      "hash": "0xc383c73cfabaea117af149fd8eca1bcca05c0493538bd55b13b02a2011667914",
+      "submitted_at_utc": "2026-11-16T09:17:37.678187+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xc383c73cfabaea117af149fd8eca1bcca05c0493538bd55b13b02a2011667914",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:04:54.905293+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:17:44.994707+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:05:27.143438+00:00",
-      "deployed_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C"
+      "finalized_observed_at_utc": "2026-11-16T09:18:12.398352+00:00",
+      "deployed_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE"
     },
     {
       "operation": "bind_court",
       "method": "bind_court",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:05:27.486756+00:00",
-      "contract_address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
+      "started_at_utc": "2026-11-16T09:18:12.727865+00:00",
+      "contract_address": "0xeB2f1fD8829088d54Bb10b564a5a20ff41F97fE4",
       "args": [
-        "0x6c1C865D0d37c26Afc484559333E0036a271164C"
+        "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE"
       ],
-      "hash": "0x9b269271d75cbde2f7361162c40e454c698a924d637c086dd711fd6b69d5acc2",
-      "submitted_at_utc": "2026-11-16T09:05:33.511991+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9b269271d75cbde2f7361162c40e454c698a924d637c086dd711fd6b69d5acc2",
+      "hash": "0xab7932c58a3ca0bbb105dac24d73907bba49dcddf9cb1710b5d54ddd212a96b9",
+      "submitted_at_utc": "2026-11-16T09:18:17.856039+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xab7932c58a3ca0bbb105dac24d73907bba49dcddf9cb1710b5d54ddd212a96b9",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:05:40.796767+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:18:24.605519+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:06:08.085504+00:00"
+      "finalized_observed_at_utc": "2026-11-16T09:18:57.158077+00:00"
     },
     {
       "operation": "seed_genesis",
       "method": "seed_genesis_precedents",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:06:08.099533+00:00",
-      "contract_address": "0xD55463770A7c7936eb33B6B862540f650A32ceA9",
+      "started_at_utc": "2026-11-16T09:18:57.164567+00:00",
+      "contract_address": "0xeB2f1fD8829088d54Bb10b564a5a20ff41F97fE4",
       "args": [
         "[{\"question\": \"Does a signed delivery schedule control when a seller misses the date?\", \"holding\": \"A buyer may recover a deposit when the seller misses the signed delivery date and no later written amendment extends it.\", \"facts_summary\": \"Signed schedule; no written amendment; delivery occurred after the deadline.\", \"outcome\": \"CLAIMANT_WINS\", \"distinguishing_factors\": []}, {\"question\": \"Can oral discussions amend a written delivery deadline?\", \"holding\": \"An oral discussion alone does not amend a signed delivery deadline; a later mutually signed amendment is required.\", \"facts_summary\": \"The parties discussed a date orally but did not sign a later amendment.\", \"outcome\": \"CLAIMANT_WINS\", \"distinguishing_factors\": []}]"
       ],
-      "hash": "0x1db533dd387cb02cf212da93e75dd10dbde24b800668d938ca73da3352c28af5",
-      "submitted_at_utc": "2026-11-16T09:06:13.794801+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1db533dd387cb02cf212da93e75dd10dbde24b800668d938ca73da3352c28af5",
+      "hash": "0x1d08bdad3be994095ba4d618d2b1da053625df36a3bd3f29042668f39dcc3839",
+      "submitted_at_utc": "2026-11-16T09:19:01.983284+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1d08bdad3be994095ba4d618d2b1da053625df36a3bd3f29042668f39dcc3839",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:06:20.648516+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:19:09.116547+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:06:46.833079+00:00"
+      "finalized_observed_at_utc": "2026-11-16T09:19:41.172513+00:00"
     },
     {
       "operation": "sync_registry_count",
       "method": "sync_registry_count",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:06:46.836851+00:00",
-      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+      "started_at_utc": "2026-11-16T09:19:41.177286+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
       "args": [],
-      "hash": "0xba4869d6caeff109962dbc731e6ea95713c866862b69160d08836a131483c363",
-      "submitted_at_utc": "2026-11-16T09:06:52.560281+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xba4869d6caeff109962dbc731e6ea95713c866862b69160d08836a131483c363",
+      "hash": "0xdf680f292135561e6d29aadaba80cf38e3cc61cfa0473cd6537c65b65d586d26",
+      "submitted_at_utc": "2026-11-16T09:19:46.533816+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xdf680f292135561e6d29aadaba80cf38e3cc61cfa0473cd6537c65b65d586d26",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:06:59.365539+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:19:53.679237+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:07:30.718516+00:00"
+      "finalized_observed_at_utc": "2026-11-16T09:20:26.300160+00:00"
     },
     {
       "operation": "case-000001_open",
       "method": "open_case",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:07:32.631099+00:00",
-      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+      "started_at_utc": "2026-11-16T09:20:28.250085+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
       "args": [
         "May the buyer recover a deposit when the seller misses the signed delivery date?",
         "The buyer says the signed May 1 schedule was missed and no extension was signed.",
@@ -318,48 +896,48 @@
         "The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension.",
         40
       ],
-      "hash": "0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
-      "submitted_at_utc": "2026-11-16T09:07:38.182067+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x20d25229e27e7d728226ab6daddb3ea8702bd4ebed9636e5c2c78f6ff4eb8137",
+      "hash": "0x7b7fda1a2172c0c61bba00675f66ed6480ba778aff58082025ace35fa29d0567",
+      "submitted_at_utc": "2026-11-16T09:20:33.842931+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x7b7fda1a2172c0c61bba00675f66ed6480ba778aff58082025ace35fa29d0567",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:07:44.903166+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:20:41.612545+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:08:17.018373+00:00"
+      "finalized_observed_at_utc": "2026-11-16T09:21:15.511684+00:00"
     },
     {
       "operation": "case-000001_respond",
       "method": "respond",
       "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:08:17.021330+00:00",
-      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+      "started_at_utc": "2026-11-16T09:21:15.515305+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
       "args": [
         "CASE-000001",
         "The seller says the buyer should forfeit the deposit despite the late delivery.",
         "The attached signed document supports this response.",
         40
       ],
-      "hash": "0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
-      "submitted_at_utc": "2026-11-16T09:08:21.619862+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xd2b3862ea8cd301b1b50524906a904f2426b5f000c673082f9a2aa14cf6b38d6",
+      "hash": "0xf61e5e414627f4f4ffa4121b480fb41e0730aa5494c908b4096c165e8f82f848",
+      "submitted_at_utc": "2026-11-16T09:21:20.622500+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xf61e5e414627f4f4ffa4121b480fb41e0730aa5494c908b4096c165e8f82f848",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:08:28.350682+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:21:27.734064+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:09:02.257013+00:00"
+      "finalized_observed_at_utc": "2026-11-16T09:22:00.741155+00:00"
     },
     {
       "operation": "case_a_consistent_proposal",
       "method": "propose_ruling",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:09:04.183015+00:00",
-      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+      "started_at_utc": "2026-11-16T09:22:02.950901+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
       "args": [
         "CASE-000001",
         "CLAIMANT_WINS",
@@ -369,37 +947,212 @@
         "",
         ""
       ],
-      "hash": "0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
-      "submitted_at_utc": "2026-11-16T09:09:09.497248+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x1df2ba32d9734eb61ddc04f0d6a1a1447f996e42ff71352724ca910a386be21d",
+      "hash": "0x01faf1d6ec043e96a5247bc6a7e35caef886516228dbca4334945c16c3610fda",
+      "submitted_at_utc": "2026-11-16T09:22:08.381417+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x01faf1d6ec043e96a5247bc6a7e35caef886516228dbca4334945c16c3610fda",
       "acceptance_status": "ACCEPTED",
-      "accepted_observed_at_utc": "2026-11-16T09:09:16.798309+00:00",
+      "accepted_observed_at_utc": "2026-11-16T09:22:15.782941+00:00",
       "finality_status": "FINALIZED",
       "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_AGREE",
       "rounds": "1",
-      "finalized_observed_at_utc": "2026-11-16T09:09:49.735590+00:00"
+      "finalized_observed_at_utc": "2026-11-16T09:22:48.119822+00:00"
     },
     {
       "operation": "case_a_consistent_adjudicate",
       "method": "adjudicate",
       "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
       "stage": "FINALIZED",
-      "started_at_utc": "2026-11-16T09:09:51.618675+00:00",
-      "contract_address": "0x6c1C865D0d37c26Afc484559333E0036a271164C",
+      "started_at_utc": "2026-11-16T09:22:50.001809+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
       "args": [
         "CASE-000001"
       ],
-      "hash": "0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
-      "submitted_at_utc": "2026-11-16T09:09:57.239731+00:00",
-      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x0dc28d31baee31dc66196e98d06dbabc26078b9f4b981dc0b2a02290cfb75e3c",
-      "acceptance_status": "UNDETERMINED",
-      "accepted_observed_at_utc": "2026-11-16T09:11:17.071654+00:00",
+      "hash": "0xe4b8daab3a3431314fed1ffacf75e9e2144f707f404ad9dea5114e84b5a01cca",
+      "submitted_at_utc": "2026-11-16T09:22:54.951038+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xe4b8daab3a3431314fed1ffacf75e9e2144f707f404ad9dea5114e84b5a01cca",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-16T09:23:20.049444+00:00",
       "finality_status": "FINALIZED",
-      "leader_execution": "ERROR",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "finalized_observed_at_utc": "2026-11-16T09:23:52.318548+00:00"
+    },
+    {
+      "operation": "case_a_consistent_adjudicate_registry_append_child",
+      "method": "append_precedent",
+      "case_id": "CASE-000001",
+      "parent_transaction": "0xe4b8daab3a3431314fed1ffacf75e9e2144f707f404ad9dea5114e84b5a01cca",
+      "hash": "0x172fb295b2a06b7b28d458502498bfe3285f800bcb687b746ef92a87c7ae0fe6",
+      "stage": "FINALIZED",
+      "submitted_at_utc": "2026-11-16T09:23:57.866854+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x172fb295b2a06b7b28d458502498bfe3285f800bcb687b746ef92a87c7ae0fe6",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-16T09:23:58.813558+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "finalized_observed_at_utc": "2026-11-16T09:24:31.726046+00:00",
+      "direct_readback": {
+        "registry_count": 3,
+        "precedent": {
+          "case_ref": "CASE-000001",
+          "created_at_case_seq": 3,
+          "distinguishing_factors": [],
+          "facts_summary": "Q: May the buyer recover a deposit when the seller misses the signed deli C: The buyer says the signed May 1 schedule was missed and no extension w R: The seller says the buyer should forfeit the deposit despite the late CE: The signed schedule says May 1. Delivery occurred May 4. The parties signed no extension. RE: The attached signed document supports this response.",
+          "genesis": false,
+          "holding": "A buyer may recover a deposit if the seller misses the signed date and no later mutually signed amendment exists.",
+          "id": "P-000003",
+          "outcome": "CLAIMANT_WINS",
+          "overrules": null,
+          "question": "May the buyer recover a deposit when the seller misses the signed delivery date?"
+        },
+        "state": "LATEST_FINAL",
+        "checked_at_utc": "2026-11-16T09:24:36.259949+00:00",
+        "seconds_after_parent_finality": 43.941
+      }
+    },
+    {
+      "operation": "case_a_consistent_adjudicate_court_finalize",
+      "method": "finalize_case",
+      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-16T09:24:36.261961+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+      "args": [
+        "CASE-000001"
+      ],
+      "hash": "0xdd972f7a15710908511072773bda2319047fd1352c2b0a6e0c094b5eae45f4a5",
+      "submitted_at_utc": "2026-11-16T09:24:43.038892+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xdd972f7a15710908511072773bda2319047fd1352c2b0a6e0c094b5eae45f4a5",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-16T09:24:49.777909+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "finalized_observed_at_utc": "2026-11-16T09:25:22.533891+00:00"
+    },
+    {
+      "operation": "case-000002_open",
+      "method": "open_case",
+      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-16T09:25:27.050997+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+      "args": [
+        "Can the seller retain a deposit after both parties sign an extension and the seller delivers by that amended date?",
+        "The seller says the signed May 4 extension replaced the original May 1 date and delivery was on time.",
+        "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
+        "The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.",
+        40
+      ],
+      "hash": "0xaaa295380a70f83faae57c4a7b5e17b6e9726827eb0169fce46d1ada52ac140a",
+      "submitted_at_utc": "2026-11-16T09:25:32.947677+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xaaa295380a70f83faae57c4a7b5e17b6e9726827eb0169fce46d1ada52ac140a",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-16T09:25:40.099697+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "finalized_observed_at_utc": "2026-11-16T09:26:07.165180+00:00"
+    },
+    {
+      "operation": "case-000002_respond",
+      "method": "respond",
+      "actor": "0xDd4860697407B53AA3E3C6213DE18c3BF34A5bbc",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-16T09:26:07.169049+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+      "args": [
+        "CASE-000002",
+        "The buyer says the original deadline alone controls and seeks the deposit.",
+        "The attached signed document supports this response.",
+        40
+      ],
+      "hash": "0xce1f495fc872d9241ed3ac72003c572dc2db84067b136f19ce13edafd542bebe",
+      "submitted_at_utc": "2026-11-16T09:26:12.400883+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0xce1f495fc872d9241ed3ac72003c572dc2db84067b136f19ce13edafd542bebe",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-16T09:26:20.229771+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "finalized_observed_at_utc": "2026-11-16T09:26:47.435636+00:00"
+    },
+    {
+      "operation": "case_b_contradiction_proposal",
+      "method": "propose_ruling",
+      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-16T09:26:49.373725+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+      "args": [
+        "CASE-000002",
+        "CLAIMANT_WINS",
+        "The original date controls even after a later signed extension, so the buyer may recover after May 1.",
+        "[\"P-000003\"]",
+        "[]",
+        "",
+        ""
+      ],
+      "hash": "0x5e26e19d5a9107f41468a15bdaaddb202610bb405ce7ab46ec4dc29b8a21945b",
+      "submitted_at_utc": "2026-11-16T09:26:54.882764+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x5e26e19d5a9107f41468a15bdaaddb202610bb405ce7ab46ec4dc29b8a21945b",
+      "acceptance_status": "ACCEPTED",
+      "accepted_observed_at_utc": "2026-11-16T09:27:01.994630+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_AGREE",
+      "rounds": "1",
+      "finalized_observed_at_utc": "2026-11-16T09:27:34.109885+00:00"
+    },
+    {
+      "operation": "case_b_contradiction_adjudicate_failed_consensus_1",
+      "method": "adjudicate",
+      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-16T09:27:36.046183+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+      "args": [
+        "CASE-000002"
+      ],
+      "hash": "0x9693a7fe3955e3d66165e902c130f4ebb4739321ee1f89fd4216081c1fa6a391",
+      "submitted_at_utc": "2026-11-16T09:27:41.586421+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x9693a7fe3955e3d66165e902c130f4ebb4739321ee1f89fd4216081c1fa6a391",
+      "acceptance_status": "UNDETERMINED",
+      "accepted_observed_at_utc": "2026-11-16T09:31:02.883178+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
       "consensus_result": "MAJORITY_DISAGREE",
       "rounds": "4",
-      "finalized_observed_at_utc": "2026-11-16T09:11:49.251089+00:00"
+      "finalized_observed_at_utc": "2026-11-16T09:31:35.562166+00:00",
+      "retry_reason": "Finalized without consensus agreement; no state transition accepted"
+    },
+    {
+      "operation": "case_b_contradiction_adjudicate",
+      "method": "adjudicate",
+      "actor": "0x54E92a1B7611B449C864Cd97723D3A3c8C7b25F5",
+      "stage": "FINALIZED",
+      "started_at_utc": "2026-11-16T09:35:13.063427+00:00",
+      "contract_address": "0x0275c538405e0FaD5D4a66078BED01C7200fe9dE",
+      "args": [
+        "CASE-000002"
+      ],
+      "hash": "0x35cf82f17d5f03f30ad8f18ef4c42f4fa4a2fdd4ef1ae0be22645bb65b8004e1",
+      "submitted_at_utc": "2026-11-16T09:35:18.862827+00:00",
+      "explorer_url": "https://explorer-studio.genlayer.com/tx/0x35cf82f17d5f03f30ad8f18ef4c42f4fa4a2fdd4ef1ae0be22645bb65b8004e1",
+      "acceptance_status": "UNDETERMINED",
+      "accepted_observed_at_utc": "2026-11-16T09:37:15.819419+00:00",
+      "finality_status": "FINALIZED",
+      "leader_execution": "SUCCESS",
+      "consensus_result": "MAJORITY_DISAGREE",
+      "rounds": "4",
+      "finalized_observed_at_utc": "2026-11-16T09:37:48.207149+00:00"
     }
   ],
   "portal_used": false,

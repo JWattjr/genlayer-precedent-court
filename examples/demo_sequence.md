@@ -1,12 +1,15 @@
-# Demo sequence
+# Revised demo sequence
 
-The live sequence requires a deployed contract address and working StudioNet access. Use the exact contract source in `contracts/precedent_court.py`.
+All units are synthetic bookkeeping. No GEN or token is locked or transferred.
 
-1. Deploy `PrecedentCourt(180)` and record the receipt and source hash.
-2. Call `seed_genesis_precedents` with the bounded JSON in `genesis_precedents.json`. Read P1 and P2 back directly.
-3. Open Case A, receive/respond or let the response window close, propose a holding citing P1, then adjudicate it consistently. Read the new P3 and verify the exact holding and accounting.
-4. Open Case B and propose a direct contradiction of P3. Record the 25% slash and unchanged remaining proposal count. Submit a second proposal with a fact-specific distinction and read the accepted P4.
-5. Open Case C, cite P4, adjudicate consistently, and read back P5. Verify the later case actually consumed the earlier case's precedent.
-6. Save each transaction hash, lifecycle observations, finalized receipt, case/citation/precedent views, Explorer transaction URL, and final accounting.
+1. Deploy PrecedentRegistry with no constructor arguments.
+2. Deploy PrecedentCourt with the Registry address and the chosen response-window seconds (the recorded release uses 7200).
+3. Bind the Court once through Registry.bind_court, seed the two genesis records, then call Court.sync_registry_count.
+4. Open a case with the claimant's bond. Respond through the designated respondent with position, evidence and a matching explicit bond.
+5. Either bonded party may propose outcome, holding, cited-ID JSON and distinction JSON. Optional overrules and overrule_reason strings identify a single active cited target.
+6. Adjudicate. For a consistent decision, wait for the emitted Registry child transaction and direct finalized record before finalize_case. The Court holds both balances until then.
+7. Follow the five scenarios in docs/DEMO_PLAN.md: A/P3, B contradiction then P4, C respondent-proposed P5, D justified overrule/P6, E unjustified rejection.
+8. Record the target before/after overruling and the separate get_overruled_by/is_active views. Original records must be unchanged.
+9. Save every transaction, execution outcome, finality and readback. Verify the two current Explorer contract pages individually.
 
-All units are synthetic. Do not describe these results as a real escrow or token payout.
+Use scripts/studionet_release.py for the exact recorded arguments. Signer data stays encrypted outside this repository. Do not use the superseded addresses as current evidence.

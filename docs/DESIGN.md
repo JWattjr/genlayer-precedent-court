@@ -39,8 +39,6 @@ This revision was explicitly confirmed by the user on November 16, 2026, followi
 
 These addresses are historical only. New source requires fresh deployment, live readbacks and Explorer checks.
 
-## Probe
-
 ## Revision deployment retry
 
 The first revised Court failed Case A with [LLM_ERROR] citation judgment count: model output omitted required cited/surfaced entries. No ruling was accepted. The prompt now explicitly enumerates all required judgment IDs and exact array lengths/order, while parsers remain strict. This documented reliability correction requires another fresh deployment and new live evidence.
@@ -51,6 +49,18 @@ Additional superseded first-revision addresses:
 
 The failed receipt remains preserved in the external first-revision run state and is not successful new-source evidence.
 
+## Probe
+
 The preserved throwaway probe established cross-contract view access, emitted writes and outsider rejection. The final readback was visible 33.158 seconds after parent finality. See ../probe/probe-result.json. The revised release separately proves actual Registry/Court interactions again.
 
 Contract source files are exempt from Git line-ending conversion so the published bytes, local bytes and deployed SHA-256 can agree exactly on Windows. This changes Git handling, not deployed program behavior.
+
+A finalized transaction is not an accepted state transition when consensus reports MAJORITY_DISAGREE. The release runner now requires MAJORITY_AGREE plus leader execution SUCCESS, checks direct state, preserves failed-consensus receipts, and permits bounded retries of the exact unchanged frozen proposal. This changes evidence collection, not contract source or the consensus comparison.
+
+The append validation also checks the total canonical JSON length before any model work or pending mutation. This covers Unicode expansion even when individual fields fit. A regression proves an oversized encoded record leaves the case PROPOSED and bonds unchanged. This guard and clearer relation definitions require a final fresh Registry/Court pair. The Case B negative demo now uses a direct logical negation of P3 rather than an ambiguous rule about an extended date; this changes demo input only.
+
+Additional superseded second-revision pair:
+- Registry: 0xeB2f1fD8829088d54Bb10b564a5a20ff41F97fE4.
+- Court: 0x0275c538405e0FaD5D4a66078BED01C7200fe9dE.
+
+The second pair's Case A completed, but Case B twice finalized without consensus and did not change state. Failed receipts are retained; no such receipt is successful evidence for the final source.

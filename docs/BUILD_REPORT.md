@@ -33,3 +33,7 @@ Public repository: [genlayer-precedent-court](https://github.com/JWattjr/genlaye
 - The overrule field is retained but cannot override the strict contradiction rule. No source changes were made after the live deployment.
 - The claimant alone proposes because only the claimant posts the tracked case bond. A split's odd unit goes to the respondent. The proposer slash is one quarter of the original bond, with the documented cap and refund rules.
 - The StudioNet Builder Portal was not opened or submitted to. No points or acceptance are promised.
+
+The first revised Court release failed Case A with [LLM_ERROR] citation judgment count and no accepted ruling. The required judgment IDs/counts were made explicit in the source prompt; lint, all 25 tests and the clean Git archive test were rerun before another fresh Registry/Court deployment. The failed pair is separately listed as superseded in DESIGN.md. Its receipt is preserved in the external first-revision run state; it is not claimed as successful evidence.
+
+The clean-archive byte check caught Git's line-ending conversion on an unchanged file. Contract-source attributes and index handling were corrected; the final clean archive contains the same contract bytes as the local/deployed SHA-256 evidence.

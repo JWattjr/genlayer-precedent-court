@@ -526,3 +526,17 @@ def test_longest_question_is_appendable_and_preserves_both_evidence_summaries(co
     assert len(precedent["question"]) == 400
     assert "CE:" in precedent["facts_summary"] and "RE:" in precedent["facts_summary"]
     assert "unsigned email" in precedent["facts_summary"]
+
+
+def test_encoded_unicode_payload_is_rejected_before_model_or_pending_append(court):
+    contract, vm, claimant, respondent, registry = court
+    case_id = create_case(contract, vm, claimant, respondent, question="界" * 400)
+    propose(contract, vm, claimant, case_id, holding="界" * 400,
+            distinctions=[{"id": "P-000001", "reason": "界" * 240}])
+    before = accounting(contract)
+    with vm.expect_revert("precedent append payload"):
+        contract.adjudicate(case_id)
+    assert contract.get_case(case_id)["status"] == "PROPOSED"
+    assert accounting(contract) == before
+    assert registry.count() == 1
+    assert not vm._captured_validators

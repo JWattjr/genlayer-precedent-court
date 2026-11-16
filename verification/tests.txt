@@ -12,5 +12,5 @@ INFO:   Environment: .env
 INFO:   Default wait interval: 3000 ms
 INFO:   Default wait retries: 50
 INFO:   Leader only mode: False
-.........................                                                [100%]
-25 passed in 4.82s
+..........................                                               [100%]
+26 passed in 5.12s

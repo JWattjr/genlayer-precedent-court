@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 import base64
 import hashlib
 import json
+import shutil
 from pathlib import Path
 import time
 
@@ -22,7 +23,7 @@ from studionet_probe import dpapi, load_accounts, status_name, tx_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WORK = ROOT.parent / "precedent-court-live-run" / "revision-2026-11-16-attempt2"
+WORK = ROOT.parent / "precedent-court-live-run" / "revision-2026-11-16-attempt3"
 STATE = WORK / "release.json"
 RPC = "https://studio.genlayer.com/api"
 EXPLORER = "https://explorer-studio.genlayer.com"
@@ -85,6 +86,18 @@ def read(address: str, method: str, args: list | None = None):
 def tx(label: str, client, *, address: str = "", method: str = "", args: list | None = None,
        deploy_source: str = "") -> dict:
     row = next((item for item in record["transactions"] if item["operation"] == label), None)
+    if row is not None and row.get("stage") == "FINALIZED" and row.get("consensus_result") != "MAJORITY_AGREE":
+        previous = [r for r in record["transactions"] if r.get("operation", "").startswith(label + "_failed_consensus_")]
+        if len(previous) >= 3:
+            raise RuntimeError(label + ": three consensus retries failed; preserved receipts require review")
+        row["operation"] = label + "_failed_consensus_" + str(len(previous) + 1)
+        old_receipt = WORK / "receipts" / (label + ".json")
+        archived_receipt = WORK / "receipts" / (row["operation"] + ".json")
+        if old_receipt.exists() and not archived_receipt.exists():
+            shutil.copy2(old_receipt, archived_receipt)
+        row["retry_reason"] = "Finalized without consensus agreement; no state transition accepted"
+        save()
+        row = None
     if row is None:
         row = {"operation": label, "method": method or "deploy", "actor": client.local_account.address,
                "stage": "SUBMITTING", "started_at_utc": iso()}
@@ -125,7 +138,7 @@ def tx(label: str, client, *, address: str = "", method: str = "", args: list | 
             row["deployed_address"] = ((details.get("data") or {}).get("contract_address")
                                        or (details.get("tx_data_decoded") or {}).get("contract_address"))
         save()
-    if row.get("stage") != "FINALIZED" or row.get("leader_execution") != "SUCCESS":
+    if row.get("stage") != "FINALIZED" or row.get("leader_execution") != "SUCCESS" or row.get("consensus_result") != "MAJORITY_AGREE":
         raise RuntimeError(f"{label}: transaction failed or did not finalize; inspect the saved receipt")
     return row
 
@@ -318,7 +331,7 @@ def run_demo() -> None:
             respondent_position="The buyer says the original deadline alone controls and seeks the deposit.",
             evidence="The original schedule says May 1. Both parties later signed an extension to May 4. The seller delivered May 4.", bond=40)
         initial = propose_and_adjudicate(case_b, outcome="CLAIMANT_WINS",
-            holding="The original date controls even after a later signed extension, so the buyer may recover after May 1.",
+            holding="A buyer may never recover a deposit when the seller misses a signed delivery date, even when there is no later amendment.",
             citations=["P-000003"], distinctions=[], label="case_b_contradiction")
         if initial["status"] != "READY_TO_REPROPOSE":
             raise RuntimeError("Case B's first proposal was not rejected and slashed as expected")
@@ -474,6 +487,7 @@ def main() -> None:
                   "source": {name: {"sha256": hashlib.sha256(source).hexdigest(), "bytes": len(source)}
                              for name, source in source_by_name.items()},
                   "contracts": {}, "transactions": [], "scenarios": {}}
+    record["status"] = "IN_PROGRESS"
     save()
     try:
         for name in ("registry", "court"):

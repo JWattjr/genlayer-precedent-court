@@ -1,6 +1,6 @@
 # Test matrix
 
-Saved pinned direct suite: 25 passing cases. Clean git archive run: 25 passing cases. See ../verification/tests.txt for exact interpreter, package versions, archive commit and command. Local tests mock LLM responses and explicitly exercise validator callbacks; they do not reproduce network consensus.
+Saved pinned direct suite: 26 passing cases. Clean git archive run: 26 passing cases. See ../verification/tests.txt for exact interpreter, package versions, archive commit and command. Local tests mock LLM responses and explicitly exercise validator callbacks; they do not reproduce network consensus.
 
 | Area | Coverage |
 |---|---|
@@ -13,3 +13,5 @@ Saved pinned direct suite: 25 passing cases. Clean git archive run: 25 passing c
 | Async behavior | Consistent adjudication holds bonds pending Registry append; finalized readback permits settlement. Direct tests use an adapter for cross-contract messages; real emitted child writes and finality are separately established by live evidence. |
 
 Required live scenarios: A accepted P3; B contradiction rejected then distinction accepted P4; C respondent proposal cites P4 and creates P5; D justified overrule creates P6 with old record unchanged; E unjustified overrule rejected/slashed. E intentionally leaves one attempt and held units.
+
+The 26th regression rejects an oversized canonical Unicode append payload before model execution or pending-state mutation, while retaining the original proposed case and conserved bonds.
