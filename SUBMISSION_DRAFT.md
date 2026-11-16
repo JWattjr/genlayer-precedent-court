@@ -42,7 +42,7 @@ Each current contract has its own direct Explorer entry. Superseded deployment a
 14. **Tests including clean archive run:** [verification/tests.txt](verification/tests.txt).
 15. **Lint and ABI validation:** [verification/lint.txt](verification/lint.txt).
 16. **Publication audit:** [verification/secret-audit.json](verification/secret-audit.json).
-
-17. **Live revision assertions:** [verification/revision-qa.json](verification/revision-qa.json).
+17. **Throwaway cross-contract probe (not contract evidence):** [probe/probe-result.json](probe/probe-result.json).
+18. **Live revision assertions:** [verification/revision-qa.json](verification/revision-qa.json).
 
 Prepared text only. The Builder Portal has not been opened, filled or submitted.
